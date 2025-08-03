@@ -622,6 +622,7 @@ htdocs/install/mysql/data/llx_accounting_account_gr.sql
 htdocs/install/mysql/data/llx_c_ticket_resolution-ticket.sql
 htdocs/install/mysql/data/llx_accounting_account_dk.sql
 htdocs/install/mysql/data/llx_accounting_account_lu.sql
+htdocs/install/mysql/data/llx_accounting_account_ch_de.sql
 htdocs/install/mysql/data/llx_accounting_account_mx.sql
 htdocs/install/mysql/data/llx_accounting_account_co.sql
 htdocs/install/mysql/data/llx_c_actioncomm.sql
@@ -3748,6 +3749,7 @@ htdocs/langs/es_PY/main.lang
 htdocs/langs/es_PY/salaries.lang
 htdocs/langs/es_PY/exports.lang
 htdocs/langs/es_PY/intracommreport.lang
+htdocs/langs/en_IE/other.lang
 htdocs/langs/en_IE/accountancy.lang
 htdocs/langs/en_IE/admin.lang
 htdocs/langs/en_IE/products.lang
@@ -4458,6 +4460,7 @@ htdocs/langs/ar_EG/datapolicy.lang
 htdocs/langs/ar_EG/compta.lang
 htdocs/langs/ar_EG/holiday.lang
 htdocs/langs/ar_EG/margins.lang
+htdocs/langs/ar_EG/install.lang
 htdocs/langs/ar_EG/propal.lang
 htdocs/langs/ar_EG/admin.lang
 htdocs/langs/ar_EG/deliveries.lang
@@ -7607,6 +7610,7 @@ htdocs/langs/ar_JO/opensurvey.lang
 htdocs/langs/ar_IQ/accountancy.lang
 htdocs/langs/ar_IQ/admin.lang
 htdocs/langs/ar_IQ/ticket.lang
+htdocs/langs/ar_IQ/bills.lang
 htdocs/langs/ar_IQ/main.lang
 htdocs/langs/uk_UA/oauth.lang
 htdocs/langs/uk_UA/mailmanspip.lang
@@ -7857,6 +7861,7 @@ htdocs/langs/pt_MZ/members.lang
 htdocs/langs/pt_MZ/compta.lang
 htdocs/langs/pt_MZ/holiday.lang
 htdocs/langs/pt_MZ/margins.lang
+htdocs/langs/pt_MZ/install.lang
 htdocs/langs/pt_MZ/propal.lang
 htdocs/langs/pt_MZ/admin.lang
 htdocs/langs/pt_MZ/deliveries.lang
@@ -14078,12 +14083,12 @@ scripts/website/regenerate-pages.php
 scripts/odt2pdf/odt2pdf.sh
 scripts/bank/export-bank-receipts.php
 scripts/withdrawals/build_withdrawal_file.php
-scripts/tools/admintool.php
 scripts/invoices/email_unpaid_invoices_to_customers.php
 scripts/invoices/email_unpaid_invoices_to_representatives.php
 scripts/invoices/rebuild_merge_pdf.php
 scripts/product/migrate_picture_path.php
 scripts/product/regenerate_thumbs.php
+scripts/admin/admintool.php
 scripts/contracts/email_expire_services_to_representatives.php
 scripts/contracts/email_expire_services_to_customers.php
 scripts/members/sync_members_types_dolibarr2ldap.php

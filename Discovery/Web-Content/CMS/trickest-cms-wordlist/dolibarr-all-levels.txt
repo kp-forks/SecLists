@@ -2775,6 +2775,11 @@ install/mysql/data/llx_accounting_account_lu.sql
 mysql/data/llx_accounting_account_lu.sql
 data/llx_accounting_account_lu.sql
 llx_accounting_account_lu.sql
+htdocs/install/mysql/data/llx_accounting_account_ch_de.sql
+install/mysql/data/llx_accounting_account_ch_de.sql
+mysql/data/llx_accounting_account_ch_de.sql
+data/llx_accounting_account_ch_de.sql
+llx_accounting_account_ch_de.sql
 htdocs/install/mysql/data/llx_accounting_account_mx.sql
 install/mysql/data/llx_accounting_account_mx.sql
 mysql/data/llx_accounting_account_mx.sql
@@ -16783,6 +16788,10 @@ htdocs/langs/es_PY/intracommreport.lang
 langs/es_PY/intracommreport.lang
 es_PY/intracommreport.lang
 intracommreport.lang
+htdocs/langs/en_IE/other.lang
+langs/en_IE/other.lang
+en_IE/other.lang
+other.lang
 htdocs/langs/en_IE/accountancy.lang
 langs/en_IE/accountancy.lang
 en_IE/accountancy.lang
@@ -19623,6 +19632,10 @@ htdocs/langs/ar_EG/margins.lang
 langs/ar_EG/margins.lang
 ar_EG/margins.lang
 margins.lang
+htdocs/langs/ar_EG/install.lang
+langs/ar_EG/install.lang
+ar_EG/install.lang
+install.lang
 htdocs/langs/ar_EG/propal.lang
 langs/ar_EG/propal.lang
 ar_EG/propal.lang
@@ -32219,6 +32232,10 @@ htdocs/langs/ar_IQ/ticket.lang
 langs/ar_IQ/ticket.lang
 ar_IQ/ticket.lang
 ticket.lang
+htdocs/langs/ar_IQ/bills.lang
+langs/ar_IQ/bills.lang
+ar_IQ/bills.lang
+bills.lang
 htdocs/langs/ar_IQ/main.lang
 langs/ar_IQ/main.lang
 ar_IQ/main.lang
@@ -33219,6 +33236,10 @@ htdocs/langs/pt_MZ/margins.lang
 langs/pt_MZ/margins.lang
 pt_MZ/margins.lang
 margins.lang
+htdocs/langs/pt_MZ/install.lang
+langs/pt_MZ/install.lang
+pt_MZ/install.lang
+install.lang
 htdocs/langs/pt_MZ/propal.lang
 langs/pt_MZ/propal.lang
 pt_MZ/propal.lang
@@ -68722,9 +68743,6 @@ export-bank-receipts.php
 scripts/withdrawals/build_withdrawal_file.php
 withdrawals/build_withdrawal_file.php
 build_withdrawal_file.php
-scripts/tools/admintool.php
-tools/admintool.php
-admintool.php
 scripts/invoices/email_unpaid_invoices_to_customers.php
 invoices/email_unpaid_invoices_to_customers.php
 email_unpaid_invoices_to_customers.php
@@ -68740,6 +68758,9 @@ migrate_picture_path.php
 scripts/product/regenerate_thumbs.php
 product/regenerate_thumbs.php
 regenerate_thumbs.php
+scripts/admin/admintool.php
+admin/admintool.php
+admintool.php
 scripts/contracts/email_expire_services_to_representatives.php
 contracts/email_expire_services_to_representatives.php
 email_expire_services_to_representatives.php
