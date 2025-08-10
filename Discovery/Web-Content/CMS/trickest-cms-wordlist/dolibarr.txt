@@ -431,11 +431,6 @@ dev/examples/mail/dolibarr_mail_withimageHTML.txt
 dev/examples/mail/source_email_ticket_2_a_answer_from_ticket.txt
 dev/examples/mail/dolibarr_mail_simpleHTML.txt
 dev/examples/mail/dolibarr_mail_attachementHTML.txt
-dev/setup/bruno/collection.bru
-dev/setup/bruno/README.md
-dev/setup/bruno/bruno.json
-dev/setup/bruno/environments/ Test local.bru
-dev/setup/bruno/status/Get status -Dolibarr version- --.bru
 dev/setup/git/hooks/pre-commit.legacy
 dev/setup/git/hooks/pre-commit
 dev/setup/fail2ban/filter.d/web-accesslog-limit404.conf
@@ -1623,6 +1618,7 @@ htdocs/fourn/commande/tpl/linkedobjectblock.tpl.php
 htdocs/fourn/commande/contact.php
 htdocs/fourn/commande/card.php
 htdocs/fourn/commande/document.php
+htdocs/fourn/commande/messaging.php
 htdocs/fourn/commande/dispatch.php
 htdocs/fourn/commande/info.php
 htdocs/fourn/commande/index.php
@@ -9527,6 +9523,7 @@ htdocs/comm/propal/contact.php
 htdocs/comm/propal/agenda.php
 htdocs/comm/propal/card.php
 htdocs/comm/propal/document.php
+htdocs/comm/propal/messaging.php
 htdocs/comm/propal/class/propal.class.php
 htdocs/comm/propal/class/propaleligne.class.php
 htdocs/comm/propal/class/propalestats.class.php

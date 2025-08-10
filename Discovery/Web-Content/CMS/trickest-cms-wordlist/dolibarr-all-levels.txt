@@ -1950,28 +1950,6 @@ dev/examples/mail/dolibarr_mail_attachementHTML.txt
 examples/mail/dolibarr_mail_attachementHTML.txt
 mail/dolibarr_mail_attachementHTML.txt
 dolibarr_mail_attachementHTML.txt
-dev/setup/bruno/collection.bru
-setup/bruno/collection.bru
-bruno/collection.bru
-collection.bru
-dev/setup/bruno/README.md
-setup/bruno/README.md
-bruno/README.md
-README.md
-dev/setup/bruno/bruno.json
-setup/bruno/bruno.json
-bruno/bruno.json
-bruno.json
-dev/setup/bruno/environments/ Test local.bru
-setup/bruno/environments/ Test local.bru
-bruno/environments/ Test local.bru
-environments/ Test local.bru
- Test local.bru
-dev/setup/bruno/status/Get status -Dolibarr version- --.bru
-setup/bruno/status/Get status -Dolibarr version- --.bru
-bruno/status/Get status -Dolibarr version- --.bru
-status/Get status -Dolibarr version- --.bru
-Get status -Dolibarr version- --.bru
 dev/setup/git/hooks/pre-commit.legacy
 setup/git/hooks/pre-commit.legacy
 git/hooks/pre-commit.legacy
@@ -7739,6 +7717,10 @@ htdocs/fourn/commande/document.php
 fourn/commande/document.php
 commande/document.php
 document.php
+htdocs/fourn/commande/messaging.php
+fourn/commande/messaging.php
+commande/messaging.php
+messaging.php
 htdocs/fourn/commande/dispatch.php
 fourn/commande/dispatch.php
 commande/dispatch.php
@@ -39901,6 +39883,10 @@ htdocs/comm/propal/document.php
 comm/propal/document.php
 propal/document.php
 document.php
+htdocs/comm/propal/messaging.php
+comm/propal/messaging.php
+propal/messaging.php
+messaging.php
 htdocs/comm/propal/class/propal.class.php
 comm/propal/class/propal.class.php
 propal/class/propal.class.php

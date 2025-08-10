@@ -1291,6 +1291,7 @@ src/Core/Content/Category/Service/NavigationLoader.php
 src/Core/Content/Category/Subscriber/CategoryTreeMovedSubscriber.php
 src/Core/Content/Category/Subscriber/CategorySubscriber.php
 src/Core/Content/Category/Tree/TreeItem.php
+src/Core/Content/Category/Tree/CategoryTreePathResolver.php
 src/Core/Content/Category/Tree/Tree.php
 src/Core/Content/Category/CategoryDefinition.php
 src/Core/Content/Category/Validation/EntryPointValidator.php
@@ -1305,8 +1306,10 @@ src/Core/Profiling/Resources/views/Collector/explain.html.twig
 src/Core/Profiling/Resources/views/Collector/db.html.twig
 src/Core/Profiling/Resources/views/Collector/flags.html.twig
 src/Core/Profiling/Resources/views/Collector/icon.svg
+src/Core/Profiling/Resources/views/Collector/cart.html.twig
 src/Core/Profiling/Resources/views/Collector/rules.html.twig
 src/Core/Profiling/Resources/views/Collector/http_cache_tags.html.twig
+src/Core/Profiling/Resources/views/Collector/cart.svg
 src/Core/Profiling/Resources/views/Collector/script_traces.html.twig
 src/Core/Profiling/Profiling.php
 src/Core/Profiling/Controller/ProfilerController.php
@@ -1322,6 +1325,7 @@ src/Core/Profiling/Integration/ServerTiming.php
 src/Core/Profiling/Integration/ProfilerInterface.php
 src/Core/Profiling/Integration/Tideways.php
 src/Core/Profiling/Twig/DoctrineExtension.php
+src/Core/Profiling/Subscriber/CartDataCollectorSubscriber.php
 src/Core/Profiling/Subscriber/ActiveRulesDataCollectorSubscriber.php
 src/Core/Profiling/Subscriber/CacheTagCollectorSubscriber.php
 src/Core/Profiling/Routing/ProfilerWhitelist.php
@@ -1687,12 +1691,9 @@ src/Core/System/Snippet/Aggregate/SnippetSet/SnippetSetCollection.php
 src/Core/System/Snippet/Event/SnippetsThemeResolveEvent.php
 src/Core/System/Snippet/SnippetEntity.php
 src/Core/System/Snippet/Struct/InvalidPluralizationCollection.php
-src/Core/System/Snippet/Struct/SnippetPaths.php
 src/Core/System/Snippet/Struct/InvalidPluralizationStruct.php
 src/Core/System/Snippet/Struct/MissingSnippetStruct.php
-src/Core/System/Snippet/Struct/Language.php
 src/Core/System/Snippet/Struct/SnippetValidationStruct.php
-src/Core/System/Snippet/Struct/LanguageCollection.php
 src/Core/System/Snippet/Struct/MissingSnippetCollection.php
 src/Core/System/Snippet/Struct/TranslationConfig.php
 src/Core/System/Snippet/SnippetValidatorInterface.php
@@ -1702,6 +1703,12 @@ src/Core/System/Snippet/Api/SnippetController.php
 src/Core/System/Snippet/SnippetException.php
 src/Core/System/Snippet/Command/InstallTranslationCommand.php
 src/Core/System/Snippet/Command/ValidateSnippetsCommand.php
+src/Core/System/Snippet/DataTransfer/SnippetPath/SnippetPath.php
+src/Core/System/Snippet/DataTransfer/SnippetPath/SnippetPathCollection.php
+src/Core/System/Snippet/DataTransfer/PluginMapping/PluginMapping.php
+src/Core/System/Snippet/DataTransfer/PluginMapping/PluginMappingCollection.php
+src/Core/System/Snippet/DataTransfer/Language/Language.php
+src/Core/System/Snippet/DataTransfer/Language/LanguageCollection.php
 src/Core/System/Snippet/Service/TranslationLoader.php
 src/Core/System/Snippet/Service/TranslationConfigLoader.php
 src/Core/System/Snippet/Subscriber/CustomFieldSubscriber.php
@@ -2336,6 +2343,7 @@ src/Core/Checkout/Cart/TaxProvider/TaxAdjustmentCalculator.php
 src/Core/Checkout/Cart/TaxProvider/Struct/TaxProviderResult.php
 src/Core/Checkout/Cart/TaxProvider/TaxProviderProcessor.php
 src/Core/Checkout/Cart/TaxProvider/AbstractTaxProvider.php
+src/Core/Checkout/CheckoutPermissions.php
 src/Core/Checkout/Promotion/PromotionDefinition.php
 src/Core/Checkout/Promotion/PromotionEntity.php
 src/Core/Checkout/Promotion/Aggregate/PromotionPersonaRule/PromotionPersonaRuleDefinition.php
@@ -4294,8 +4302,19 @@ src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schema
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/WishlistLoadRouteResponse.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/PropertyGroupOption.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/CartItems.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/parameters/criteria.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/OpenApi3Response.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/CountryStateListResponse.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/CurrencyListResponse.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/CountryListResponse.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/ContextTokenResponse.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/SeoUrlListResponse.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/PaymentMethodListResponse.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/ShippingMethodListResponse.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/SalutationListResponse.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/LanguageListResponse.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/ProductListResponse.json
+src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/components/responses/CategoryListResponse.json
 src/Core/Framework/Api/ApiDefinition/Generator/Schema/StoreApi/tags/tags.json
 src/Core/Framework/Api/ApiDefinition/Generator/OpenApiFileLoader.php
 src/Core/Framework/Api/ApiDefinition/Generator/BundleSchemaPathCollection.php
@@ -4304,6 +4323,7 @@ src/Core/Framework/Api/ApiDefinition/Generator/OpenApi/OpenApiDefinitionSchemaBu
 src/Core/Framework/Api/ApiDefinition/Generator/OpenApi/OpenApiSchemaBuilder.php
 src/Core/Framework/Api/ApiDefinition/Generator/OpenApi/DeactivateValidationAnalysis.php
 src/Core/Framework/Api/ApiDefinition/Generator/OpenApi/OpenApiPathBuilder.php
+src/Core/Framework/Api/ApiDefinition/README.md
 src/Core/Framework/Api/ApiDefinition/ApiTypeNotFoundException.php
 src/Core/Framework/Api/ApiDefinition/ApiDefinitionGeneratorInterface.php
 src/Core/Framework/Api/ApiDefinition/DefinitionService.php
@@ -5769,6 +5789,7 @@ src/Core/Migration/V6_7/Migration1752219159AddLanguageActive.php
 src/Core/Migration/V6_7/Migration1742484083TransitionToAddressInputFieldArrangement.php
 src/Core/Migration/V6_7/Migration1753799632FixStateMachineHistoryIntegrationConstraint.php
 src/Core/Migration/V6_7/Migration1742199550MeasurementDisplayUnitTable.php
+src/Core/Migration/V6_7/Migration1754398573ChangeAllLineItemsRuleValueType.php
 src/Core/Migration/V6_7/Migration1742568836CreateThemeRuntimeConfigTable.php
 src/Core/Migration/V6_7/Migration1728119898AddRobotsTxt.php
 src/Core/Migration/V6_7/Migration1737430168RemoveFileTypeOfDocumentTable.php
@@ -6041,6 +6062,7 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoNewRequestInStorefrontRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/PropertyNativeTypeRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/MessagesShouldNotUsePHPStanTypes.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFlowEventAwareExtendsRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoAddCacheTagEventRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalClassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Internal/InternalMethodRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoUnconfiguredMetricAllowed.php
@@ -8446,10 +8468,6 @@ src/Administration/Resources/app/administration/src/module/sw-promotion-v2/compo
 src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/sw-promotion-v2-empty-state-hero/sw-promotion-v2-empty-state-hero.html.twig
 src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/sw-promotion-v2-empty-state-hero/sw-promotion-v2-empty-state-hero.spec.js
 src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/sw-promotion-v2-empty-state-hero/index.js
-src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/sw-promotion-v2-rule-select/sw-promotion-v2-rule-select.scss
-src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/sw-promotion-v2-rule-select/sw-promotion-v2-rule-select.html.twig
-src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/sw-promotion-v2-rule-select/index.js
-src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/sw-promotion-v2-rule-select/sw-promotion-v2-rule-select.spec.js
 src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/promotion-codes/sw-promotion-v2-generate-codes-modal/sw-promotion-v2-generate-codes-modal.html.twig
 src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/promotion-codes/sw-promotion-v2-generate-codes-modal/sw-promotion-v2-generate-codes-modal.spec.js
 src/Administration/Resources/app/administration/src/module/sw-promotion-v2/component/promotion-codes/sw-promotion-v2-generate-codes-modal/index.js
@@ -11396,9 +11414,6 @@ src/Administration/Resources/app/administration/src/app/component/form/select/en
 src/Administration/Resources/app/administration/src/app/component/form/select/entity/sw-entity-multi-select/index.js
 src/Administration/Resources/app/administration/src/app/component/form/select/entity/sw-entity-multi-select/sw-entity-multi-select.scss
 src/Administration/Resources/app/administration/src/app/component/form/select/entity/sw-entity-multi-select/sw-entity-multi-select.html.twig
-src/Administration/Resources/app/administration/src/app/component/form/select/entity/sw-entity-many-to-many-select/sw-many-to-many-select.spec.js
-src/Administration/Resources/app/administration/src/app/component/form/select/entity/sw-entity-many-to-many-select/sw-entity-many-to-many-select.html.twig
-src/Administration/Resources/app/administration/src/app/component/form/select/entity/sw-entity-many-to-many-select/index.js
 src/Administration/Resources/app/administration/src/app/component/form/select/entity/advanced-selection-entities/sw-advanced-selection-rule/sw-advanced-selection-rule.scss
 src/Administration/Resources/app/administration/src/app/component/form/select/entity/advanced-selection-entities/sw-advanced-selection-rule/sw-advanced-selection-rule.html.twig
 src/Administration/Resources/app/administration/src/app/component/form/select/entity/advanced-selection-entities/sw-advanced-selection-rule/sw-advanced-selection-rule.spec.js
@@ -13122,7 +13137,6 @@ tests/integration/Core/Checkout/Cart/Processor/_fixtures/HighTaxes.php
 tests/integration/Core/Checkout/Cart/Processor/_fixtures/PercentageItem.php
 tests/integration/Core/Checkout/Cart/Processor/PromotionProcessorTest.php
 tests/integration/Core/Checkout/Cart/Processor/ContainerCartProcessorTest.php
-tests/integration/Core/Checkout/Cart/LineItem/Group/LineItemQuantitySplitterTest.php
 tests/integration/Core/Checkout/Cart/LineItem/Group/LineItemGroupBuilderTest.php
 tests/integration/Core/Checkout/Cart/TaxProvider/TaxProviderRegistryTest.php
 tests/integration/Core/Checkout/Cart/TaxProvider/TaxAdjustmentTest.php
@@ -13350,6 +13364,7 @@ tests/integration/Core/Framework/DataAbstractionLayer/Search/AntiJoinSearchTest.
 tests/integration/Core/Framework/DataAbstractionLayer/Search/GroupByTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/EntityExtensionRegisterTest.php
 tests/integration/Core/Framework/DataAbstractionLayer/Commands/RefreshIndexCommandTest.php
+tests/integration/Core/Framework/fixtures/QueryParameterAllowList.php
 tests/integration/Core/Framework/Log/ScheduledTask/LogCleanupTaskHandlerTest.php
 tests/integration/Core/Framework/FeatureFlag/_fixture/featuretest.html.twig
 tests/integration/Core/Framework/FeatureFlag/_fixture/featuretest_unregistered.html.twig
@@ -14115,6 +14130,7 @@ tests/integration/Administration/Snippet/fixtures/caseDifferentLanguages/core/de
 tests/integration/Administration/Snippet/fixtures/caseDifferentLanguages/plugin/en-GB.json
 tests/integration/Administration/Snippet/fixtures/caseSameLanguage/core/de-DE.json
 tests/integration/Administration/Snippet/fixtures/caseSameLanguage/plugin/de-DE.json
+tests/integration/Administration/Snippet/fixtures/translationConfig/translation.yaml
 tests/integration/Administration/Snippet/SnippetFinderTest.php
 tests/integration/Administration/Service/AdminSearcherTest.php
 tests/integration/Administration/Notification/Repository/NotificationRepositoryTest.php
@@ -14160,6 +14176,7 @@ tests/migration/Core/V6_7/Migration1751623078AddMeasurementSystemPrivilegesTest.
 tests/migration/Core/V6_7/Migration1717573310ImportExportTechnicalNameRequiredTest.php
 tests/migration/Core/V6_7/Migration1697112044PaymentAndShippingTechnicalNameRequiredTest.php
 tests/migration/Core/V6_7/Migration1743151679AddContextGatewayUrlTest.php
+tests/migration/Core/V6_7/Migration1754398573ChangeAllLineItemsRuleValueTypeTest.php
 tests/migration/Core/V6_7/Migration1752499887UpdateAppRequestedPrivilegesTest.php
 tests/migration/Core/V6_7/Migration1728119898AddRobotsTxtTest.php
 tests/migration/Core/V6_7/Migration1742897274RegistrationSalutationToggleConfigTest.php
@@ -14656,6 +14673,7 @@ tests/unit/Core/Content/Category/Service/CategoryUrlGeneratorTest.php
 tests/unit/Core/Content/Category/Service/CategoryBreadcrumbBuilderTest.php
 tests/unit/Core/Content/Category/Subscriber/CategorySubscriberTest.php
 tests/unit/Core/Content/Category/Subscriber/CategoryTreeMovedSubscriberTest.php
+tests/unit/Core/Content/Category/Tree/CategoryTreePathResolverTest.php
 tests/unit/Core/Profiling/Controller/ProfilerControllerTest.php
 tests/unit/Core/Profiling/FeatureFlag/FeatureFlagProfilerTest.php
 tests/unit/Core/Profiling/ProfilingTest.php
@@ -14663,6 +14681,7 @@ tests/unit/Core/Profiling/Doctrine/ConnectionProfilerTest.php
 tests/unit/Core/Profiling/Doctrine/BacktraceDebugDataHolderTest.php
 tests/unit/Core/Profiling/Doctrine/ProfilingMiddlewareTest.php
 tests/unit/Core/Profiling/Twig/DoctrineExtensionTest.php
+tests/unit/Core/Profiling/Subscriber/CartDataCollectorSubscriberTest.php
 tests/unit/Core/Profiling/Subscriber/CacheTagCollectorSubscriberTest.php
 tests/unit/Core/Profiling/Subscriber/ActiveRulesDataCollectorSubscriberTest.php
 tests/unit/Core/System/User/UserExceptionTest.php
@@ -14747,6 +14766,7 @@ tests/unit/Core/System/UsageData/EntitySync/DispatchEntityMessageTest.php
 tests/unit/Core/System/Currency/CurrencyFormatterTest.php
 tests/unit/Core/System/Currency/Rule/CurrencyRuleTest.php
 tests/unit/Core/System/NumberRange/ValueGenerator/IncrementRedisStorageTest.php
+tests/unit/Core/System/NumberRange/ValueGenerator/NumberRangeValueGeneratorTest.php
 tests/unit/Core/System/SalesChannel/SalesChannelExceptionTest.php
 tests/unit/Core/System/SalesChannel/SalesChannelContextTest.php
 tests/unit/Core/System/SalesChannel/Aggregate/SalesChannelAnalytics/SalesChannelAnalyticsEntityTest.php
@@ -14795,11 +14815,20 @@ tests/unit/Core/System/Snippet/Files/SnippetFileCollectionTest.php
 tests/unit/Core/System/Snippet/Files/MockedKernel.php
 tests/unit/Core/System/Snippet/SnippetServiceTest.php
 tests/unit/Core/System/Snippet/Struct/TranslationConfigTest.php
-tests/unit/Core/System/Snippet/Struct/SnippetPathsTest.php
-tests/unit/Core/System/Snippet/Struct/LanguageTest.php
 tests/unit/Core/System/Snippet/Api/SnippetControllerTest.php
 tests/unit/Core/System/Snippet/Command/InstallTranslationCommandTest.php
+tests/unit/Core/System/Snippet/DataTransfer/SnippetPath/SnippetPathTest.php
+tests/unit/Core/System/Snippet/DataTransfer/SnippetPath/SnippetPathCollectionTest.php
+tests/unit/Core/System/Snippet/DataTransfer/PluginMapping/PluginMappingTest.php
+tests/unit/Core/System/Snippet/DataTransfer/Language/LanguageTest.php
 tests/unit/Core/System/Snippet/Service/TranslationLoaderTest.php
+tests/unit/Core/System/Snippet/Service/TestableTranslationConfigLoader.php
+tests/unit/Core/System/Snippet/Service/fixtures/translation_broken_url.yaml
+tests/unit/Core/System/Snippet/Service/fixtures/translation_empty_string_url.yaml
+tests/unit/Core/System/Snippet/Service/fixtures/translation_empty.yaml
+tests/unit/Core/System/Snippet/Service/fixtures/translation.yaml
+tests/unit/Core/System/Snippet/Service/fixtures/translation_invalid_url.yaml
+tests/unit/Core/System/Snippet/Service/fixtures/translation_non_string_url.yaml
 tests/unit/Core/System/Snippet/Service/TranslationConfigLoaderTest.php
 tests/unit/Core/System/Snippet/Filter/EmptySnippetFilterTest.php
 tests/unit/Core/System/Snippet/Filter/EditedFilterTest.php
@@ -14816,7 +14845,6 @@ tests/unit/Core/System/Snippet/Mock/_fixtures/storefront.en-GB.json
 tests/unit/Core/System/Snippet/Mock/_fixtures/storefront.de-DE.json
 tests/unit/Core/System/Snippet/Mock/_fixtures/swagtheme.de-DE.json
 tests/unit/Core/System/Snippet/Mock/_fixtures/swagtheme.en-GB.json
-tests/unit/Core/System/Snippet/Mock/FilePutContentsMock.php
 tests/unit/Core/System/Snippet/SnippetValidatorTest.php
 tests/unit/Core/System/StateMachine/Api/StateMachineActionControllerTest.php
 tests/unit/Core/System/CustomField/CustomFieldServiceTest.php
@@ -15074,6 +15102,7 @@ tests/unit/Core/Checkout/Cart/LineItem/LineItemCollectionTest.php
 tests/unit/Core/Checkout/Cart/LineItem/LineItemTest.php
 tests/unit/Core/Checkout/Cart/LineItem/Group/ProductLineItemProviderTest.php
 tests/unit/Core/Checkout/Cart/LineItem/Group/LineItemQuantityTest.php
+tests/unit/Core/Checkout/Cart/LineItem/Group/LineItemQuantitySplitterTest.php
 tests/unit/Core/Checkout/Cart/LineItem/Group/RuleMatcher/AnyRuleLineItemMatcherTest.php
 tests/unit/Core/Checkout/Cart/LineItem/Group/RuleMatcher/AnyRuleMatcherTest.php
 tests/unit/Core/Checkout/Cart/LineItem/Group/Packager/LineItemGroupCountPackagerTest.php
@@ -15141,6 +15170,7 @@ tests/unit/Core/Checkout/Promotion/Cart/PromotionProcessorTest.php
 tests/unit/Core/Checkout/Promotion/Api/PromotionActionControllerTest.php
 tests/unit/Core/Checkout/Promotion/Rule/PromotionLineItemRuleTest.php
 tests/unit/Core/Checkout/Promotion/Subscriber/PromotionIndividualCodeRedeemerTest.php
+tests/unit/Core/Checkout/Promotion/Subscriber/Storefront/StorefrontCartSubscriberTest.php
 tests/unit/Core/Checkout/Payment/PaymentExceptionTest.php
 tests/unit/Core/Checkout/Payment/Controller/PaymentControllerTest.php
 tests/unit/Core/Checkout/Payment/Event/FinalizePaymentOrderTransactionCriteriaEventTest.php
@@ -15835,9 +15865,11 @@ tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithOverri
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/AdminApi/paths/order_delivery.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/AdminApi/components/schemas/infoConfigResponse.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/AdminApi/tags/tags.json
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/paths/category.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/paths/order_delivery.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/infoConfigResponse2.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/schemas/infoConfigResponse.json
+tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/components/parameters/x-parameter-groups.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/Api/ApiDefinition/Generator/Schema/StoreApi/tags/tags.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithApiSchema/Resources/Schema/AdminApi/paths/order_delivery.json
 tests/unit/Core/Framework/Api/ApiDefinition/Generator/_fixtures/BundleWithApiSchema/Resources/Schema/AdminApi/components/schemas/infoConfigResponse.json
@@ -16305,6 +16337,7 @@ tests/unit/Administration/Snippet/fixtures/invalidPlugin/Resources/app/administr
 tests/unit/Administration/Snippet/fixtures/activePlugin/Resources/app/administration/src/jp-JP.json
 tests/unit/Administration/Snippet/fixtures/activePlugin/Resources/app/meteor-app/jp-JP.json
 tests/unit/Administration/Snippet/fixtures/existingBundle/Resources/app/administration/src/jp-JP.json
+tests/unit/Administration/Snippet/fixtures/existingBundle/Resources/app/meteor-app/jp-JP.json
 tests/unit/Administration/Snippet/CachedSnippetFinderTest.php
 tests/unit/Administration/Snippet/AppAdministrationSnippetPersisterTest.php
 tests/unit/Administration/Snippet/SnippetExceptionTest.php
@@ -19281,6 +19314,7 @@ changelog/_unreleased/2025-05-19-bsfg-compliant-alt-tag-for-decorative-images.md
 changelog/_unreleased/2025-08-04-allow-storefront-routes-without-prefix.md
 changelog/_unreleased/2025-05-07-deprecated-theme-translations-to-use-admin-snippets.md
 changelog/_unreleased/2025-06-26-fix-media-item-quickinfo-update-after-save.md
+changelog/_unreleased/2025-08-06-cart-persistance-behaviour.md
 changelog/_unreleased/2025-07-14-restore-kernel-handle-resetinterface.md
 changelog/_unreleased/2025-07-29-fix-inconsistent-seourls-for-cross-selling-products.md
 changelog/_unreleased/2025-07-03-add-canonical-redirect-extension.md
@@ -19292,6 +19326,7 @@ changelog/_unreleased/2025-06-27-fix-invoice-number-selection.md
 changelog/_unreleased/2025-06-30-prevent-line-item-price-editing-in-admin-if-price-definition-is-missing.md
 changelog/_unreleased/2025-06-15-fix-document-route-authentication.md
 changelog/_unreleased/2025-05-23-add-new-increment-api-to-delete-unused-keys-or-cluster.md
+changelog/_unreleased/2025-08-06-event-interfaces-for-extension-events.md
 changelog/_unreleased/2025-06-27-fix-document-number-customization.md
 changelog/_unreleased/2025-06-14-remove-superfluous-vat-id-block-from-address-form-html-twig.md
 changelog/_unreleased/2024-07-26-fix-variant-listing-config-when-cloning-products-or-deleting-variants.md
@@ -19301,6 +19336,7 @@ changelog/_unreleased/2025-03-14-add-acl-hook-service.md
 changelog/_unreleased/2025-07-16-copy-app-snippets-after-system-language-change.md
 changelog/_unreleased/2025-07-25-use-sw-text-editor-instead-of-mt-text-editor.md
 changelog/_unreleased/2025-07-29-fix-primary-connection-is-not-working-when-replica-configured.md
+changelog/_unreleased/2025-08-07-fix-display-of-line-item-taxes-with-tax-provider.md
 changelog/_unreleased/2025-01-04-add-an-explicit-configurable-robots-txt.md
 changelog/_unreleased/2025-07-22-allow-child-classes-for-getting-extension-of-type.md
 changelog/_unreleased/2025-06-27-cleanup-styles-of-the-sw-category-module.md
@@ -19317,6 +19353,7 @@ changelog/_unreleased/2024-04-25-implement-mt-banner-code-mod.md
 changelog/_unreleased/2025-07-07-change-api-aware-visibility-products-customer-wishlist.md
 changelog/_unreleased/2025-06-24-fix-apps-with-duplicated-custom-field-sets.md
 changelog/_unreleased/2025-05-23-register-mt-modal-componants-globally.md
+changelog/_unreleased/2025-08-06-load-all-category-levels-for-current-path.md
 changelog/_unreleased/2025-06-19-use-global-vue-prop-type.md
 changelog/_unreleased/2025-03-27-added-new-configs-for-changing-cart-columns.md
 changelog/_unreleased/2025-08-01-document-styling.md
@@ -19332,6 +19369,7 @@ changelog/_unreleased/2022-10-13-use-rule-areas-in-entity-cache-key-generation.m
 changelog/_unreleased/2025-06-24-unify-margins-of-admin-dashboard.md
 changelog/_unreleased/2025-02-24-deferred-cart-errors.md
 changelog/_unreleased/2025-07-29-add-design-tokens-to-the-smart-bar.md
+changelog/_unreleased/2025-08-06-fix-advanced-prices-for-fixed-item-price-discount.md
 changelog/_unreleased/2025-03-28-save-file-hash-if-it-is-available.md
 changelog/_unreleased/2025-04-28-fix-unprepared-statements-breaking-profiler.md
 changelog/_unreleased/2025-06-23-fix-duplicate-grid-settings-space.md
@@ -19339,12 +19377,15 @@ changelog/_unreleased/2025-04-10-add-support-for-extended-definition-of-attribut
 changelog/_unreleased/2025-07-28-move-search-config-loader-class-to-core-bundle.md
 changelog/_unreleased/2025-04-04-implement-app-list-command.md
 changelog/_unreleased/2025-07-14-change-class-constants-to-self-classes.md
+changelog/_unreleased/2025-08-04-add-cart-data-to-the-symfony-profiler.md
+changelog/_unreleased/2025-07-16-replace-add-cache-tag-event-with-cache-tag-collector-add-tag.md
 changelog/_unreleased/2025-06-24-custom-field-set-name-is-now-unique-for-apps.md
 changelog/_unreleased/2025-06-04-fix-password-field-autocomplete-new-password.md
 changelog/_unreleased/2025-07-02-add-customer-list-created-at-column.md
 changelog/_unreleased/2025-07-03-add-remove-function-to-form-submit-loader-plugin.md
 changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.md
 changelog/_unreleased/2025-05-10-load-saleschannelcategoryentity-when-loading-the-breadcrumb.md
+changelog/_unreleased/2025-07-22-include-get-methods-to-store-api-schema-where-post-and-get-supported.md
 changelog/_unreleased/2025-07-18-write-updated-by-for-api-changes.md
 changelog/_unreleased/2025-06-13-remove-unused-url-specification-from-app-metadata.md
 changelog/_unreleased/2025-06-02-added-namespaces-parameter-for-dal-validate.md
@@ -19374,8 +19415,10 @@ changelog/_unreleased/2025-06-19-fix-session-usage-and-session-start-behaviour.m
 changelog/_unreleased/2025-07-02-add-admin-product-number-filter.md
 changelog/_unreleased/2025-04-04-fix-product-media-import-with-whitespace-in-url.md
 changelog/_unreleased/2025-05-28-add-deprecations-to-the-theme-configuration-apis.md
+changelog/_unreleased/2025-08-06-adjust-matrix-element-extends-struct-for-store-api.md
 changelog/_unreleased/2025-06-06-skip-media-indexing-when-remote-thumbnails-are-enabled.md
 changelog/_unreleased/2025-07-30-add-custom-field-entities-to-apps.md
+changelog/_unreleased/2025-08-06-fix-recursive-usage-of-cartitemremoveroute.md
 changelog/_unreleased/2025-04-09-optimizing-theme-config-loading.md
 changelog/_unreleased/2025-07-11-refresh-measurement-units.md
 changelog/_unreleased/2025-06-23-add-search-sorting-for-live-search.md
@@ -19394,13 +19437,16 @@ changelog/_unreleased/2025-07-28-remove-fk-delete-exception-handler.md
 changelog/_unreleased/2025-07-28-fix-systemconfigservice-deleteextensionconfiguration-removes-only-global-configuration.md
 changelog/_unreleased/2025-07-10-ar-placement.md
 changelog/_unreleased/2025-07-10-improve-basic-captcha-a11y.md
+changelog/_unreleased/2025-08-06-remove-assign-override-of-media-thumbnail-entity.md
 changelog/_unreleased/2025-04-15-deprecate-account-order-detail-page.md
 changelog/_unreleased/2025-06-27-fix-unable-to-fall-back-to-parent-language-on-product-entity.md
 changelog/_unreleased/2025-05-18-change-file_exists-to-is_dir.md
 changelog/_unreleased/2025-07-14-category-path-does-not-display.md
 changelog/_unreleased/2025-07-31-fix-media-thumbnail-size-id-not-null.md
+changelog/_unreleased/2025-08-07-download-translations-to-private-filesystem.md
 changelog/_unreleased/2025-03-19-add-nl2br-filter-to-review-content.md
 changelog/_unreleased/2025-07-02-fix-tooltip-formatting.md
+changelog/_unreleased/2025-07-30-fix-tax-rounding-errors-for-percentage-price-calculation.md
 changelog/_unreleased/2025-06-10-removed-write-protection-flag-from-fileextension-field-in-the-mediadefinition.md
 changelog/_unreleased/2025-07-03-use-single-shared-interval-for-sw-time-ago.md
 changelog/_unreleased/2025-05-05-remove-obsolete-requiredmessage-variable-declarations.md
@@ -19420,6 +19466,7 @@ changelog/_unreleased/2025-07-07-use-minimal-search-term-length-in-config-tables
 changelog/_unreleased/2025-04-25-add-measurement-settings-into-sales-channel-configuration.md
 changelog/_unreleased/2025-06-23-fix-issue-seo-url-not-generating-anymore.md
 changelog/_unreleased/2025-07-03-use-sw-time-ago-for-past-date-times.md
+changelog/_unreleased/2025-08-08-fix-recursive-cart-lock-usage.md
 changelog/_unreleased/2025-03-13-preserve-administration-sidebar-state.md
 changelog/_unreleased/2025-06-23-fix-product-search-sql-scoring.md
 changelog/_unreleased/2025-05-30-silence-and-log-exceptions-of-in-app-purchases.md
@@ -19430,12 +19477,14 @@ changelog/_unreleased/2025-06-03-fix-tooltip-of-the-sw-product-variant-info-comp
 changelog/_unreleased/2025-07-24-fix-theme-compiler-side-effects.md
 changelog/_unreleased/2024-08-19-add-context-to-orderstatechangecriteriaevent.md
 changelog/_unreleased/2025-03-20-move-review-active-check-into-store-api-routes.md
+changelog/_unreleased/2025-07-16-improve-admin-search-on-searching-for-numeric-tokens.md
 changelog/_unreleased/2025-05-09-remove-first-level-app-snippet-restriction.md
 changelog/_unreleased/2025-07-03-esi-url-instead-of-path.md
 changelog/_unreleased/2025-07-21-fix-reviews-not-activated.md
 changelog/_unreleased/2025-07-04-added-deduplicatablemessageinterface.md
 changelog/_unreleased/2025-07-29-add-dark-mode-support-to-sidebar.md
 changelog/_unreleased/2025-07-29-fix-backward-compatibility-of-mediathumbnailentity.md
+changelog/_unreleased/2025-07-30-fix-elasticsearch-datetime-format.md
 changelog/_unreleased/2025-01-07-fix-gallery-thumbnail-slider.md
 changelog/_unreleased/2024-08-05-metrics-abstraction.md
 changelog/_unreleased/2024-05-22-navbar-for-main-navigation.md
@@ -19461,6 +19510,7 @@ changelog/_unreleased/2025-07-04-add-product-creation-date-sorting-criteria-opti
 changelog/_unreleased/2025-06-19-properly-align-logout-link-with-icon.md
 changelog/_unreleased/2025-08-04-add-guest-logout-manipulation-possibility.md
 changelog/_unreleased/2025-07-01-add-lock-for-cache-clearer.md
+changelog/_unreleased/2025-08-05-update-matchalllineitemsrule-to-support-multiple-item-types.md
 changelog/_unreleased/2025-06-25-fix-after-sort-with-multiple-null-values.md
 changelog/_unreleased/2025-04-02-create-migration-and-dal-for-scale-unit.md
 changelog/_unreleased/2025-07-29-fix-state-machine-history-fk-constraint.md
@@ -19483,6 +19533,7 @@ changelog/_unreleased/2024-09-13-deprecate-force-option-from-es-index-cleanup-co
 changelog/_unreleased/2025-07-12-implement-soft-purge-http-cache.md
 changelog/_unreleased/2025-07-24-skip-persisting-admin-snippets-for-non-existing-locales.md
 changelog/_unreleased/2025-07-21-min-search-term-is-now-configurable.md
+changelog/_unreleased/2025-08-06-fix-cms-content-slot-overrides-for-modules-and-languages.md
 changelog/_unreleased/2025-07-21-fix-sidebar-sdk-handlers-sw-meteor-page.md
 changelog/_unreleased/2025-03-26-remove-non-existing-imports-from-admin-module-stub.md
 changelog/_unreleased/2025-07-31-fix-seourl-generate-database-error-when-the-url-changes.md
@@ -19517,6 +19568,7 @@ changelog/_unreleased/2025-07-10-add-env-variables-for-opensearch-min_ngram-and-
 changelog/_unreleased/2025-06-26-remove-usage-of-file_exists-in-admin.md
 changelog/_unreleased/2025-07-22-add-missing-cms-block-and-section-id-api-aware.md
 changelog/_unreleased/2025-07-24-fix-theme-lifecycle-service-refresh-themes-without-plugins.md
+changelog/_unreleased/2025-08-07-fix-duplicate-address-display-in-order-detail.md
 changelog/_unreleased/2025-07-28-increased-minimum-required-version-of-mysql-database.md
 changelog/_unreleased/2025-06-10-fix-wrong-variant-of-mt-banner-on-sales-channel-detail-page.md
 changelog/_unreleased/2025-05-28-add-recalculated-custom-line-items-to-delivery.md
