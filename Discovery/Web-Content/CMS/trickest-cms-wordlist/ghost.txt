@@ -8,6 +8,7 @@
 .docker/grafana/dashboards/main-dashboard.json
 .docker/caddy/trust_caddy_ca.sh
 .docker/caddy/Caddyfile
+patches/README.md
 patches/esm+3.2.25.patch
 .gitattributes
 LICENSE
@@ -3623,6 +3624,7 @@ ghost/core/test/integration/services/email-service/email-event-storage.test.js
 ghost/core/test/integration/services/email-service/batch-sending.test.js
 ghost/core/test/integration/services/members/clean-tokens.test.js
 ghost/core/test/integration/migrations/migration.test.js
+ghost/core/test/integration/migrations/nullable-utils.test.js
 ghost/core/test/integration/exporter/exporter.test.js
 ghost/core/test/integration/settings/settings.test.js
 ghost/core/test/integration/prometheus-client.test.js
@@ -4023,6 +4025,7 @@ ghost/core/test/unit/api/canary/utils/validators/input/tags.test.js
 ghost/core/test/unit/api/canary/utils/validators/input/posts.test.js
 ghost/core/test/unit/api/canary/utils/validators/input/pages.test.js
 ghost/core/test/unit/api/canary/utils/validators/input/webhooks.test.js
+ghost/core/test/unit/frontend/web/middleware/redirect-ghost-to-admin.test.js
 ghost/core/test/unit/frontend/web/middleware/handle-image-sizes.test.js
 ghost/core/test/unit/frontend/web/middleware/serve-favicon.test.js
 ghost/core/test/unit/frontend/web/middleware/frontend-caching.test.js
@@ -5625,6 +5628,7 @@ package.json
 .cursor/rules/yarn.mdc
 .env.example
 SECURITY.md
+e2e/helpers/pages/PageHttpLogger.ts
 e2e/helpers/pages/public/index.ts
 e2e/helpers/pages/public/PublicPage.ts
 e2e/helpers/pages/public/HomePage.ts
@@ -5635,6 +5639,7 @@ e2e/helpers/pages/admin/analytics/AnalyticsWebTrafficPage.ts
 e2e/helpers/pages/admin/analytics/AnalyticsGrowthPage.ts
 e2e/helpers/pages/admin/analytics/AnalyticsLocationsPage.ts
 e2e/helpers/pages/admin/post-analytics/PostAnalyticsPage.ts
+e2e/helpers/pages/BasePage.ts
 e2e/helpers/utils/.keep
 e2e/README.md
 e2e/compose.e2e.yml
