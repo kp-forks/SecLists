@@ -6397,11 +6397,13 @@ _singlePage.html
 _smt=
 _sort
 _static
+_td
 _td_api
 _tdhl_api
 _tdpp_api
 _template
 _themes
+_uac/adpage.html
 _user/api
 _v1st
 _vercel/insights/view
@@ -6503,8 +6505,6 @@ about/careers/applications/jobs/results?*&page=
 about/careers/applications/jobs/results?page=
 about/faq/station-finder/?state-text=
 about/faq/station-finder/?zip-text=
-about/leadership-university-administration/board-of-trustees/newsletter
-about/news-publications/news/search
 about?
 aboutus
 abs
@@ -6769,8 +6769,6 @@ admin/*
 administration
 administrator
 adminusers
-admissions/undergraduate-admissions
-admissions/undergraduate-admissions.html
 adobe/dynamicmedia/deliver/
 adredir?
 adresa-segmentator
@@ -6949,7 +6947,6 @@ alphafoldserver
 als/shakespeare_pilot
 alumni
 alumni-subscriptions
-alumni/the-hub
 am-cookie-helper
 am-sonntag/vorproduktion
 amazon-chat
@@ -8817,7 +8814,6 @@ build
 build.xml
 builders
 bundle-next
-bursar
 bus/api
 bus/orders
 buscar
@@ -9717,7 +9713,6 @@ cloud-launcher/sitemap
 cloud/
 cloud/multicloud-solution
 cloudhsm/classic
-cloudmonitor
 cloudplayer
 cloudsourcetools/images
 clp
@@ -13106,12 +13101,6 @@ demo
 demo/$
 demos/dev-mode-design/$
 demos/dev-mode-developers/$
-dental/dh
-dental/endo
-dental/histo
-dental/intranet
-dental/perio
-dental/students
 depth--
 design
 design-handoff/$
@@ -13254,7 +13243,6 @@ discount_type=
 discover
 discover/trending/detail
 discovery
-discuss/search
 discussion
 discussion/comment-permalink
 discussion/edit-profile
@@ -14448,6 +14436,7 @@ en/users/*/bookmarks
 en/users/*/followers
 en/users/*/mypixiv
 en/web/campaigns
+en/web/emadrid-legacy
 en/web/technology-transfer/institutional-ip-policies-links
 en/web/upov
 en_au
@@ -15604,7 +15593,6 @@ faq_search.php
 faqs/search
 fashion/lookbook/38917
 fashion/search/models
-fast-facts
 fast-five
 fast-furious
 fastajax
@@ -17625,6 +17613,7 @@ forums/create/question
 forums/login
 forums/preferences
 forums/profile
+forward
 foryou
 fos/icn/
 fotos/es/*+
@@ -19799,7 +19788,6 @@ internal
 internal-api
 internal/*
 internalPref
-internalapi
 interstitial-ad
 intl
 intl/*/customers
@@ -19872,6 +19860,7 @@ ip-outreach/*/ipday/
 ip-outreach/*/ipday/2024/
 ipad
 iphone_data/check_update
+iplayer
 iplayer/bigscreen
 iplayer/cbbc/episodes
 iplayer/cbbc/search
@@ -21120,6 +21109,7 @@ labs-code
 labs/caption-search
 labs/pmc
 labs/popgadget/search
+lac
 lamda/images
 land-browse-bff
 landing
@@ -21996,6 +21986,7 @@ mld?
 mlt
 mm
 mm/
+mm_track
 mmend.htm$
 mms
 mn
@@ -22922,7 +22913,6 @@ nwshp$
 nxs-video-player
 nymag/columns/intelligencer/features/16951
 nymag/letters/14872
-nyucard/campuscash/admin
 nz
 nz$
 nz*/listing/*/favoriters
@@ -24363,7 +24353,6 @@ projects
 projects/*/contributions
 projects/*/payments
 projects/browse.php
-projects/embed
 projects/geo/download
 projects/geo/tools
 projects/gtr/gt
@@ -24890,7 +24879,6 @@ public
 public-api
 public-data-sets/applicants/
 public-data-sets/terms/
-public.affairs/gata
 public.api
 public/*.css$
 public/*.css?
@@ -25566,8 +25554,6 @@ reservations/*/notifyme
 reset
 reset-password
 reset?
-residential.education/archive
-residential.education/templates
 resource
 resource-library/$
 resource-library/*?
@@ -26259,8 +26245,6 @@ sco/user
 sco/users
 scorecard
 scorecard/
-scratch_1.4
-scratchr2/static
 screener/insider
 screensaver
 screenshots
@@ -26820,7 +26804,6 @@ single_pages
 sio
 sit_rep
 site
-site-api
 site-archive
 site-explorer
 site-explorer/$
@@ -27866,7 +27849,6 @@ surveys-360
 surveys/
 suspended_tickets
 suspension-appeal
-sustainability
 sutils
 sv-SE/android/collections
 sv-SE/android/search
@@ -27999,6 +27981,7 @@ tag-manager-360
 tag/
 tag/*+http://dinotim.com/robots.txt
 tag/credible
+tag/expire-images
 tag/interaction-card
 tag/js
 tag/search/db-home
@@ -28872,6 +28855,7 @@ tracky
 tractive
 trade
 tradeoffer
+traffic
 training-plans
 training/
 training/ajax
@@ -29739,7 +29723,6 @@ validate-user
 valkyrie-playground
 var
 variant=
-varserver
 vas
 vbtv/
 ve/Download
@@ -29955,8 +29938,6 @@ w/load.php?
 w/rest.php/site/v1/sitemap
 w/users/user_hints
 w3
-wagner/newsite
-wagner/newsiteTEST
 wai-conformance-model-test
 walking-tall
 walkscore
@@ -30042,6 +30023,7 @@ web/ZA/telepresence/pro/
 web/applicat
 web/campaigns
 web/checkout
+web/emadrid-legacy
 web/go
 web/help/index.html
 web/login
@@ -31127,7 +31109,7 @@ your
 your-account
 your-shop
 youreurope/businessACC
-youreurope/businessDEV/http://eur-lex.europa.eu/robots.txt
+youreurope/businessDEV/http://europarl.europa.eu/robots.txt
 youreurope/citizensACC
 youreurope/citizensDEV
 yours
