@@ -75,6 +75,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 .git$
 .js
 .json
+.md
 .pdf$
 .php
 .qr
@@ -350,6 +351,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?source=
 ?state=
 ?success=
+?t=
 ?tab=achievements&achievement=
 ?utf8=
 ?utm_*=
@@ -1532,10 +1534,10 @@ hp/video
 hpc/*/supported-applications.aspx?
 hpm
 hpmob
-http://cdc.gov/robots.txt
-http://google-analytics.com/robots.txt
+http://amazon.com/robots.txt
+http://calendar.google.com/robots.txt
 http://ncbi.nlm.nih.gov/robots.txt
-http://s3.amazonaws.com/robots.txt
+http://news.google.com/robots.txt
 hub?category=
 hz/contact-us/ajax/initiate-trusted-contact
 hz/help/contact/*/message/$
@@ -2168,6 +2170,7 @@ reviews/polls
 reviews/search?
 reviews/top-reviewers
 rewardsapp/
+ripple
 row
 rss
 rss/people/*/reviews
@@ -2899,7 +2902,6 @@ vi-vn/lp
 vi-vn/searchresults
 video/embedded
 videos
-videos/?
 videos/browsing
 videos/explore
 videos/favorites
@@ -2909,14 +2911,8 @@ videos/music
 videos/music/
 videos/music/?
 videos/music?
-videos/riverview/relatedvideo
-videos/riverview/relatedvideo/?
-videos/riverview/relatedvideo?
-videos/search/?
-videos/search?
 videos/trending
 videos/trendingcontent
-videos?
 viewer
 viewlocale=zh_CN
 viewvc
@@ -3252,7 +3248,7 @@ wiki/Wikipedia_Diskussion:Checkuser
 wiki/Wikipedia_Diskussion:Spam-Blacklist-Log
 wiki/Wikipedia_talk%3AAbuse_reports
 wiki/Wikipedia_talk%3AAbuse_response
-wiki/Wikipedia_talk%3AAdministrator_electionshttp://goo.gl/robots.txt
+wiki/Wikipedia_talk%3AAdministrator_electionshttp://gstatic.com/robots.txt
 wiki/Wikipedia_talk%3AAdministrator_recall
 wiki/Wikipedia_talk%3AAdministrator_review
 wiki/Wikipedia_talk%3AAdministrators%27_noticeboard
