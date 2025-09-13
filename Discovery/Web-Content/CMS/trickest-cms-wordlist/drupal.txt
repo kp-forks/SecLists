@@ -27,6 +27,7 @@ composer/Generator/Builder/DrupalPinnedDevDependenciesBuilder.php
 composer/Generator/Util/DrupalCoreComposer.php
 composer/Generator/PackageGenerator.php
 composer/Composer.php
+composer/Plugin/Scaffold/DrupalInstalledTemplate.php
 composer/Plugin/Scaffold/ScaffoldFilePath.php
 composer/Plugin/Scaffold/TESTING.txt
 composer/Plugin/Scaffold/README.md
@@ -6009,6 +6010,7 @@ core/modules/file/src/Hook/CronHook.php
 core/modules/file/src/Hook/FileHooks.php
 core/modules/file/src/FileAccessFormatterControlHandlerInterface.php
 core/modules/file/src/EventSubscriber/FileEventSubscriber.php
+core/modules/file/src/EventSubscriber/DefaultContentSubscriber.php
 core/modules/file/src/Upload/FormUploadedFile.php
 core/modules/file/src/Upload/InputStreamUploadedFile.php
 core/modules/file/src/Upload/FileUploadLocationTrait.php
@@ -6853,6 +6855,7 @@ core/modules/block_content/src/Plugin/views/wizard/BlockContent.php
 core/modules/block_content/src/Plugin/Validation/Constraint/BlockContentEntityChangedConstraint.php
 core/modules/block_content/src/Plugin/Validation/Constraint/BlockContentEntityChangedConstraintValidator.php
 core/modules/block_content/src/Controller/BlockContentController.php
+core/modules/block_content/src/Access/BlockContentIsReusableAccessCheck.php
 core/modules/block_content/src/Event/BlockContentGetDependencyEvent.php
 core/modules/block_content/src/Entity/BlockContentType.php
 core/modules/block_content/src/Entity/BlockContent.php
@@ -6927,6 +6930,7 @@ core/modules/block_content/tests/src/Functional/Views/BlockContentFieldFilterTes
 core/modules/block_content/tests/src/Functional/BlockContentCreationTest.php
 core/modules/block_content/tests/src/Functional/UnpublishedBlockTest.php
 core/modules/block_content/tests/src/Functional/BlockContentListTest.php
+core/modules/block_content/tests/src/Functional/BlockContentRouteAccessTest.php
 core/modules/block_content/tests/src/Functional/PageEditTest.php
 core/modules/block_content/tests/src/Functional/BlockContentPageViewTest.php
 core/modules/block_content/tests/src/Functional/BlockContentRevisionRevertTest.php
@@ -8839,6 +8843,7 @@ core/modules/system/tests/modules/image_test/image_test.info.yml
 core/modules/system/tests/modules/test_htmx/test_htmx.routing.yml
 core/modules/system/tests/modules/test_htmx/src/Controller/HtmxTestAttachmentsController.php
 core/modules/system/tests/modules/test_htmx/src/Form/HtmxTestAjaxForm.php
+core/modules/system/tests/modules/test_htmx/src/Form/HtmxTestForm.php
 core/modules/system/tests/modules/test_htmx/js/behavior.js
 core/modules/system/tests/modules/test_htmx/test_htmx.info.yml
 core/modules/system/tests/modules/test_htmx/test_htmx.libraries.yml
@@ -13690,6 +13695,7 @@ core/modules/package_manager/tests/fixtures/release-history/drupal.9.8.2.xml
 core/modules/package_manager/tests/modules/package_manager_test_update/package_manager_test_update.info.yml
 core/modules/package_manager/tests/modules/package_manager_test_validation/src/TestSandboxDatabaseUpdatesValidator.php
 core/modules/package_manager/tests/modules/package_manager_test_validation/src/EventSubscriber/TestSubscriber.php
+core/modules/package_manager/tests/modules/package_manager_test_validation/src/TestExecutableFinder.php
 core/modules/package_manager/tests/modules/package_manager_test_validation/src/PackageManagerTestValidationServiceProvider.php
 core/modules/package_manager/tests/modules/package_manager_test_validation/src/CollectPathsToExcludeFailValidator.php
 core/modules/package_manager/tests/modules/package_manager_test_validation/package_manager_test_validation.services.yml
@@ -14757,6 +14763,7 @@ core/tests/Drupal/KernelTests/Core/Validation/AtLeastOneOfConstraintValidatorTes
 core/tests/Drupal/KernelTests/Core/Validation/UniqueFieldConstraintTest.php
 core/tests/Drupal/KernelTests/Core/Validation/UniqueValuesConstraintValidatorTest.php
 core/tests/Drupal/KernelTests/Core/Validation/UriHostValidatorTest.php
+core/tests/Drupal/KernelTests/Core/Htmx/HtmxRendererTest.php
 core/tests/Drupal/KernelTests/Core/Element/PathElementFormTest.php
 core/tests/Drupal/KernelTests/Core/Lock/LockTest.php
 core/tests/Drupal/KernelTests/Core/Ajax/CommandsTest.php
@@ -15745,6 +15752,7 @@ core/tests/Drupal/FunctionalTests/BrowserTestBaseUserAgentTest.php
 core/tests/Drupal/FunctionalTests/Bootstrap/UncaughtExceptionTest.php
 core/tests/Drupal/FunctionalTests/Bootstrap/ExceptionContainer.php
 core/tests/Drupal/FunctionalTests/Bootstrap/ErrorContainer.php
+core/tests/Drupal/FunctionalTests/Htmx/HtmxRendererCacheTest.php
 core/tests/Drupal/FunctionalTests/ExistingDrupal8StyleDatabaseConnectionInSettingsPhpTest.php
 core/tests/Drupal/Nightwatch/Assertions/deprecationErrorExists.js
 core/tests/Drupal/Nightwatch/Assertions/elementCount.js
@@ -15847,6 +15855,7 @@ core/tests/Drupal/FunctionalJavascriptTests/Core/JsMessageTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Core/Form/FormGroupingElementsTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Core/Form/JavascriptStatesTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Core/MachineNameTest.php
+core/tests/Drupal/FunctionalJavascriptTests/Core/Htmx/HtmxDynamicFormTest.php
 core/tests/Drupal/FunctionalJavascriptTests/DrupalSelenium2Driver.php
 core/tests/Drupal/FunctionalJavascriptTests/Components/ComponentRenderTest.php
 core/tests/Drupal/FunctionalJavascriptTests/JavascriptErrorsTest.php
@@ -17340,6 +17349,7 @@ core/lib/Drupal/Core/Render/MainContent/ModalRenderer.php
 core/lib/Drupal/Core/Render/MainContent/MainContentRendererInterface.php
 core/lib/Drupal/Core/Render/MainContent/HtmlRenderer.php
 core/lib/Drupal/Core/Render/MainContent/AjaxRenderer.php
+core/lib/Drupal/Core/Render/MainContent/HtmxRenderer.php
 core/lib/Drupal/Core/Render/RenderEvents.php
 core/lib/Drupal/Core/Render/PreviewFallbackInterface.php
 core/lib/Drupal/Core/Render/BubbleableMetadata.php
@@ -17720,6 +17730,7 @@ core/lib/Drupal/Core/DefaultContent/ExportMetadata.php
 core/lib/Drupal/Core/DefaultContent/Finder.php
 core/lib/Drupal/Core/DefaultContent/PreExportEvent.php
 core/lib/Drupal/Core/DefaultContent/AdminAccountSwitcher.php
+core/lib/Drupal/Core/DefaultContent/ExportResult.php
 core/lib/Drupal/Core/DefaultContent/Exporter.php
 core/lib/Drupal/Core/DefaultContent/Importer.php
 core/lib/Drupal/Core/DefaultContent/InvalidEntityException.php
