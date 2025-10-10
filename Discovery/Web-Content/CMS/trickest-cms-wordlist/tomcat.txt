@@ -1971,7 +1971,6 @@ java/org/apache/catalina/Authenticator.java
 java/org/apache/catalina/Executor.java
 java/org/apache/catalina/LifecycleListener.java
 java/org/apache/catalina/filters/LocalStrings_de.properties
-java/org/apache/catalina/filters/RemoteAddrFilter.java
 java/org/apache/catalina/filters/RemoteIpFilter.java
 java/org/apache/catalina/filters/SessionInitializerFilter.java
 java/org/apache/catalina/filters/ExpiresFilter.java
@@ -2179,7 +2178,6 @@ java/org/apache/catalina/valves/LocalStrings_ru.properties
 java/org/apache/catalina/valves/Constants.java
 java/org/apache/catalina/valves/ErrorReportValve.java
 java/org/apache/catalina/valves/LocalStrings_ja.properties
-java/org/apache/catalina/valves/RemoteAddrValve.java
 java/org/apache/catalina/valves/ProxyErrorReportValve.java
 java/org/apache/catalina/valves/mbeans-descriptors.xml
 java/org/apache/catalina/valves/JsonErrorReportValve.java
@@ -3906,6 +3904,7 @@ test/org/apache/catalina/valves/TestErrorReportValve.java
 test/org/apache/catalina/valves/TestPatternTokenizer.java
 test/org/apache/catalina/valves/TestParameterLimitValveConfig.java
 test/org/apache/catalina/valves/Benchmarks.java
+test/org/apache/catalina/authenticator/TestSSOChangeSessionId.java
 test/org/apache/catalina/authenticator/TestDigestAuthenticatorAlgorithms.java
 test/org/apache/catalina/authenticator/TestDigestAuthenticator.java
 test/org/apache/catalina/authenticator/jaspic/TestAuthConfigFactoryImpl.java
