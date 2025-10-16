@@ -5788,9 +5788,6 @@ bank.php
 htdocs/admin/resource_extrafields.php
 admin/resource_extrafields.php
 resource_extrafields.php
-htdocs/admin/propal_pdf.php
-admin/propal_pdf.php
-propal_pdf.php
 htdocs/admin/defaultvalues.php
 admin/defaultvalues.php
 defaultvalues.php
@@ -5827,9 +5824,6 @@ ticket.php
 htdocs/admin/agenda_reminder.php
 admin/agenda_reminder.php
 agenda_reminder.php
-htdocs/admin/invoice_pdf.php
-admin/invoice_pdf.php
-invoice_pdf.php
 htdocs/admin/taxes.php
 admin/taxes.php
 taxes.php
@@ -5940,9 +5934,6 @@ boxes.php
 htdocs/admin/index.php
 admin/index.php
 index.php
-htdocs/admin/order_pdf.php
-admin/order_pdf.php
-order_pdf.php
 htdocs/admin/sms.php
 admin/sms.php
 sms.php
@@ -7528,9 +7519,6 @@ demo_wsclient_project.php-NORUN
 htdocs/webservices/server_other.php
 webservices/server_other.php
 server_other.php
-htdocs/salaries/paiement_salary.php
-salaries/paiement_salary.php
-paiement_salary.php
 htdocs/salaries/list.php
 salaries/list.php
 list.php
@@ -7585,6 +7573,9 @@ htdocs/salaries/class/salariesstats.class.php
 salaries/class/salariesstats.class.php
 class/salariesstats.class.php
 salariesstats.class.php
+htdocs/salaries/payment_salary.php
+salaries/payment_salary.php
+payment_salary.php
 htdocs/cron/list.php
 cron/list.php
 list.php
