@@ -2543,6 +2543,7 @@ core/tests/Drupal/Tests/Core/StringTranslation/TranslationManagerTest.php
 core/tests/Drupal/Tests/Core/StringTranslation/PluralTranslatableMarkupTest.php
 core/tests/Drupal/Tests/Core/StringTranslation/StringTranslationTraitTest.php
 core/tests/Drupal/Tests/Core/PreWarm/CachePreWarmerTest.php
+core/tests/Drupal/Tests/Core/Command/BootableCommandTraitTest.php
 core/tests/Drupal/Tests/Core/Cron/CronSuspendQueueDelayTest.php
 core/tests/Drupal/Tests/Core/UnroutedUrlTest.php
 core/tests/Drupal/Tests/Core/Path/PathMatcherTest.php
@@ -5312,6 +5313,7 @@ core/lib/Drupal/Core/Extension/ExtensionList.php
 core/lib/Drupal/Core/Extension/ModuleDependencyMessageTrait.php
 core/lib/Drupal/Core/Extension/Requirement/RequirementSeverity.php
 core/lib/Drupal/Core/Extension/ProceduralCall.php
+core/lib/Drupal/Core/Extension/ThemeSettingsProvider.php
 core/lib/Drupal/Core/Extension/ThemeExtensionList.php
 core/lib/Drupal/Core/Extension/ExtensionPathResolver.php
 core/lib/Drupal/Core/Lock/LockAcquiringException.php
@@ -6025,6 +6027,7 @@ core/modules/contextual/src/Hook/ContextualViewsHooks.php
 core/modules/contextual/src/Plugin/views/field/ContextualLinks.php
 core/modules/contextual/src/Element/ContextualLinksPlaceholder.php
 core/modules/contextual/src/Element/ContextualLinks.php
+core/modules/contextual/src/Theme/ContextualLinksNegotiator.php
 core/modules/contextual/src/ContextualController.php
 core/modules/contextual/contextual.permissions.yml
 core/modules/menu_link_content/menu_link_content.module
@@ -6476,11 +6479,13 @@ core/modules/workspaces/src/WorkspaceAccessException.php
 core/modules/workspaces/src/WorkspaceMerger.php
 core/modules/workspaces/src/WorkspaceManager.php
 core/modules/workspaces/src/WorkspacesMenuTreeStorage.php
+core/modules/workspaces/src/EventSubscriber/WorkspaceSwitchSubscriber.php
 core/modules/workspaces/src/EventSubscriber/WorkspaceRequestSubscriber.php
 core/modules/workspaces/src/EventSubscriber/EntitySchemaSubscriber.php
 core/modules/workspaces/src/WorkspacesLayoutTempstoreRepository.php
 core/modules/workspaces/src/Controller/WorkspacesHtmlEntityFormController.php
 core/modules/workspaces/src/Event/WorkspacePostPublishEvent.php
+core/modules/workspaces/src/Event/WorkspaceSwitchEvent.php
 core/modules/workspaces/src/Event/WorkspacePrePublishEvent.php
 core/modules/workspaces/src/Event/WorkspacePublishEvent.php
 core/modules/workspaces/src/EntityQuery/PgsqlQueryFactory.php
@@ -10294,6 +10299,9 @@ core/modules/taxonomy/taxonomy.libraries.yml
 core/modules/taxonomy/js/taxonomy.js
 core/modules/taxonomy/taxonomy.links.menu.yml
 core/modules/taxonomy/templates/taxonomy-term.html.twig
+core/modules/taxonomy/tests/modules/taxonomy_overview_override_test/src/Hook/TaxonomyOverviewOverrideHooks.php
+core/modules/taxonomy/tests/modules/taxonomy_overview_override_test/src/Form/OverviewTermsOverride.php
+core/modules/taxonomy/tests/modules/taxonomy_overview_override_test/taxonomy_overview_override_test.info.yml
 core/modules/taxonomy/tests/modules/taxonomy_crud/taxonomy_crud.info.yml
 core/modules/taxonomy/tests/modules/taxonomy_crud/config/schema/taxonomy_crud.schema.yml
 core/modules/taxonomy/tests/modules/taxonomy_crud/src/Hook/TaxonomyCrudHooks.php
