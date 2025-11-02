@@ -384,6 +384,7 @@ upload/admin/view/sass/scss/_images.scss
 upload/admin/view/javascript/article.js
 upload/admin/view/javascript/subscription.js
 upload/admin/view/javascript/category.js
+upload/admin/view/javascript/country.js
 upload/admin/view/javascript/task.js
 upload/admin/view/javascript/order.js
 upload/admin/view/javascript/review.js
@@ -6277,6 +6278,7 @@ upload/assets/webcomponent/component/upload.js
 upload/assets/webcomponent/component/currency.js
 upload/assets/webcomponent/component/pagination.js
 upload/assets/webcomponent/component/switch.js
+upload/assets/webcomponent/component/ckeditor.js
 upload/assets/webcomponent/component/form.js
 upload/assets/webcomponent/component/zone.js
 upload/assets/webcomponent/liquid.browser.umd.js
@@ -6385,6 +6387,7 @@ upload/extension/opencart/admin/view/template/payment/cheque.twig
 upload/extension/opencart/admin/view/template/payment/bank_transfer.twig
 upload/extension/opencart/admin/view/template/payment/free_checkout.twig
 upload/extension/opencart/admin/view/template/payment/cod.twig
+upload/extension/opencart/admin/view/javascript/chart.js
 upload/extension/opencart/admin/language/fr-fr/other/cloud.php
 upload/extension/opencart/admin/language/fr-fr/total/tax.php
 upload/extension/opencart/admin/language/fr-fr/total/total.php

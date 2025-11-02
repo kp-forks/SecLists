@@ -3909,6 +3909,7 @@ tests/acceptance/tests/Visual/Administration/CategoryDetail.spec.ts
 tests/acceptance/tests/Visual/Administration/FlowBuilder.spec.ts
 tests/acceptance/tests/Visual/Administration/RuleBuilderDetail.spec.ts
 tests/acceptance/tests/Visual/Administration/AdminMenu.spec.ts
+tests/acceptance/tests/Visual/Administration/SalesChannels.spec.ts
 tests/acceptance/tests/Visual/Administration/ProductDetail.spec.ts
 tests/acceptance/tests/Visual/Administration/Media.spec.ts
 tests/acceptance/tests/Visual/Administration/CustomerDetail.spec.ts
@@ -4233,6 +4234,7 @@ tests/migration/Core/V6_7/Migration1753191228AddMediaThumbnailSizeIdToMediaThumb
 tests/migration/Core/V6_7/Migration1754892246FixWordingMistakeInEmailTemplatesTest.php
 tests/migration/Core/V6_7/Migration1752499887UpdateAppRequestedPrivilegesTest.php
 tests/migration/Core/V6_7/Migration1752750234AddIndexToOrderTransactionCreateAndUpdateTest.php
+tests/migration/Core/V6_7/Migration1761739065IncreaseProductWeightPrecisionTest.php
 tests/migration/Core/V6_7/Migration1733136208AddH1ToCmsCategoryListingTest.php
 tests/migration/Core/V6_7/Migration1742484083TransitionToAddressInputFieldArrangementTest.php
 tests/migration/Core/V6_7/Migration1737430168RemoveFileTypeOfDocumentTableTest.php
@@ -7776,6 +7778,7 @@ changelog/release-6-5-8-2/2024-01-19-revert-update-npm-packages.md
 changelog/_unreleased/2025-10-14-fix-cache-cookie-handling.md
 changelog/_unreleased/2025-05-26-google-recaptcha-loading-only-if-cookie-accepted.md
 changelog/_unreleased/2025-10-08-only-consider-filterable-discount-packages.md
+changelog/_unreleased/2025-10-30-add-generate-blocks-command-to-composer-json.md
 changelog/_unreleased/2025-10-21-fix-cacheclearer-global-locking.md
 changelog/_unreleased/2024-09-20-simplify-emitting-metrics.md
 changelog/_unreleased/2025-01-24-fix-theme-config-directory-creation.md
@@ -7817,6 +7820,9 @@ changelog/_unreleased/2024-04-25-implement-mt-banner-code-mod.md
 changelog/_unreleased/2025-10-29-fix-invalid-wording-in-sw-order-general-info.md
 changelog/_unreleased/2024-01-31-improve-cart-page-performance.md
 changelog/_unreleased/2025-10-05-form-auto-submit-with-validation.md
+changelog/_unreleased/2025-10-29-increase-product-weight-precision.md
+changelog/_unreleased/2025-10-14-fix-dynamic-product-group-percentage-accessor.md
+changelog/_unreleased/2025-10-26-special-characters-in-search-not-working-even-when-added-as-preserved-characters-in-config-file.md
 changelog/_unreleased/2025-10-15-fix-select-result-list-not-loading-the-next-page.md
 changelog/_unreleased/2025-08-09-fix-b2c-tax-setting-overriding-b2b-tax-logic.md
 changelog/_unreleased/2025-02-14-postpone-telemetry_metrics-stable-version-to-6-8.md
@@ -7833,9 +7839,11 @@ changelog/_unreleased/2025-09-17-improve-url-assembling-in-listing-js-plugin.md
 changelog/_unreleased/2025-10-20-add-events-when-fetching-entities-for-the-sitemap.md
 changelog/_unreleased/2022-05-18-abstract-and-reduce-rule-condition-components.md
 changelog/_unreleased/2025-10-17-add-possibility-to-set-fetchpriority-high-on-cms-image-elements.md
+changelog/_unreleased/2025-10-23-cms-content-override-indicator.md
 changelog/_unreleased/2025-10-09-clearance-sale-stock-handling-is-ignored-as-soon-as-a-product-is-in-the-cart.md
 changelog/_unreleased/2025-10-04-fix-proper-display-of-the-administrator-switch-in-the-user-create.md
 changelog/_unreleased/2025-10-22-fix-vite-bundling-for-symfony-bundles.md
+changelog/_unreleased/2025-10-30-mark-product-number-as-required-field.md
 changelog/_unreleased/2025-10-15-update-health-check-api.md
 changelog/_unreleased/2022-04-05-keep-track-of-changes-on-rule-builder-detail-page.md
 changelog/_unreleased/2024-11-29-make-product-slider-defaults-accessible.md
@@ -7850,6 +7858,7 @@ changelog/_unreleased/2025-10-14-add-message-queue-message-size-limit-config-opt
 changelog/_unreleased/2025-10-21-separate-vimeo-youtube-cookies.md
 changelog/_unreleased/2025-10-28-fixed-wiggling-floor-in-3d-viewer.md
 changelog/_unreleased/2025-10-05-add-blocks-to-reduce-code-you-need-to-copy.md
+changelog/_unreleased/2025-09-11-implement-save-media-modal.md
 changelog/_unreleased/2025-10-06-improve-shipping-and-payment-cart-blocking-errors.md
 changelog/_template.md
 changelog/release-6-4-4-0/2021-08-03-fix-special-characters-in-mail-subject-not-display-correctly.md
@@ -9639,6 +9648,7 @@ changelog/release-6-4-8-0/2021-01-04-add-appstore.md
 changelog/release-6-4-8-0/2021-12-07-storefront-language-selection-sorting.md
 changelog/release-6-7-3-1/2025-09-1-improve-restrictions-for-private-media.md
 changelog/release-6-7-3-1/2025-09-19-ensure-extension-zip-files-do-not-contain-path-traversals.md
+changelog/release-6-7-3-1/2025-10-28-clarify-demodata-error-message
 changelog/release-6-7-3-1/2025-10-13-compatibility-with-opensearch-3-x.md
 changelog/release-6-5-7-1/2023-11-20-remove-tests-classes-from-services-xml.md
 changelog/release-6-4-12-0/2022-01-12-update-applifecycle-element-for-flow-action.md
@@ -11876,6 +11886,10 @@ src/Administration/Resources/app/administration/src/module/sw-media/component/sw
 src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-modal-v2/sw-media-modal-v2.html.twig
 src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-modal-v2/sw-media-modal-v2.spec.js
 src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-modal-v2/sw-media-modal-v2.scss
+src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-save-modal/index.js
+src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-save-modal/sw-media-save-modal.spec.js
+src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-save-modal/sw-media-save-modal.html.twig
+src/Administration/Resources/app/administration/src/module/sw-media/component/sw-media-save-modal/sw-media-save-modal.scss
 src/Administration/Resources/app/administration/src/module/sw-media/component/sidebar/sw-media-quickinfo/sw-media-quickinfo.spec.js
 src/Administration/Resources/app/administration/src/module/sw-media/component/sidebar/sw-media-quickinfo/sw-media-quickinfo.scss
 src/Administration/Resources/app/administration/src/module/sw-media/component/sidebar/sw-media-quickinfo/index.js
@@ -12101,7 +12115,6 @@ src/Administration/Resources/app/administration/src/module/sw-settings-country/p
 src/Administration/Resources/app/administration/src/module/sw-category/error-config.json
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-cms/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-cms/sw-category-detail-cms.html.twig
-src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-cms/sw-category-detail-cms.scss
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-custom-entity/sw-category-detail-custom-entity.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-custom-entity/index.ts
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-custom-entity/sw-category-detail-custom-entity.spec.js
@@ -12112,7 +12125,6 @@ src/Administration/Resources/app/administration/src/module/sw-category/view/sw-l
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-seo/sw-category-detail-seo.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-seo/index.js
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-landing-page-detail-cms/index.js
-src/Administration/Resources/app/administration/src/module/sw-category/view/sw-landing-page-detail-cms/sw-landing-page-detail-cms.scss
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-landing-page-detail-cms/sw-landing-page-detail-cms.html.twig
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-products/sw-category-detail-products.scss
 src/Administration/Resources/app/administration/src/module/sw-category/view/sw-category-detail-products/sw-category-detail-products.html.twig
@@ -12411,6 +12423,7 @@ src/Administration/Resources/app/administration/src/module/sw-cms/elements/image
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/image/component/component.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/image/component/sw-cms-el-image.html.twig
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/image/component/sw-cms-el-image.scss
+src/Administration/Resources/app/administration/src/module/sw-cms/elements/image/config.constant.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/image/image.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/preview/sw-cms-el-preview-location-renderer.html.twig
 src/Administration/Resources/app/administration/src/module/sw-cms/elements/location-renderer/preview/index.ts
@@ -12890,6 +12903,8 @@ src/Administration/Resources/app/administration/src/module/sw-cms/service/cms-el
 src/Administration/Resources/app/administration/src/module/sw-cms/index.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/init/cmsPageTypes.init.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/init/cmsPageTypes.init.ts
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-form-sync/index.ts
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-form-sync/sw-cms-form-sync.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-product-box-preview/index.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-product-box-preview/sw-cms-product-box-preview.scss
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-product-box-preview/sw-cms-product-box-preview.html.twig
@@ -12897,6 +12912,10 @@ src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-c
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-visibility-config/sw-cms-visibility-config.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-visibility-config/sw-cms-visibility-config.scss
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-visibility-config/index.ts
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-reset-inheritance/sw-cms-reset-inheritance.spec.js
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-reset-inheritance/sw-cms-reset-inheritance.html.twig
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-reset-inheritance/sw-cms-reset-inheritance.scss
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-reset-inheritance/index.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-layout-modal/sw-cms-layout-modal.html.twig
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-layout-modal/index.js
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-layout-modal/sw-cms-layout-modal.spec.js
@@ -12983,6 +13002,10 @@ src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-c
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-missing-element-modal/index.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-missing-element-modal/sw-cms-missing-element-modal.scss
 src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-missing-element-modal/sw-cms-missing-element-modal.spec.js
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-inherit-wrapper/sw-cms-inherit-wrapper.html.twig
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-inherit-wrapper/index.ts
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-inherit-wrapper/sw-cms-inherit-wrapper.scss
+src/Administration/Resources/app/administration/src/module/sw-cms/component/sw-cms-inherit-wrapper/sw-cms-inherit-wrapper.spec.js
 src/Administration/Resources/app/administration/src/module/sw-cms/default-search-configuration.ts
 src/Administration/Resources/app/administration/src/module/sw-cms/snippet/en.json
 src/Administration/Resources/app/administration/src/module/sw-cms/snippet/de.json
@@ -17270,6 +17293,8 @@ src/Core/System/SalesChannel/Entity/PartialSalesChannelEntityLoadedEvent.php
 src/Core/System/SalesChannel/Entity/SalesChannelEntityLoadedEvent.php
 src/Core/System/SalesChannel/Entity/SalesChannelRepository.php
 src/Core/System/SalesChannel/SalesChannelException.php
+src/Core/System/SalesChannel/Validation/Mapping.php
+src/Core/System/SalesChannel/Validation/SalesChannelData.php
 src/Core/System/SalesChannel/Validation/SalesChannelValidator.php
 src/Core/System/SalesChannel/DataAbstractionLayer/SalesChannelIndexer.php
 src/Core/System/SalesChannel/DataAbstractionLayer/SalesChannelIndexingMessage.php
@@ -20417,6 +20442,7 @@ src/Core/Migration/V6_7/Migration1756068712FixOrderAddressLastNameLength.php
 src/Core/Migration/V6_7/Migration1728040170AddPrimaryOrderTransaction.php
 src/Core/Migration/V6_7/Migration1733136208AddH1ToCmsCategoryListing.php
 src/Core/Migration/V6_7/Migration1720603803RemoveDefaultPaymentMethodRule.php
+src/Core/Migration/V6_7/Migration1761739065IncreaseProductWeightPrecision.php
 src/Core/Migration/V6_7/Migration1740563553AddAppRequestedPrivileges.php
 src/Core/Migration/V6_7/Migration1742484083TransitionToAddressInputFieldArrangement.php
 src/Core/Migration/V6_7/Migration1746176773AddIntegrationIdStateHistory.php
