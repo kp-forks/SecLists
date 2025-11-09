@@ -690,8 +690,6 @@ settings.json
 extensions.json
 .editorconfig
 pnpm-lock.yaml
-.changeset/hip-beers-flow.md
-hip-beers-flow.md
 .changeset/config.json
 config.json
 .dockerignore
