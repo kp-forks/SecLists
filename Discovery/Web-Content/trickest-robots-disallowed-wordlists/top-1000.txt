@@ -1605,6 +1605,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /admin-ajax.php
 /admin/
 /ads/
+/adult
 /advanced-trade/spot
 /aeglodetailweb/api/msite/item?productId*
 /affiliate_amazon.cms*
@@ -3547,7 +3548,6 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?gclsrc
 ?getlink=*
 ?gm
-?gologin=1
 ?google_preview=
 ?gws_rd=ssl$
 ?h=*
@@ -4173,7 +4173,6 @@ ExternalLinkInterstitial
 FG_ID=
 FacebookConnect
 FareCalendar
-FatalError.html
 Feature
 Featured
 FeaturedShowMoreOverlay
@@ -4362,7 +4361,6 @@ JoinPlus
 JsonData/
 JsonServiceController
 JustForYouGuide
-LFE/Live.controls.sharedpages/error.aspx
 LICENSE.txt
 LNAjax
 LanderLogger
@@ -4685,7 +4683,6 @@ OwnersDM
 OwnersNew
 OwnersOld
 OwnersTermsAndConditions
-P.mvc?_escaped_fragment_=/peopletags.aspx
 PDAET
 PDATOI/
 POLLSERVER
@@ -4928,11 +4925,9 @@ Search/Mail/Public
 SearchNavigationView
 SelectLocale?fromPage=
 SelfServeAdvertising
-SendMessage
 SendToFriend
 SentConfirmationEmail
 Server
-ServerError.aspx
 Service-Search/find-a-psychological-therapies-service/find-your-gp
 Service-Search/find-a-psychological-therapies-service/results
 Service-Search/find-a-psychological-therapies-service/what-happens-when-you-refer-yourself
@@ -5406,7 +5401,7 @@ _tdhl_api
 _tdpp_api
 _template
 _themes
-_uac/adpage.htmlhttp://enterprisemarketingportal.google/robots.txt
+_uac/adpage.html
 _user/api
 _v1st
 _vercel/insights/view
@@ -5416,6 +5411,7 @@ _vti_log
 _vti_map
 _vti_pvt
 _vti_txt
+_zc
 a
 a-knight-s-tale
 a-league-of-their-own
@@ -5493,9 +5489,6 @@ about-wipo/*/assemblies/2019/a_59/statement_details.jsp
 about-wipo/*/assemblies/2019/a_59/statements.jsp
 about-wipo/*/dgo/
 about.html
-about/*/getting-started
-about/*/mobile
-about/*/update
 about/adrm/data-linkage
 about/careers/applications-a/jobs/results
 about/careers/applications/candidate-prep
@@ -6162,9 +6155,14 @@ aq
 aqiscript/*
 ar
 ar-ae/
+ar-ae/payroll/
 ar-ar/search
 ar-ar/searchresults
+ar-bh/payroll/
 ar-eg/
+ar-kw/payroll/
+ar-om/payroll/
+ar-qa/payroll/
 ar-sa/
 ar/
 ar/$
@@ -6568,7 +6566,6 @@ auth_pass
 authentication
 authentication$
 authentication/signin
-authkey=
 author
 author/
 author/*/date
@@ -6670,6 +6667,7 @@ backstage
 bad-boys
 bad-boys-ii
 badges/profile/create
+baidu
 bal/impression
 bal/impression/RecordImpression.htm?
 ban-me-i-am-a-robot
@@ -6921,7 +6919,7 @@ blog/*?text=
 blog/*sitemap.xml$
 blog/*utm_source=
 blog/.*
-blog/.html.*http://schema.org/robots.txt
+blog/.html.*http://samsung.com/robots.txt
 blog/10-lessons-from-an-engineering-manager/$
 blog/2025-shifting-roles-report/$
 blog/23-prototyping-resources-to-bookmark-right-now/$
@@ -7116,6 +7114,7 @@ blog/discover-hidden-functionalities-with-figmatip-roundup-1-0/$
 blog/double-click-does-efficiency-kill-love/$
 blog/double-click-human-takes-on-agentic-ai/$
 blog/double-click-vibe-coding/$
+blog/double-click-what-does-it-mean-to-be-a-designer-in-the-age-of-ai/$
 blog/double-click-what-does-mcp-mean-for-agentic-ai/$
 blog/double-click-you-can-just-do-things/$
 blog/dribbble-case-study/$
@@ -7796,7 +7795,6 @@ bridesmaids
 broadband
 brouillon/
 browse-2
-browse.aspx
 browse/deals/partial
 browse/homes/all
 browse/more_page
@@ -8162,6 +8160,7 @@ ca_fr
 ca_fr/Download
 ca_referer=
 caas
+caas/http://enterprisemarketingportal.google/robots.txt
 cache
 cache/MiamiImageURL
 cacheKey
@@ -8371,6 +8370,7 @@ captchaPerimeterX
 card/panel
 card_management.php
 cards/
+career-academy/programs
 careers
 careers/$
 careers/Phoenix-Hiring-Event/
@@ -8463,7 +8463,7 @@ cdn-cgi
 cdn-cgi/
 cdn-cgi/bm/cv
 cdn-cgi/challenge-platform
-cdn-cgi/http://meetup.com/robots.txt
+cdn-cgi/http://medium.com/robots.txt
 cdn-cgi/images/trace
 cdn-cgi/l/email-protection
 cdn-cgi/rum
@@ -11105,8 +11105,15 @@ core/services/aop-file-manager/file
 corgi$
 corgi/i18n
 corp
+corp/*.pdf$
+corp/*/search
 corp/Privacy.htm
 corp/Terms.htm
+corp/get-data
+corp/lps
+corp/search
+corp/solution
+corp/unlock-growth
 corporate
 corporate/contracts
 corporate/languageselection.aspx
@@ -11169,6 +11176,7 @@ cpp/docs/reference/*/latest
 cpp/docs/reference/*/latest$
 cpp/docs/reference/help
 cpresources
+cpro
 cpropub/univercd
 cpspa
 cr$
@@ -11303,6 +11311,7 @@ customers/how-commbank-is-banking-on-collaboration/$
 customers/how-crunchyroll-streamlined-workflow/$
 customers/how-customerio-simplifies-design-handoffs-with-variables-and-dev-mode/$
 customers/how-datadog-built-enterprise-platform-scaling-design-system/$
+customers/how-dave-clark-delivers-faster-work-and-stronger-client-relationships-with-figma/$
 customers/how-design-systems-in-figma-are-unifying-diverse-teams-at-orange/$
 customers/how-deutsche-bank-redeveloped-all-front-end-apps-from-scratch/$
 customers/how-enterprise-teams-get-design-to-code-faster-with-figma/$
@@ -11584,6 +11593,7 @@ de-de/customers/how-deutsche-bank-redeveloped-all-front-end-apps-from-scratch/$
 de-de/customers/how-figjam-makes-planning-fun/$
 de-de/customers/how-figma-helped-design-agency-ennostudio/$
 de-de/customers/how-figma-helped-non-designers-at-contentsquare-become-design-angels/$
+de-de/customers/how-flipkart-boosts-its-design-vision-for-indian-e-commerce-with-figma/$
 de-de/customers/how-free-builds-consistent-customer-experiences/$
 de-de/customers/how-hellofresh-built-a-design-system/$
 de-de/customers/how-king-brings-game-design-together/$
@@ -12106,12 +12116,10 @@ dear-john
 death-wish
 debats/
 debug
-decision-makers$
 decision-makers/*/admin_accounts$
 decision-makers/*/admin_accounts?
 decision-makers/*/edit$
 decision-makers/*/edit?
-decision-makers?
 deep-health-abstract
 deep-health-auth
 deep-health-search
@@ -12492,7 +12500,6 @@ downloadHistory
 download_file
 download_history.mhtml$
 downloadassets
-downloadaszip
 downloadimage.aspx
 downloads
 downloads.php
@@ -12732,7 +12739,6 @@ embed_js
 embed_video
 embeddable
 embeds
-embedservererror.aspx
 embedvideo.cms*
 emmy
 empire-state
@@ -13759,6 +13765,7 @@ es-es/customers/driving-design-transformation-how-cars24-builds-faster-with-figm
 es-es/customers/erste-groupbetter-financial-health-by-design/$
 es-es/customers/how-datadog-built-enterprise-platform-scaling-design-system/$
 es-es/customers/how-deutsche-bank-redeveloped-all-front-end-apps-from-scratch/$
+es-es/customers/how-flipkart-boosts-its-design-vision-for-indian-e-commerce-with-figma/$
 es-es/customers/how-hellofresh-built-a-design-system/$
 es-es/customers/how-king-brings-game-design-together/$
 es-es/customers/how-patagonia-uses-figma/$
@@ -13981,6 +13988,7 @@ es-la/customers/driving-adoption-of-seat-cupra-design-system/$
 es-la/customers/driving-design-transformation-how-cars24-builds-faster-with-figma/$
 es-la/customers/erste-groupbetter-financial-health-by-design/$
 es-la/customers/how-datadog-built-enterprise-platform-scaling-design-system/$
+es-la/customers/how-flipkart-boosts-its-design-vision-for-indian-e-commerce-with-figma/$
 es-la/customers/how-hellofresh-built-a-design-system/$
 es-la/customers/how-king-brings-game-design-together/$
 es-la/customers/how-patagonia-uses-figma/$
@@ -14635,6 +14643,7 @@ f/*/widget
 f/*/x
 f/*?modal
 f/healthcheck
+f378f367da952d86
 f[
 fabordrab
 facebook
@@ -14666,7 +14675,6 @@ fastajax/order
 fastajax/order/tax
 fastajax/order/tax/validatevat
 fastanswers
-fatalerror.html
 faves-i_love_u_get_away_from_me
 favorit-hinzufuegen
 favorit-loeschen
@@ -17024,6 +17032,7 @@ fr-fr/customers/how-design-systems-in-figma-are-unifying-diverse-teams-at-orange
 fr-fr/customers/how-figjam-makes-planning-fun/$
 fr-fr/customers/how-figma-helped-design-agency-ennostudio/$
 fr-fr/customers/how-figma-helped-non-designers-at-contentsquare-become-design-angels/$
+fr-fr/customers/how-flipkart-boosts-its-design-vision-for-indian-e-commerce-with-figma/$
 fr-fr/customers/how-free-builds-consistent-customer-experiences/$
 fr-fr/customers/how-hellofresh-built-a-design-system/$
 fr-fr/customers/how-king-brings-game-design-together/$
@@ -17999,7 +18008,6 @@ groupSharingMsg
 groupcallembed/*
 groupon_says
 groups
-groups/
 groups/*/-/analytics
 groups/*/-/billings
 groups/*/-/contribution_analytics
@@ -18275,6 +18283,7 @@ homeimprovement/EmbeddedProfile.htm
 homeloans/*zga_z_guid=
 homepage
 homepage-video-test
+homepage/
 homepage/2013
 homepage/HomepageVideoMetrics.htm
 homes
@@ -18366,9 +18375,9 @@ html5
 http
 http-checker
 http2_data
-http://1.envato.market/robots.txt
+http://1.bp.blogspot.com/robots.txt
 http://akparti.org.tr/robots.txt
-http://aljazeera.com/robots.txt
+http://aliexpress.com/robots.txt
 http://amazon.co.jp/robots.txt
 http://amazon.co.uk/robots.txt
 http://amazon.com/robots.txt
@@ -18386,7 +18395,7 @@ http://en.m.wikipedia.org/robots.txt
 http://expedia.com/robots.txt
 http://gist.github.com/robots.txt
 http://govostis.gr/robots.txt
-http://gravatar.com/robots.txt
+http://groupon.com/robots.txt
 http://healthline.com/robots.txt
 http://help.twitter.com/robots.txt
 http://img.youtube.com/robots.txt
@@ -18403,7 +18412,7 @@ http://static.wixstatic.com/robots.txt
 http://techradar.com/robots.txt
 http://threads.net/robots.txt
 http://tracks.arte.tv/robots.txt
-http://use.fontawesome.com/robots.txt
+http://usatoday.com/robots.txt
 http://weebly.com/robots.txt
 https://player.cnevids.com
 https://www.iubenda.com/en/help/126238-pricing-faqs-legacy-guide
@@ -19486,6 +19495,7 @@ ja-jp/customers/figma-helps-groww-simplify-investing/$
 ja-jp/customers/how-capcom-elevates-speed-quality-and-creative-vision-with-figma/$
 ja-jp/customers/how-datadog-built-enterprise-platform-scaling-design-system/$
 ja-jp/customers/how-figma-helped-to-increase-ux-maturity-at-dbs-bank/$
+ja-jp/customers/how-flipkart-boosts-its-design-vision-for-indian-e-commerce-with-figma/$
 ja-jp/customers/how-king-brings-game-design-together/$
 ja-jp/customers/how-patagonia-uses-figma/$
 ja-jp/customers/how-qonto-reduces-lead-times/$
@@ -20071,6 +20081,7 @@ ko-kr/customers/driving-adoption-of-seat-cupra-design-system/$
 ko-kr/customers/driving-design-transformation-how-cars24-builds-faster-with-figma/$
 ko-kr/customers/erste-groupbetter-financial-health-by-design/$
 ko-kr/customers/how-datadog-built-enterprise-platform-scaling-design-system/$
+ko-kr/customers/how-flipkart-boosts-its-design-vision-for-indian-e-commerce-with-figma/$
 ko-kr/customers/how-hellofresh-built-a-design-system/$
 ko-kr/customers/how-king-brings-game-design-together/$
 ko-kr/customers/how-patagonia-uses-figma/$
@@ -20572,6 +20583,7 @@ limited-release
 link
 link-intersect
 link-intersect/$
+link?
 link_to
 linked
 linkedin
@@ -21215,8 +21227,6 @@ mobileapps
 mobileformat=
 mobilenextapi/graphql
 mobilenextapi/v2/logs
-mobilepagenotfounderror.aspx
-mobileservererror.aspx
 mod
 mod.php
 mod=
@@ -22290,6 +22300,8 @@ p
 p.php
 p/*/actions$
 p/*/actions?
+p/*/activity$
+p/*/activity?
 p/*/advocates$
 p/*/advocates/confirm$
 p/*/advocates/confirm?
@@ -22364,7 +22376,7 @@ p/*/v2/actions$
 p/*/v2/actions?
 p/*/victory$
 p/*/victory?
-p/*http://soundcloud.com/robots.txt
+p/*http://socialimpact.youtube.com/robots.txt
 p/*surveyopen
 p/*thm=
 p/60
@@ -22427,7 +22439,6 @@ pagead/js
 pagead/managed
 pagead/show_ads.js
 pageitem
-pagenotfounderror.aspx
 pages-extensions/FollowCompany
 pages.www.cloudflare.com
 pages/
@@ -22787,8 +22798,6 @@ people/pad$
 people/pad/$
 people/search
 people/search
-peopleoptions.aspx
-peopletags.aspx
 pepe
 percy-jackson-the-olympians-the-lightning-thief
 perfil
@@ -23337,7 +23346,7 @@ privacy/zoho-group.html
 private
 private
 private-promo
-private/http://about.google/robots.txt
+private/http://about.fb.com/robots.txt
 private/wtrack
 pro
 pro-learn
@@ -23726,6 +23735,7 @@ pt-br/customers/driving-adoption-of-seat-cupra-design-system/$
 pt-br/customers/driving-design-transformation-how-cars24-builds-faster-with-figma/$
 pt-br/customers/erste-groupbetter-financial-health-by-design/$
 pt-br/customers/how-datadog-built-enterprise-platform-scaling-design-system/$
+pt-br/customers/how-flipkart-boosts-its-design-vision-for-indian-e-commerce-with-figma/$
 pt-br/customers/how-hellofresh-built-a-design-system/$
 pt-br/customers/how-king-brings-game-design-together/$
 pt-br/customers/how-patagonia-uses-figma/$
@@ -24137,7 +24147,6 @@ questions-and-answers
 queue
 qui-sommes-nous
 quick-search
-quickadd.aspx
 quickcast
 quickfacts
 quickstart
@@ -24351,6 +24360,7 @@ reports/5-agencies-that-changed-the-way-they-design/$
 reports/RC/public
 reports/ai-2025/$
 reports/ai-design-trends-2024/$
+reports/ai-experimentation/$
 reports/australia-design-growth-story-apac-report/$
 reports/bridging-design-and-code/$
 reports/bringing-non-designers-into-design-process/$
@@ -24710,6 +24720,8 @@ resource
 resource-library/$
 resource-library/*?
 resource-library/agile-and-waterfall-methodologies/$
+resource-library/ai-design-tools/$
+resource-library/ai-in-design/$
 resource-library/alignment-charts-explained/$
 resource-library/best-design-collaboration-tools/$
 resource-library/best-font-for-resume/$
@@ -25251,6 +25263,7 @@ s3
 s=
 s=p
 s?
+s?
 s?*rh=n%3A1380045031
 s_id=
 sa
@@ -25616,7 +25629,7 @@ search_rss$
 search_suggest
 searchdeb/
 searches
-searchhttp://shopify.com/robots.txt
+searchhttp://sgtrains.com/robots.txt
 searchresults
 searchresults.aspx
 searchsuggest
@@ -25650,11 +25663,9 @@ seenMatchId=
 segments/*/compare
 select
 selectedImage
-selectembed.aspx
 selectlocale-dmc?fromPage=
 selectpayment
 self-registration
-self.aspx
 sell/?
 sell/options
 seller_onboarding
@@ -25687,6 +25698,7 @@ server-status
 server/banners
 server/body-include
 server/bottom-notes
+server/docs/search
 server/footer
 server/fs-gang
 server/generic
@@ -25705,7 +25717,6 @@ server/trans-map.html
 server/whatsnew_translations.xml
 server_error_pages/
 serverdown
-servererror.aspx
 service-search/dist/images/loading.gif
 service-search/find-a-psychological-therapies-service/find-your-gp
 service-search/find-a-psychological-therapies-service/results
@@ -25838,9 +25849,7 @@ shareables
 shared
 shared/
 shared/*?wtime
-sharedfavorite.aspx
 sharedmemories
-sharefavorite.aspx
 sharer
 sharer.php
 sharing
@@ -25849,6 +25858,7 @@ sharing/folders
 shelf/user_shelves
 shenghuo
 shenghuo/search?
+shifen/
 shihui
 shihui?
 ship
@@ -25937,6 +25947,7 @@ signed_out_modal.json
 signin
 signin$
 signin-oidc
+signin-oidc
 signin.aspx
 signin/$
 signin/inject
@@ -25944,6 +25955,7 @@ signin?
 signin?expId=confirmEmail
 signout
 signout
+signout-oidc
 signup
 signup$
 signup-interstitial
@@ -25960,6 +25972,7 @@ signup/payment%
 signup/payment?
 signup?
 signup_modal
+silent-login
 silva
 silver-linings-playbook
 since=
@@ -28363,6 +28376,7 @@ uk/zazzle
 uki/search
 ul
 uli/trac
+ulink?
 ulk/i
 ulk/sch
 ulk/usr
@@ -29064,7 +29078,6 @@ vip
 virtual
 virtualization/
 virtualsupportassistant
-viruswarning.aspx
 visual-notes
 visualj/
 visuals/services
@@ -29265,7 +29278,6 @@ weekly/signup
 weimg
 welcome
 welcome-email
-welcome.aspx
 wetter/action/bayernwetter/bayern.do?plz=
 wetter/action/bayernwetter/bayern.do?regio=
 wewantyou/
@@ -29406,7 +29418,6 @@ wiki/Discussioni_Wikipedia:Pagine_da_cancellare/Archivio
 wiki/Discussioni_Wikipedia:Utenti_problematici
 wiki/Discussioni_progetto%3ACococo
 wiki/Discussioni_progetto:Cococo
-wiki/Fundraising_2007/comments
 wiki/Help
 wiki/Help:
 wiki/K%C3%A4ytt%C3%A4j%C3%A4:
@@ -29967,8 +29978,6 @@ word/document_stats
 word/document_url
 word/download
 word/embed
-wordpress/wp-admin
-wordpress/wp-admin/admin-ajax.php
 work
 work
 work-at-ucl/redeployment
@@ -30067,6 +30076,7 @@ wp-admin
 wp-admin/
 wp-admin/admin-ajax.php
 wp-admin/admin-ajax.php
+wp-admin/admin-ajax.phphttp://rtbf.be/robots.txt
 wp-admin/admin-ajax.phphttp://starbucks.com/robots.txt
 wp-admin/load-scripts.php
 wp-admin/load-styles.php
@@ -30617,7 +30627,6 @@ zz-test
 8618
 9742
 9744
-625096ca6a492564
 1014943
 3584794
 5787254
