@@ -3091,6 +3091,7 @@ core/tests/Drupal/Tests/Core/Cache/ChainedFastBackendTest.php
 core/tests/Drupal/Tests/Core/Cache/LruMemoryCacheTest.php
 core/tests/Drupal/Tests/Core/Cache/CacheTest.php
 core/tests/Drupal/Tests/Core/Cache/CacheableMetadataTest.php
+core/tests/Drupal/Tests/Core/Layout/LayoutAttributeTest.php
 core/tests/Drupal/Tests/Core/Layout/LayoutPluginManagerTest.php
 core/tests/Drupal/Tests/Core/Layout/LayoutDefaultTest.php
 core/tests/Drupal/Tests/Core/Image/ImageTest.php
@@ -10908,8 +10909,6 @@ core/modules/options/tests/options_config_install_test/config/install/core.entit
 core/modules/options/tests/options_config_install_test/config/install/field.storage.node.field_options_float.yml
 core/modules/options/tests/options_config_install_test/config/install/node.type.options_install_test.yml
 core/modules/options/tests/options_config_install_test/config/install/core.entity_view_display.node.options_install_test.default.yml
-core/modules/options/tests/options_config_install_test/config/install/field.field.node.options_install_test.body.yml
-core/modules/options/tests/options_config_install_test/config/install/field.storage.node.body.yml
 core/modules/options/tests/options_config_install_test/options_config_install_test.info.yml
 core/modules/options/tests/options_test_views/test_views/views.view.test_options_list_argument_string.yml
 core/modules/options/tests/options_test_views/test_views/views.view.test_options_list_argument_numeric.yml
@@ -11028,6 +11027,7 @@ core/modules/ckeditor5/js/ckeditor5_plugins/drupalHtmlEngine/src/drupalhtmlbuild
 core/modules/ckeditor5/js/ckeditor5_plugins/drupalHtmlEngine/src/drupalhtmlwriter.js
 core/modules/ckeditor5/js/ckeditor5_plugins/drupalHtmlEngine/src/drupalhtmlengine.js
 core/modules/ckeditor5/ckeditor5.api.php
+core/modules/ckeditor5/tests/fixtures/update/remove-source-editing-from-full-html-editor.php
 core/modules/ckeditor5/tests/fixtures/ckeditor4_config/filter.format.full_html.yml
 core/modules/ckeditor5/tests/fixtures/ckeditor4_config/filter.format.basic_html.yml
 core/modules/ckeditor5/tests/fixtures/ckeditor4_config/editor.editor.full_html.yml
@@ -11081,6 +11081,7 @@ core/modules/ckeditor5/tests/src/FunctionalJavascript/MediaTest.php
 core/modules/ckeditor5/tests/src/FunctionalJavascript/SourceEditingEmptyElementTest.php
 core/modules/ckeditor5/tests/src/FunctionalJavascript/CKEditor5FragmentLinkTest.php
 core/modules/ckeditor5/tests/src/Functional/ImageUploadTest.php
+core/modules/ckeditor5/tests/src/Functional/Update/AddListPluginStylesTest.php
 core/modules/ckeditor5/tests/src/Functional/AddedStylesheetsTest.php
 core/modules/ckeditor5/tests/src/Functional/GenericTest.php
 core/modules/ckeditor5/tests/src/Functional/MediaEntityMetadataApiTest.php

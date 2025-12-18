@@ -99,6 +99,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 &item=*
 &jw_start
 &keywords=
+&kuid=
 &kwid=
 &layout=
 &lid=
@@ -144,6 +145,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 &r=
 &radius=
 &ref=
+&ref=isModalView
 &referrer=
 &regionId=
 &returnPage=
@@ -332,7 +334,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 .well-known/amphtml/apikey.pub
 .well-known/apple-app-site-association
 .well-known/assetlinks.json
-.well-known/assetlinks.jsonhttp://web.archive.org/robots.txt
+.well-known/assetlinks.jsonhttp://wattpad.com/robots.txt
 .well-known/privacy-sandbox-attestations.json
 .well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200
 .well-known/security.txt
@@ -1619,6 +1621,8 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /affiliates_library*
 /agency/author/*&
 /agency/author/*?
+/agent-templates/search?
+/agent-templates/standalone
 /ai-search
 /aisearch
 /ajax
@@ -1661,6 +1665,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /answers/comments
 /answers/revisions
 /answers/search
+/answers/user-threads?username=
 /answers/users
 /antiSpam$
 /ap/
@@ -1680,12 +1685,17 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /api?
 /apis
 /app-marketplace/search?
+/app-templates/search?
+/app-templates/standalone
+/app/createWithWidget
 /application
 /apply
 /apply-for-finance/fragments/simulator
 /appointments/api
 /appointments/book/profile
 /appointments/mapbox
+/approval-templates/search?
+/approval-templates/standalone
 /apps
 /archive
 /archives
@@ -1760,6 +1770,9 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /browse/more_page
 /browse?
 /buckets$
+/build
+/build$
+/build?
 /business
 /business-store
 /business/ai-search
@@ -2071,7 +2084,6 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /f
 /favorite-*.html
 /favorite.html
-/favorites_list
 /favourites
 /feature
 /featured
@@ -2116,6 +2128,12 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /foreclosure--
 /fork
 /form
+/form-templates/*?card$
+/form-templates/preview/thank-you
+/form-templates/search
+/form-templates/standalone
+/form-templates/static
+/form-templates/ur
 /format:thumbnail
 /forr/companyadmin
 /forum-attachment
@@ -2219,6 +2237,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /image-vector/*.webp
 /imagelist-*.html
 /imagelist.html
+/images
 /imagine/
 /includes
 /increment_lp_video_plays
@@ -2271,8 +2290,6 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /layout/
 /layoutvorlagen
 /lazy.js
-/leads/*/jsplayer_show_lead_form.html
-/leads/*/show_form.html
 /learn
 /least
 /legal/*?ets=
@@ -2488,6 +2505,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /nus$
 /nus-
 /nw-auth-dialog
+/nx
 /o
 /oauth
 /objectforward/
@@ -2538,6 +2556,8 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /pd/Podcast
 /pd/item_name-Podcast
 /pdf
+/pdf-templates/search?
+/pdf-templates/standalone
 /pdfft
 /pdp-async/preview
 /people/*/circle
@@ -2971,6 +2991,8 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /t/*/73368+
 /t/*/73369
 /t/*/73369+
+/table-templates/demo
+/table-templates/search?
 /tables
 /tag
 /tag/*page=
@@ -2990,6 +3012,10 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /the-hustle/author/*&
 /the-hustle/author/*?
 /the-tonight-show/guest
+/theme-store/preview/thank-you
+/theme-store/search
+/theme-store/tagged
+/theme-store/theme/my-theme-
 /themes
 /themes/*.css$
 /themes/*.css?
@@ -3164,6 +3190,8 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /windvane$
 /winfx/
 /wire?
+/workflow-templates/search?
+/workflow-templates/standalone
 /workshop
 /workshop/
 /wp-admin
@@ -3188,6 +3216,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /{image}
 /{link}
 0
+0*?
 ;jsessionid
 ;jsessionid
 ;preview=
@@ -3243,8 +3272,10 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?*edition
 ?*editmode=
 ?*egotecpage
+?*em_x=
 ?*embed=
 ?*entry=
+?*entrymessage=
 ?*err_code=404
 ?*etext=
 ?*f%5B*%5D=
@@ -3326,6 +3357,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?*smprod=
 ?*sort=
 ?*source
+?*source=post_page
 ?*source=user_page
 ?*sr_source
 ?*srsltid
@@ -3335,6 +3367,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?*topics=
 ?*tpcid=
 ?*trustscore=
+?*u=
 ?*ua
 ?*unptid=
 ?*utm
@@ -3556,6 +3589,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?intc=
 ?intenttarget=
 ?irclickid=
+?isIframeEmbed=1$
 ?isPreview=
 ?isocode=*
 ?item=*
@@ -3567,6 +3601,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?kids=
 ?kind=
 ?krypto=
+?kuid=
 ?kwid=
 ?lang=
 ?lang=en-ss
@@ -3706,6 +3741,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?ref=
 ?ref=binfind.com
 ?ref=dotcom
+?ref=isModalView
 ?ref_src=
 ?referal_id=
 ?referralCode=*
@@ -3853,6 +3889,13 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 @async
 AI
 AITripBuilder
+API/ai-agent
+API/formInitCatchLogger
+API/forum/update-who-typing
+API/user
+API/user/abtest
+API/user/combinedinfo
+API/uxr-survey-management
 APIAccessSupport
 AWSEC2/2006-06-26
 AWSEC2/2006-10-01
@@ -5328,6 +5371,7 @@ _hcms/iplookup
 _hcms/livechat/widget
 _hcms/perf
 _hcms/preview
+_helpers
 _hook/*.html
 _hsenc=
 _jcr_content
@@ -5447,7 +5491,6 @@ aaut
 ab
 ab-experiment
 ab-taproom-api
-ab_tests
 abandon.aspx
 abc4000
 abclinks
@@ -5522,8 +5565,10 @@ academic/search
 academy
 academy-free-account
 academy/*/results
+academy/*/verify
 academy/*?*draft
 academy/*utm_source=
+academy/badge
 academy/certificates
 academy/draft
 acc-merge
@@ -5850,6 +5895,7 @@ agencies/*?*businessSize=
 agencies/*?*industries[]=
 agencies/*?*languages[]=
 agencies/*?services[]=
+agent
 agent-resources/zgwp/app/themes/paxl/assets/fonts/stargate.ttf
 agent-websites
 aggregator
@@ -5990,12 +6036,19 @@ android/market
 android/market_images
 angels-demons
 annotated
+announcement
 announcements.cms
 anon-ftp
 anon/AdPreview$
 anonymous
 answers
 answers$
+answers/?eco_tools
+answers/answer_listing.php
+answers/asked
+answers/my_list_with_status.php
+answers/search.php
+answers/tag
 ant-man
 antika-sanat
 aol
@@ -6062,7 +6115,6 @@ api/taxonomy$
 api/template-taxonomy-service
 api/template-taxonomy-service$
 api/ucs/shortlist
-api/ui
 api/ui-extensions
 api/uisprime/track
 api/unified-underdog
@@ -6146,6 +6198,8 @@ appliance
 applicant-eligibility
 apply
 apply/*
+approval-form
+approver-actions
 apps
 apps*&tags=
 apps/*
@@ -6154,6 +6208,7 @@ apps/*/landing
 apps/*/roles
 apps/customizer/run
 apps/download/results.html
+apps/fix/app
 apps/publish
 apps/search/results.html
 apps/user
@@ -6314,6 +6369,7 @@ assets/templates
 assets/templates-elements
 assets/themes
 assets/tvs
+assign
 assignments.php
 assignments_archive.php
 assistant
@@ -6830,6 +6886,7 @@ bilgisayar-tablet
 billing
 billing/confirmed
 billing/invoice
+billpay/
 bills/billAction
 bin
 bin/
@@ -6953,6 +7010,7 @@ blog/7-moments-that-shaped-figma/$
 blog/8-tips-for-designers-building-branded-templates-in-figma-buzz/$
 blog/8-ways-to-build-with-figma-make/$
 blog/8-ways-to-craft-an-unforgettable-config-talk/$
+blog/?
 blog/?id=*
 blog/?p=
 blog/?rest_route=
@@ -7060,6 +7118,7 @@ blog/career-and-education/$
 blog/case-study/$
 blog/cgi-bin
 blog/charmaine-lees-10-rules-for-building-developer-tools/$
+blog/chat-are-we-cooked-algospeak-adam-aleksic/$
 blog/co-designing-at-segment/$
 blog/coinbase-case-study/$
 blog/collaborating-and-connecting-in-figjam/$
@@ -7497,6 +7556,7 @@ blog/product-updates/$
 blog/productivity/$
 blog/profiles-and-interviews/$
 blog/proto-gp-5-ways-to-level-up-your-prototyping-workflow/$
+blog/prototypes-are-the-new-prds/$
 blog/prototyping-updates-and-interactive-components/$
 blog/prototyping/$
 blog/punto
@@ -7849,8 +7909,6 @@ business-insider$
 business-name-generator/list
 business-templates/*?__hstc
 business/ad_create
-business/adshare
-business/adshare/faqs
 business/adv/appointmentnotices/search
 business/availability
 business/availability/?context
@@ -7867,17 +7925,12 @@ business/community-information
 business/convert
 business/create
 business/create-linked-account
-business/feedback
 business/hub
 business/invite
-business/leads/jsplayer_show_lead_form.html
-business/leads/show_form.html
 business/learning/blog
 business/onboarding
 business/pin_create
 business/pos-system/shop
-business/premium/is_payment_pending
-business/promotion
 business/prweb
 business/referral
 business/sales/blog
@@ -8051,6 +8104,7 @@ c/subscription
 c/technology.atom
 c1/en/pdf-nf/*.PDF
 c1/en/pdf-nf/*.pdf
+c1a6a4206fb6bc70
 c?*attr_*=
 cDN_contENt
 ca
@@ -8396,6 +8450,7 @@ capacity4dev/users
 capacity4dev/xmlrpc.php
 captain-america-the-winter-soldier
 captcha
+captcha?
 captchaPerimeterX
 card/panel
 card_management.php
@@ -8493,7 +8548,7 @@ cdn-cgi
 cdn-cgi/
 cdn-cgi/bm/cv
 cdn-cgi/challenge-platform
-cdn-cgi/http://meetup.com/robots.txt
+cdn-cgi/http://medium.com/robots.txt
 cdn-cgi/images/trace
 cdn-cgi/l/email-protection
 cdn-cgi/rum
@@ -8670,6 +8725,7 @@ chrome_newtab
 chwilio
 chwilio$
 chwilio?
+cimg
 cisco/support/RU/
 cisco/web/
 cisco/web/UK/telepresence/pro
@@ -11286,6 +11342,7 @@ csrf_error
 csrf_token
 css
 css-validator
+csv
 ct
 ct.html
 ct/log_list
@@ -12167,6 +12224,7 @@ decision-makers/*/edit?
 deep-health-abstract
 deep-health-auth
 deep-health-search
+deeplink
 deeplinkid
 def/
 defalpha=
@@ -14107,6 +14165,7 @@ every-mind-matters/mental-wellbeing-tips/your-mind-plan-quiz/application
 eweb
 ews
 examples/*
+excel
 exclusive-offers
 exec/obidos/account-access-login
 exec/obidos/change-style
@@ -14229,7 +14288,6 @@ faves-i_love_u_get_away_from_me
 favicon.icohttp://blog.google/robots.txt
 favorit-hinzufuegen
 favorit-loeschen
-favorite
 favorites?
 fb
 fb.html
@@ -16204,6 +16262,8 @@ forgot_password
 forgot_password?
 forgotpassword?
 form
+form/*/event
+form/*?
 form/conf/
 form/pdf/*
 form_defaults.
@@ -17082,7 +17142,6 @@ friends
 from-chrome-store
 from_id=
 frommers
-frontend-track
 fscripts
 fsid=
 ftp
@@ -17090,7 +17149,6 @@ ftp_instructions.php
 ftpinstructions
 full
 fullscreen
-fullscreen/ReportLinker
 fun/api/
 fun/g/
 funding?
@@ -17156,7 +17214,6 @@ gb/search
 gb/user
 gb/user$
 gc?k
-gcc
 gcdn/dc
 gcdn/dcc
 gcdn/dcjs
@@ -17453,6 +17510,7 @@ graphique-du-jour
 graphql
 graphql/api
 graphql?
+grid
 group
 group/
 group/*/hobby$
@@ -17509,7 +17567,6 @@ gundem
 gview
 gwc
 gws$
-gwt
 gx/en/audit-services-risk-assurance-services/assets/PwCs_journals_ai.pdf
 gx/en/forensics/gecs-2020/pdf/global-economic-crime-and-fraud-survey-2020.pdf
 gx/en/zz-test
@@ -17576,7 +17633,7 @@ health/*/wp-
 health/QA-Tabbed-ManyTabs-21
 health/drugs/hm-test-all-about-humira
 health/drugs/ozempic-for-weight-loss
-health/files/rhpthttp://indeed.com/robots.txt
+health/files/rhpthttp://inc.com/robots.txt
 health/hm-test-17-proven-tips-to-sleep-better-at-night
 health/hm-test-feature-template-for-sponsorship
 health/mirgraine-headaches
@@ -17632,6 +17689,7 @@ hi/search/default.mi
 hi_in
 hi_in/templates/M
 hidden
+hidebanner
 highereducation/_nuxt
 highereducation/my-account
 highlights
@@ -17836,7 +17894,7 @@ http
 http-checker
 http2_data
 http://15721.courses.cs.cmu.edu/robots.txt
-http://akparti.org.tr/robots.txt
+http://alexa.com/robots.txt
 http://aliexpress.com/robots.txt
 http://amazon.co.jp/robots.txt
 http://amazon.co.uk/robots.txt
@@ -17864,7 +17922,7 @@ http://lefigaro.fr/robots.txt
 http://nationalgeographic.com/robots.txt
 http://patents.google.com/robots.txt
 http://python.org/robots.txt
-http://semrush.com/robots.txt
+http://seekingalpha.com/robots.txt
 http://siteground.com/robots.txt
 http://smithsonianmag.com/robots.txt
 http://static.wixstatic.com/robots.txt
@@ -17930,7 +17988,6 @@ i/models/*/ar-redirect
 i/models/*/views
 i/u
 i18n-checker/check
-ia
 ia/android/collections
 ia/android/search
 ia/firefox/collections
@@ -18168,7 +18225,6 @@ images/viewconfig$
 images?
 imagine/
 imaginecup/*
-imesync
 imf-fetch-message
 imf-fetch-message/api/v1/request/fetch-message/MOBILE_APP_UPSELL
 img
@@ -18576,6 +18632,7 @@ iplayer/cbbc/search
 iplayer/cbeebies/episodes
 iplayer/cbeebies/search
 iplayer/search
+ipns
 ipp
 ipportal-support-api
 ipstatsdb/
@@ -18608,13 +18665,19 @@ it-it/ai/our-approach/$
 it-it/buzz/$
 it-it/contact/$
 it-it/creare-presentazioni/$
+it-it/customers/$
+it-it/customers/astra-tech-aligns-design-and-dev-across-mena/$
 it-it/customers/dev-mode-helps-hp/$
+it-it/customers/digital-transformation-at-philips/$
+it-it/customers/from-pfizer-to-sap-building-design-systems-that-scale/$
 it-it/customers/how-aws-drives-collaboration-between-designers-and-developers-at-scale/$
 it-it/customers/how-commbank-is-banking-on-collaboration/$
 it-it/customers/how-customerio-simplifies-design-handoffs-with-variables-and-dev-mode/$
 it-it/customers/how-deutsche-bank-redeveloped-all-front-end-apps-from-scratch/$
+it-it/customers/how-hellofresh-built-a-design-system/$
 it-it/customers/how-nuuly-enhances-cross-functional-collaboration-with-figma/$
 it-it/customers/how-on-brings-its-teams-together-to-innovate-at-pace/$
+it-it/customers/how-sap-uses-figma-for-collaboration/$
 it-it/customers/how-swiggy-rolls-out-features-50-percent-faster/$
 it-it/customers/how-workday-scales-design-and-development-collaboration-with-figma/$
 it-it/customers/itau-unibanco-launched-45-digital-products-with-figma/$
@@ -19559,6 +19622,7 @@ jsky/search?
 jsky?
 json
 jsonp/Bdp.htm?
+jufs
 jump_to
 junglee
 k
@@ -20194,6 +20258,7 @@ login/resend-confirmation-link
 login?
 login?*=
 login?continue=
+login?fullscreen=
 login?next=
 login?redirectPath=
 login?ref=
@@ -20210,6 +20275,7 @@ logo-maker/wordpress
 logotypes
 logout
 logout$
+logout.php
 logout?redirectPath=
 logs
 logtopickeywords*
@@ -20356,7 +20422,6 @@ mailman
 mailman/admin/ceylon-core
 mailman/listinfo/ceylon-core
 mailman/private/ceylon-core
-main
 main/
 main/global_search
 main/local_scene
@@ -20387,12 +20452,10 @@ map-regular.xml
 map-videofull.xml
 map/
 map_tile.php
-mapabcpoi?
 mapeditor/*?
 maphp?
 mapi/v4/*/user
 mapi?*
-mapprint?
 maps
 maps-api/docs/js-api/reference-guide/instruction-gxs.html
 maps-api/docs/js-api/reference-guide/instruction-rs.html
@@ -20459,9 +20522,7 @@ maps?saddr=
 maps?sid=
 mapslt?
 mapspro
-mapstt?
 mapview
-mar-optout
 market/
 market/confederate_flag
 market/dixie_flag
@@ -20661,6 +20722,7 @@ middle
 migration/
 million-dollar-arm
 mimeType=
+min
 min=
 min_price=
 mindbody
@@ -20890,8 +20952,6 @@ music/artist
 music/search/*
 music/song-embed
 musica
-musicad
-musicas
 musicl
 musiclp
 musics
@@ -21000,6 +21060,7 @@ mybookoflists
 mycart
 mye
 myebay
+myforms/?createTeam=1
 myft
 myjs
 mylibrary
@@ -21019,6 +21080,8 @@ mystunningwebsites
 mysupport/s/forumshome
 mysupport/s/forumsproduct
 mysupport/s/forumsquestion
+myteams
+mythemes/collection
 myworks$
 myzillow
 myzillow/ChangePassword.htm
@@ -21261,7 +21324,6 @@ nextThread.html
 nextadvisor/search
 nextendweb-social-login/?
 nextgensearch/_*.js
-nextjs
 nexus
 ngc=
 nike
@@ -21780,6 +21842,7 @@ opportunity
 opt-in-mobile
 opt-out-info.jsp
 opt-out.jsp
+opt/widget-cache.php
 optInEmail
 optimize
 optimize-360
@@ -21803,7 +21866,6 @@ organizationMembers
 organizationinvited
 organizations
 origin=
-orkut/albums
 oslo/
 ospublishing/story
 osview
@@ -21815,6 +21877,8 @@ our-kind-of-traitor
 out-of-home
 overlay
 overview
+ownerView.php
+ownerview.php
 p
 p.php
 p/*/actions$
@@ -21935,6 +21999,7 @@ page-59800369_45472411$
 page-777107_28406709$
 page-resources
 page-strength
+page.php
 page/*/?a_aid=
 page/*/?egotecpage
 page/*/?hc_location=
@@ -22290,6 +22355,9 @@ pda?
 pdarla
 pdf
 pdf$
+pdf-submission
+pdf-templates/*/clone
+pdf-view
 pdf/documents
 pdf/traineeships/
 pdfs/advertorials
@@ -22417,7 +22485,6 @@ pin/find
 pin/find?url=
 pin_shop
 ping
-pingback
 pingdom
 pinterest-predicts
 pinterest-wellbeing
@@ -22609,6 +22676,7 @@ places/*/edit
 plan
 plan=
 plans
+platform
 platform-telemetry
 platform/
 platform/contextual
@@ -22621,6 +22689,7 @@ play/surveys/serp
 player
 player/metadata/video
 playerColor=
+playground
 playing-house
 playlist
 playlists/*/user
@@ -22636,7 +22705,6 @@ plus/experience/*/
 plus/experience/*/series/
 plus/experience/dreamforce_2025_x_test
 plusinstall
-pm-optout
 pm/
 pm/amplify/
 pm/lambda/
@@ -22761,10 +22829,7 @@ power-rangers
 powershell/
 ppc
 ppl
-ppob/?
-ppob?
 ppt/*?
-pqa
 pr
 pr=
 practical-law-the-journal/search
@@ -22782,7 +22847,7 @@ premium$
 premium-reports
 premium/
 premium/$
-premium/http://s3-us-west-2.amazonaws.com/robots.txt
+premium/http://s.w.org/robots.txt
 premiumsupport/iam/
 premiumsupport/knowledge-center/feedback-no/
 premiumsupport/knowledge-center/feedback-yes/
@@ -22899,7 +22964,7 @@ product-integrations/figma-for-microsoft-teams/$
 product-integrations/google-workspace/$
 product-integrations/zoom/$
 product-managers/$
-product-ratings/http://woocommerce.com/robots.txt
+product-ratings/http://wix.com/robots.txt
 product-reviews/B0069IY63Y
 product/*
 product/electrode/api/logger
@@ -23657,7 +23722,6 @@ q=
 qa
 qemail
 qi
-qnasearch?
 qr
 qr-code-generator/$
 qrCode/*
@@ -23773,8 +23837,6 @@ received-gift
 recensioni
 recently-viewed
 recfb?
-recharge/dashboard/car
-recharge/dashboard/static
 recherche
 recipes/*?q=
 recipes/search
@@ -23863,7 +23925,6 @@ remotelogout
 removalrequest
 remove-favorite
 renders
-renewal-reminder-optout
 rental-manager/?source=topnav&itc=postbutton_topnav
 rental-manager/?zpid=
 rental-manager/login/?url
@@ -24623,6 +24684,7 @@ rss?
 rssFeed
 rssarticleshow
 rssarticleshow*
+rssform.php
 rstmh/
 rsvp/images
 rt%3Dnc
@@ -24840,7 +24902,6 @@ scholar
 scholar_share
 scholarship
 scholarships
-school
 schools/TestHistoryAsync.htm
 schoolsearch
 science/MiamiMultiMediaURL
@@ -25190,9 +25251,11 @@ serv
 server
 server-configurator
 server-status
+server.php
 server/banners
 server/body-include
 server/bottom-notes
+server/check-olark-chat-support
 server/docs/search
 server/footer
 server/fs-gang
@@ -25209,6 +25272,7 @@ server/source
 server/staging
 server/top-addendum
 server/trans-map.html
+server/update-user-traffic-source
 server/whatsnew_translations.xml
 server_error_pages/
 serverdown
@@ -25357,10 +25421,7 @@ sharing/files
 sharing/folders
 shelf/user_shelves
 shenghuo
-shenghuo/search?
 shifen/
-shihui
-shihui?
 ship
 shipping
 shipping-payment
@@ -25429,8 +25490,8 @@ shrek
 si
 si/*
 si/Download
-sidewiki/entry
 sigma.html
+sign
 sign-in
 sign-in
 sign-in-6for6Sale
@@ -25474,6 +25535,7 @@ signup/payment
 signup/payment%
 signup/payment?
 signup?
+signup?fullscreen=
 signup_modal
 silent-login
 silva
@@ -25863,8 +25925,6 @@ slick_min_js_v18/*
 slides
 slides/$
 slideshow/*-inline$
-slideshow/*/lead-form
-slideshow/embed_code
 slink
 slp/*/b$
 slp/s$
@@ -25928,11 +25988,13 @@ solutions/$
 solutions/ai-admin-app-builder/$
 solutions/ai-agency-website-builder/$
 solutions/ai-agent-workflow-builder/$
+solutions/ai-analytics-dashboard-generator/$
 solutions/ai-animated-prototype-generator/$
 solutions/ai-app-builder/$
 solutions/ai-artist-website-builder/$
 solutions/ai-booking-app-builder/$
 solutions/ai-budgeting-app-builder/$
+solutions/ai-business-dashboard-generator/$
 solutions/ai-business-website-builder/$
 solutions/ai-calculator-app-builder/$
 solutions/ai-calendar-app-builder/$
@@ -26154,8 +26216,6 @@ spot
 spots_shown=
 spreadsheet
 spresults
-sprint_wml
-sprint_xhtml
 sq-AL/$
 sq/android/collections
 sq/android/search
@@ -26165,9 +26225,6 @@ sq/firefox/collections/4757633/$
 sq/firefox/collections/mozilla
 sq/firefox/collections/mozilla/$
 sq/firefox/search
-squared/api
-squared/search
-squared/table
 sr-RS/$
 sr-latn-cs/
 sr-latn-rs/
@@ -26374,6 +26431,7 @@ stories
 story
 story-pin-builder
 story-pin-invite
+story/
 story/2014/03/20/ge-cfo-challenge-david-bartlett-amway/6653003
 story/advisory
 story/draft
@@ -26434,7 +26492,10 @@ sub-sections
 subject
 subject=
 subjects
+submission
+submissions
 submit
+submit.php
 submitstory
 submitted/review
 subscribe/*/media/oembed
@@ -26657,6 +26718,8 @@ t31337
 ta-IN/$
 tab=
 tabdisplay
+table
+tables
 tablet
 tacms
 tacpage
@@ -27130,7 +27193,6 @@ templates/x-matrix-template/$
 templates/yearly-calendar-template/$
 temporary_marketing_proxy/*
 temptation-island
-ter-optout
 termini-e-condizioni
 termos-e-condicoes
 terms
@@ -27456,7 +27518,6 @@ topic/sections
 topic/sgo-subjects
 topiclist/
 topics
-topicsearch?q=
 total-leadership
 touch/login
 touchsearch
@@ -27492,6 +27553,7 @@ tr/firefox/collections/4757633/$
 tr/firefox/collections/mozilla
 tr/firefox/collections/mozilla/$
 tr/firefox/search
+tr/form
 tr/forum
 tr/group
 tr/kb
@@ -27552,7 +27614,6 @@ transcripts/419570939
 transcripts/470280334
 transcripts/480128005
 transcripts/830237502
-transfers
 transformation-digitale-du-processus-de-design/$
 transit?
 translate
@@ -27877,7 +27938,6 @@ univercd/cc/td/doc
 universal-design-system/
 university
 unlink
-unlisted
 unsaved
 unsub
 unsubscribe
@@ -27885,7 +27945,9 @@ unsubscribe$
 unsubscribe-from-applet
 unsubscribe-thankyou.html
 unsubscribe/invitation
+unsubscribe=
 unsubscribe?
+unsubscribecampaign
 unsubscribed
 unsupported-browser
 until=
@@ -27899,6 +27961,8 @@ updates
 updates/
 upgrade-browser
 upgrade-offer
+upgrade/?username=
+upgrade?username=
 upload
 upload-document?
 upload-lens-image
@@ -27921,6 +27985,7 @@ uploads/7/0/2/6/70262511/custom_themes
 uploads/8/5/1/4/85141968
 uploads/8/5/1/4/85141968/custom_themes
 uploads/c/e816fe41-644e-11e8-937d-c4544454fb00/odigos
+uploads/page-builder
 ur/$
 urchin_test
 url
@@ -28430,7 +28495,6 @@ verification/source
 verificationofemployment
 verified-modal
 verify
-verify-mobile
 verify_age
 verify_cookies
 verify_your_email$
@@ -28620,8 +28684,6 @@ wall*?search=1
 wall*?thread=
 wall*?with=
 wall-*?q=
-wallpaper
-wallpapers
 wanted
 wap/*
 wapsearch?
@@ -28820,6 +28882,7 @@ whythisad
 widget
 widget-docs
 widget-landing-page.html
+widget-uploads
 widget/cr
 widget/entity/search/?
 widget/render
@@ -28831,6 +28894,7 @@ widgets$
 widgets-admin
 widgets/content_iframe
 widgets/content_js
+widgets/fix/widget
 widgets/trk
 widgets=
 widnows/
@@ -29534,6 +29598,7 @@ work/xhr/install
 work/xhr/inviteadmin
 work/xhr/removeadmin
 workers/*
+workflow/withForm
 working-at-statista
 workinmoms
 workplace/nic/
@@ -29725,7 +29790,6 @@ xclick-auction
 xcs0MhRsfxHG.js
 xdoor
 xf/help
-xfx7
 xgCxM9By/init.js
 xhr
 xhtml/?
@@ -30000,17 +30064,19 @@ zz-test
 {0}/
 {{section}}
 {{url}}
-~
 ~*
 ~ecartis
 ~guido/orlijn
 ~srloomis/ut/trac
 1
+1*?
 1_fs
 2
+2*?
 2-fast-2-furious
 2fa
 3
+3*?
 3/account
 3/configuration
 3/folders
@@ -30024,14 +30090,22 @@ zz-test
 3com
 3for2
 4
+4*?
+5
+5*?
 6
+6*?
+7
+7*?
+8
+8*?
 8bit-fest/parents
 9
+9*?
 10
 21-jump-street
 22minutes
 64-bit/
-71f62290946e5dbf
 100books/*/downloadPDF
 100chats
 100chats-project
@@ -30122,3 +30196,4 @@ zz-test
 71347885
 71466320146/checkouts
 71466320146/orders
+63463511625958
