@@ -72,6 +72,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 &eventType=
 &f%5B
 &f[
+&f[*]=
 &fbclid=
 &filters=
 &find_similar_by=
@@ -122,6 +123,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 &order=
 &p=
 &page*&=sort
+&page=
 &pageToken=
 &pager.offset=
 &pcrid=
@@ -331,7 +333,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 .well-known/amphtml/apikey.pub
 .well-known/apple-app-site-association
 .well-known/assetlinks.json
-.well-known/assetlinks.jsonhttp://wattpad.com/robots.txt
+.well-known/assetlinks.jsonhttp://web.archive.org/robots.txt
 .well-known/privacy-sandbox-attestations.json
 .well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200
 .well-known/security.txt
@@ -772,6 +774,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /brandpublishing
 /breakingnews.js
 /briefs/articleid-*
+/browse
 /browse-history
 /browse.html
 /browse/more_page
@@ -786,7 +789,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /business/aisearch
 /business/availability
 /business/availability/?context
-/business/availability/?context=http://hertason.blogspot.com/robots.txt
+/business/availability/?context=http://help.twitter.com/robots.txt
 /business/availability?context
 /business/availability?context=
 /business/search
@@ -2507,6 +2510,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?expId=confirmEmail
 ?f%5B
 ?f[
+?f[*]=
 ?fbc=
 ?fbclid
 ?fbclid=
@@ -5044,6 +5048,8 @@ api.php?*&action=
 api.php?action=
 api/
 api/*
+api/*&page=
+api/*?page=
 api/1/performance/records
 api/1/performance/settings
 api/?
@@ -5086,7 +5092,6 @@ api/taxonomy$
 api/template-taxonomy-service
 api/template-taxonomy-service$
 api/ucs/shortlist
-api/ui
 api/ui-extensions
 api/uisprime/track
 api/unified-underdog
@@ -5222,7 +5227,10 @@ archive$
 archive.php?archive=*
 archive.php?view=all
 archive/api/image.jpg
+archive/article
+archive/find
 archive/graphs.php
+archive/page
 archive/project/sovsport$
 archived
 archived$
@@ -5274,7 +5282,6 @@ articleshowprint*
 artist/*/now-playing
 artist/127231622/radio?autoplay=true
 artist/export_shows_csv
-artist/list/search
 artist/view_widget_popup
 artists
 arts/library/
@@ -6572,6 +6579,18 @@ blog/skill-share/$
 blog/slack-from-the-start/$
 blog/slides-buzz-figma-app-in-chatgpt/$
 blog/social-impact/$
+blog/software-is-culture-newsletter/$
+blog/software-is-culture/$
+blog/software-is-culture/autoplay/$
+blog/software-is-culture/biometric-authentication/$
+blog/software-is-culture/infinite-scroll/$
+blog/software-is-culture/multiplayer-collaboration/$
+blog/software-is-culture/natural-language-prompts/$
+blog/software-is-culture/pinch-to-zoom/$
+blog/software-is-culture/pull-to-refresh/$
+blog/software-is-culture/swipe-right-left/$
+blog/software-is-culture/tap-to-like/$
+blog/software-is-culture/voice-interaction/$
 blog/speeding-up-build-times/$
 blog/speeding-up-file-load-times-one-page-at-a-time/$
 blog/state-of-design-systems-2018/$
@@ -7481,6 +7500,7 @@ cart.srv
 cart?
 cartoon
 carts
+case-studies/http://wretch.cc/robots.txt
 cash
 cashout
 cassette.axd/manifest.xml
@@ -7723,6 +7743,7 @@ citations?view_op=sitemap
 citations?view_op=top_venues
 cits
 city
+civil/frauds
 civis/account
 civis/admin.php
 civis/attachments
@@ -7794,7 +7815,6 @@ close-account
 cloud-launcher/sitemap
 cloud/
 cloudhsm/classic
-cloudmonitor
 cloudplayer
 cloudsourcetools/images
 clp
@@ -9804,7 +9824,6 @@ community/search?
 community/trackback
 community_comment
 community_post
-community_s
 company
 company/*.rss
 company/add-ons-agreement
@@ -11398,7 +11417,6 @@ discount_type=
 discover
 discover/trending/detail
 discovery
-discuss/search
 discussion
 discussion/comment-permalink
 discussion/edit-profile
@@ -12156,6 +12174,7 @@ engage/demo
 engage/sites/all/files/blog_images/monkeys.gif
 engagement
 engine
+engine-for-good
 engine/hydrate
 engineers/$
 english-association/
@@ -13173,6 +13192,7 @@ events/fsi-cloud-symposium-nyc.html
 events/rss
 events/slides/$
 events?
+evercache
 everly
 every-mind-matters/mental-wellbeing-tips/your-mind-plan-quiz/application
 eweb
@@ -13268,6 +13288,7 @@ f/*/widget
 f/*/x
 f/*?modal
 f/healthcheck
+f78b7fdae37b35c7
 f[
 fabordrab
 facebook
@@ -16281,6 +16302,7 @@ general/availability/?context=
 general/availability?context
 general/availability?context=
 general/dbapps/404
+genesis
 genre
 genuine/
 geo/browse
@@ -16288,6 +16310,7 @@ geo/download
 geo/tools
 geocoder
 geolocation
+geotarget
 germany/library/images/mnp/
 germany/video/de/de/related*
 get
@@ -16415,6 +16438,7 @@ google_place_photo
 google_search.html
 googlebooks/images
 googlegroups
+gopherdata
 gorf
 gorsel
 gorsel/$
@@ -16960,7 +16984,7 @@ html5
 http
 http-checker
 http2_data
-http://4.bp.blogspot.com/robots.txt
+http://1.envato.market/robots.txt
 http://akparti.org.tr/robots.txt
 http://aliexpress.com/robots.txt
 http://amazon.co.jp/robots.txt
@@ -16973,17 +16997,15 @@ http://amazon.in/robots.txt
 http://amazon.it/robots.txt
 http://ameblo.jp/robots.txt
 http://apple.com/robots.txt
-http://bbc.com/robots.txt
-http://bbcsfx.acropolis.org.uk/robots.txt
 http://chrome.google.com/robots.txt
 http://creativecommons.org/robots.txt
 http://en.m.wikipedia.org/robots.txt
 http://expedia.com/robots.txt
 http://gist.github.com/robots.txt
-http://gov.br/robots.txt
+http://govostis.gr/robots.txt
 http://groupon.com/robots.txt
 http://healthline.com/robots.txt
-http://images.google.com/robots.txt
+http://img.youtube.com/robots.txt
 http://irishtimes.com/robots.txt
 http://kickstarter.com/robots.txt
 http://lefigaro.fr/robots.txt
@@ -17316,6 +17338,7 @@ imagine/
 imaginecup/*
 imf-fetch-message
 imf-fetch-message/api/v1/request/fetch-message/MOBILE_APP_UPSELL
+img
 img/*-wWIDTH*.jpg
 img/placeholder.gif
 img/users
@@ -17614,6 +17637,7 @@ information/terms-conditions.html
 initps
 inproduct_help/chatsupport
 inquiry/user_study
+ins
 insetsrv/v1
 inside-the-fbi-new-york
 insider$
@@ -17640,7 +17664,6 @@ internal
 internal-api
 internal/*
 internalPref
-internalapi
 interstitial-ad
 intl
 intl/*/customers
@@ -19245,6 +19268,7 @@ legal-content/SV/TXT/SIG
 legal/$
 legal/3874403/
 legal/ai-terms/$
+legal/aup
 legal/aup/$
 legal/candidate-privacy-notice/$
 legal/code-of-conduct/$
@@ -19259,7 +19283,11 @@ legal/data-portability-and-deletion/$
 legal/developer-terms/$
 legal/digital-services-act/$
 legal/disclaimer/$
+legal/dmca-takedown-request
+legal/dpa
 legal/dpa/$
+legal/dsa-transparency-report
+legal/enterprise-terms-of-service
 legal/events-tos/$
 legal/figma-principles-regarding-government-and-other-third-party-requests-for-customer-personal-data/$
 legal/impressum/$
@@ -19267,6 +19295,7 @@ legal/jamboard-terms/$
 legal/msa/$
 legal/nothing-great-is-made-alone-sock-promotion-official-rules/$
 legal/pay-transparency-policy-statement/$
+legal/privacy
 legal/privacy-and-data-protection/$
 legal/privacy-resources/$
 legal/privacy-trust-center/$
@@ -19274,12 +19303,16 @@ legal/privacy/$
 legal/renewal-and-cancellation/$
 legal/security-resources/$
 legal/shared-responsibility-security-model/$
-legal/standards-of-conduct/$
+legal/sla
+legal/stripe-connect-addendum
+legal/sub-processor-list
 legal/supplier-code-of-conduct/$
+legal/terms-of-service
 legal/tos/$
 legal/tos/versions/$
 legal/transparency-in-coverage-tic-rules-for-us-health-plans/$
 legal/transparency-report/$
+legal/wpengine-terms-of-service
 legally-blonde-2-red-white-and-blonde
 lemonde-beta
 lenovo/
@@ -19718,13 +19751,13 @@ maps?sid=
 mapslt?
 mapspro
 mapview
-mar-optout
 market/
 market/confederate_flag
 market/dixie_flag
 market/rebel_flag
 market_catalog/*?w=product-
 market_news/enqueue_tracking
+marketer
 marketing
 marketing-cms
 marketing-containers
@@ -20088,7 +20121,7 @@ mre/*.jpg$
 mre/*.js$
 mre/*.pdf$
 mre/*.png$
-mre/*.zip$http://govostis.gr/robots.txt
+mre/*.zip$http://gov.uk/robots.txt
 mre/*?
 mre/*@@configuracoes_view
 mre/*@@download/file$
@@ -20129,8 +20162,6 @@ mtlibraryrss/
 mu_api
 multiproduct
 multivu
-munin
-munin*http://pnas.org/robots.txt
 muse/identity/v2/identity.js
 museumdays/accounts
 music
@@ -20507,10 +20538,14 @@ newsletters
 newsletters/*
 newsletters/kiosk
 newspaper/archive
+newsroom
 newsroom/$
 newsroom/ctr
 newsroom/dae
+newsroom/leadership-team
+newsroom/press-releases
 newsroom/rss/
+newsroom/thought-leadership
 newsround
 newssearch
 newsstand
@@ -21014,6 +21049,7 @@ ofr/api/v3/questionnaire
 og
 oggiPlayerLoader.htm
 ogm
+ojp
 okxbet.com
 om/payroll/
 oma
@@ -21027,6 +21063,7 @@ onebox/sports/logos/sports_types/png
 oneclick
 online-count
 onward
+opa/pr/support
 opb/mt4
 open
 open-source/$
@@ -21075,6 +21112,7 @@ otomobil-motor-aksesuar
 ott
 our-kind-of-traitor
 out-of-home
+overage-pricing
 overlay
 overview
 ownerView.php
@@ -21126,8 +21164,6 @@ p/*/psf/share$
 p/*/psf/share-group-recommendations$
 p/*/psf/share-group-recommendations?
 p/*/psf/share?
-p/*/psf/supporter-actions-screener$
-p/*/psf/supporter-actions-screener?
 p/*/responses/new$
 p/*/responses/new/complete-profile$
 p/*/responses/new/complete-profile?
@@ -21143,8 +21179,6 @@ p/*/sponsors/new$
 p/*/sponsors/new?
 p/*/starter-onboarding/*$
 p/*/starter-onboarding/*?
-p/*/supporter-action/start-a-recommended-petition$
-p/*/supporter-action/start-a-recommended-petition?
 p/*/u/*/edit$
 p/*/u/*/edit?
 p/*/u/new$
@@ -21157,7 +21191,7 @@ p/*/v2/actions$
 p/*/v2/actions?
 p/*/victory$
 p/*/victory?
-p/*http://soundcloud.com/robots.txt
+p/*http://socialimpact.youtube.com/robots.txt
 p/*surveyopen
 p/*thm=
 p/60
@@ -21913,7 +21947,6 @@ plus/experience/*/series/
 plus/experience/dreamforce_2025_x_test
 plus/r
 plusinstall
-pm-optout
 pm/
 pm/amplify/
 pm/lambda/
@@ -22179,7 +22212,7 @@ product-integrations/figma-for-microsoft-teams/$
 product-integrations/google-workspace/$
 product-integrations/zoom/$
 product-managers/$
-product-ratings/http://wix.com/robots.txt
+product-ratings/http://woocommerce.com/robots.txt
 product-reviews/B0069IY63Y
 product/*
 product/electrode/api/logger
@@ -22283,7 +22316,6 @@ project/issues/subscribe-mail
 projects
 projects/?
 projects/browse.php
-projects/embed
 projects/geo/download
 projects/geo/tools
 projects/gtr/gt
@@ -23102,7 +23134,6 @@ redux-thunk/static-2.1
 redux/static-3.6
 redux/static-3.7
 reengageoptout
-ref
 ref=
 ref_cta=
 ref_loc=
@@ -23157,7 +23188,6 @@ remotelogout
 removalrequest
 remove-favorite
 renders
-renewal-reminder-optout
 rental-manager/?source=topnav&itc=postbutton_topnav
 rental-manager/?zpid=
 rental-manager/login/?url
@@ -23547,6 +23577,7 @@ reset?
 resource
 resource-library/$
 resource-library/*?
+resource-library/about-us-page-examples/$
 resource-library/agile-and-waterfall-methodologies/$
 resource-library/ai-in-design/$
 resource-library/alignment-charts-explained/$
@@ -23637,6 +23668,7 @@ resource-library/instagram-story-ideas/$
 resource-library/interaction-design/$
 resource-library/k-12-design-basics/$
 resource-library/kotters-8-step-change-model/$
+resource-library/landing-page-examples/$
 resource-library/lateral-thinking-explained/$
 resource-library/linkedin-banner-ideas/$
 resource-library/linkedin-post-examples/$
@@ -24189,8 +24221,6 @@ scl
 scmp_comments
 scorecard
 scorecard/
-scratch_1.4
-scratchr2/static
 screener/insider
 screensaver
 screenshots
@@ -24445,6 +24475,7 @@ secure
 secure/
 secure/login
 secure/register
+security
 security/$
 security/aws-pgp-public-key
 security/ec2-pkgs-public-key
@@ -24783,7 +24814,6 @@ single_pages
 sio
 sit_rep
 site
-site-api
 site-archive
 site-explorer
 site-explorer/$
@@ -24803,11 +24833,13 @@ sitemap
 sitemap-*.xml
 sitemap-extended
 sitemap.xml
+sitemap.xml?page=
 sitemap/catalog
 sitemap/crawl-monitor
 sitemap/rss
 sitemaps
 sitemaps/
+sitemaps/*?page=
 siteminderagent
 siteopt.js
 sites
@@ -25215,6 +25247,7 @@ soft/punto/?
 soft/punto/mac/uninstall
 soft/punto/win/uninstall
 soft/win/?
+software-is-culture-image-sources/$
 software/gnun/linc
 software/gnun/proofread
 software/gnun/reports
@@ -26443,7 +26476,6 @@ templates/x-matrix-template/$
 templates/yearly-calendar-template/$
 temporary_marketing_proxy/*
 temptation-island
-ter-optout
 termini-e-condizioni
 termos-e-condicoes
 terms
@@ -26690,7 +26722,6 @@ tlqa
 tmall
 tmoney
 tmp
-to
 tobedeleted-sites
 today
 todays_paper
@@ -26866,17 +26897,10 @@ transcripts/419570939
 transcripts/470280334
 transcripts/480128005
 transcripts/830237502
-transfers
 transformation-digitale-du-processus-de-design/$
 transit?
 translate
-translate/releases
 translate_a
-translate_c
-translate_dict
-translate_f
-translate_p
-translate_static
 translate_suggestion
 translate_t
 translator/?ref=
@@ -26984,6 +27008,10 @@ try-search-term
 try?
 trylater
 tsa
+tto/archive/article
+tto/archive/find
+tto/archive/frame/article
+tto/archive/page
 tucritica
 tune*retpath=
 turbo
@@ -27188,7 +27216,6 @@ univercd/cc/td/doc
 universal-design-system/
 university
 unlink
-unlisted
 unsaved
 unsub
 unsubscribe
@@ -27685,7 +27712,7 @@ uxtest/ux/
 uy
 uy/es/ServicesLandingPage/AdvisoryLanding/RPA/Robotic_Process%20Automation_insert.pdf
 uy/help
-uz/http://billboard.com/robots.txt
+uz/http://bilgematics.com/robots.txt
 v
 v$
 v/badge
@@ -27724,7 +27751,6 @@ validate-user
 valkyrie-playground
 var
 variant=
-varserver
 vas
 vbtv/
 ve/Download
@@ -27741,7 +27767,6 @@ verification/source
 verificationofemployment
 verified-modal
 verify
-verify-mobile
 verify_age
 verify_cookies
 verify_your_email$
@@ -27929,8 +27954,6 @@ wall*?search=1
 wall*?thread=
 wall*?with=
 wall-*?q=
-wallpaper
-wallpapers
 wanted
 wap/*
 wapsearch?
@@ -28025,6 +28048,7 @@ webapps/checkout
 webapps/hermes
 webapps/xo/html/cookiecheck.html
 webapps/xoonboarding
+webby-case-study
 webcasts
 webcreation
 webinar
@@ -28592,7 +28616,7 @@ wiki/Wikipedia_talk%3AAbuse_reports
 wiki/Wikipedia_talk%3AAbuse_response
 wiki/Wikipedia_talk%3AAdministrator_electionshttp://en.wikipedia.org/robots.txt
 wiki/Wikipedia_talk%3AAdministrator_electionshttp://engadget.com/robots.txt
-wiki/Wikipedia_talk%3AAdministrator_electionshttp://win.gs/robots.txt
+wiki/Wikipedia_talk%3AAdministrator_electionshttp://windows.microsoft.com/robots.txt
 wiki/Wikipedia_talk%3AAdministrator_recall
 wiki/Wikipedia_talk%3AAdministrator_review
 wiki/Wikipedia_talk%3AAdministrators%27_noticeboard
@@ -28792,6 +28816,7 @@ wnet/religionandethics/search_results.html
 woa
 wondermissive/interest
 word-of-the-day/manage-subscription
+wordpress-themes-and-tools
 wordpress/wp-admin
 wordpress/wp-admin/admin-ajax.php
 work
@@ -28966,6 +28991,7 @@ wp-content/uploads/woocommerce_transient_files
 wp-content/uploads/woocommerce_uploads
 wp-content/uploads/wpforms
 wp-dyn
+wp-engine-api
 wp-includes
 wp-includes/
 wp-includes/*.css
@@ -29014,6 +29040,7 @@ wsus/
 wt-assets/static-files/mktg-analytics
 wt.mc_id=
 wui
+wusage
 wv
 ww/*
 ww/en
@@ -29424,7 +29451,6 @@ zz-test
 8618
 9742
 9744
-39102c5806d044f6
 1014943
 3584794
 5787254
