@@ -146,13 +146,13 @@ public/themes/admin/default/build/manifest.json
 public/themes/shop/default/build/assets/bagisto-shop-BHAKyv0r.woff
 public/themes/shop/default/build/assets/small-product-placeholder-CMT26fOX.webp
 public/themes/shop/default/build/assets/logo-CZWQQgOF.svg
+public/themes/shop/default/build/assets/app-DY2zjNPx.js
 public/themes/shop/default/build/assets/veeValidate-BnSi22_q.js
 public/themes/shop/default/build/assets/large-product-placeholder-B9xoAuKQ.webp
 public/themes/shop/default/build/assets/vendor-CW6uOYFM.js
 public/themes/shop/default/build/assets/hero-image-DwKg3YHc.webp
 public/themes/shop/default/build/assets/spinner-CWS6ej98.svg
 public/themes/shop/default/build/assets/default-language-BxH8WlkY.svg
-public/themes/shop/default/build/assets/app-Dh-0BQjA.js
 public/themes/shop/default/build/assets/medium-product-placeholder-INODB-G2.webp
 public/themes/shop/default/build/assets/vue-DaFNcYaj.js
 public/themes/shop/default/build/manifest.json
@@ -193,6 +193,10 @@ lang/nl/auth.php
 lang/nl/validation.php
 lang/nl/pagination.php
 lang/nl/passwords.php
+lang/id/auth.php
+lang/id/validation.php
+lang/id/pagination.php
+lang/id/passwords.php
 lang/it/auth.php
 lang/it/validation.php
 lang/it/pagination.php
@@ -422,6 +426,7 @@ packages/Webkul/Core/src/Models/ChannelProxy.php
 packages/Webkul/Core/src/Models/CurrencyProxy.php
 packages/Webkul/Core/src/Models/Address.php
 packages/Webkul/Core/src/Models/CountryStateTranslation.php
+packages/Webkul/Core/src/Console/Commands/TranslationsChecker.php
 packages/Webkul/Core/src/Console/Commands/InvoiceOverdueCron.php
 packages/Webkul/Core/src/Console/Commands/BagistoVersion.php
 packages/Webkul/Core/src/Console/Commands/UpCommand.php
@@ -934,7 +939,6 @@ packages/Webkul/Product/src/Resources/lang/id/app.php
 packages/Webkul/Product/src/Resources/lang/it/app.php
 packages/Webkul/Product/src/Resources/lang/en/app.php
 packages/Webkul/Product/src/Resources/lang/ar/app.php
-packages/Webkul/Product/src/Resources/lang/zn_CH/app.php
 packages/Webkul/Product/src/Resources/lang/ru/app.php
 packages/Webkul/Product/src/Resources/lang/ca/app.php
 packages/Webkul/Product/src/Resources/lang/he/app.php
@@ -944,6 +948,7 @@ packages/Webkul/Product/src/Resources/lang/fa/app.php
 packages/Webkul/Product/src/Resources/lang/bn/app.php
 packages/Webkul/Product/src/Resources/lang/hi_IN/app.php
 packages/Webkul/Product/src/Resources/lang/de/app.php
+packages/Webkul/Product/src/Resources/lang/zh_CN/app.php
 packages/Webkul/Product/src/Resources/lang/es/app.php
 packages/Webkul/Product/src/Resources/lang/pl/app.php
 packages/Webkul/Product/src/Resources/lang/uk/app.php
@@ -1980,7 +1985,6 @@ packages/Webkul/Admin/src/Resources/views/sales/orders/index.blade.php
 packages/Webkul/Admin/src/Resources/views/sales/bookings/calendar.blade.php
 packages/Webkul/Admin/src/Resources/views/sales/bookings/index.blade.php
 packages/Webkul/Admin/src/Resources/views/sales/invoices/create.blade.php
-packages/Webkul/Admin/src/Resources/views/sales/invoices/pdf.blade.php
 packages/Webkul/Admin/src/Resources/views/sales/invoices/view.blade.php
 packages/Webkul/Admin/src/Resources/views/sales/invoices/index.blade.php
 packages/Webkul/Admin/src/Resources/views/components/tree/checkbox.blade.php
