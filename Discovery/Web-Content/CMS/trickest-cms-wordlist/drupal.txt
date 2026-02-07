@@ -199,7 +199,7 @@ core/modules/syslog/config/schema/syslog.schema.yml
 core/modules/syslog/syslog.module
 core/modules/syslog/tests/modules/syslog_test/syslog_test.info.yml
 core/modules/syslog/tests/modules/syslog_test/syslog_test.services.yml
-core/modules/syslog/tests/modules/syslog_test/src/Logger/SysLogTest.php
+core/modules/syslog/tests/modules/syslog_test/src/Logger/SysLogFile.php
 core/modules/syslog/tests/src/Functional/SyslogTest.php
 core/modules/syslog/tests/src/Functional/GenericTest.php
 core/modules/syslog/tests/src/Kernel/SyslogTest.php
@@ -500,6 +500,7 @@ core/modules/dblog/src/Form/DblogClearLogConfirmForm.php
 core/modules/dblog/src/Form/DblogFilterForm.php
 core/modules/dblog/src/Hook/DblogViewsHooks.php
 core/modules/dblog/src/Hook/DblogHooks.php
+core/modules/dblog/src/DbLogFilters.php
 core/modules/dblog/migrations/state/dblog.migrate_drupal.yml
 core/modules/dblog/migrations/d6_dblog_settings.yml
 core/modules/dblog/migrations/d7_dblog_settings.yml
@@ -1570,6 +1571,7 @@ core/modules/user/tests/src/Kernel/UserSaveStatusTest.php
 core/modules/user/tests/src/Kernel/UserAdminSettingsFormTest.php
 core/modules/user/tests/src/Kernel/UserNameValidatorTest.php
 core/modules/user/tests/src/Kernel/UserMailDefaultsTest.php
+core/modules/user/tests/src/Kernel/UserNameThemeCacheTest.php
 core/modules/user/tests/src/Kernel/UserFieldsTest.php
 core/modules/user/tests/src/Kernel/Plugin/Validation/Constraint/RoleExistsConstraintValidatorTest.php
 core/modules/user/tests/src/Kernel/Plugin/migrate/source/d7/UserEntityTranslationTest.php
@@ -3881,6 +3883,7 @@ core/modules/system/tests/src/FunctionalJavascript/Form/ElementsVerticalTabsWith
 core/modules/system/tests/src/FunctionalJavascript/ModuleUninstallFilterTest.php
 core/modules/system/tests/src/FunctionalJavascript/Pager/PagerModalTest.php
 core/modules/system/tests/src/FunctionalJavascript/System/DateFormatTest.php
+core/modules/system/tests/src/FunctionalJavascript/Block/SystemMenuBlockUiTest.php
 core/modules/system/tests/src/FunctionalJavascript/FrameworkTest.php
 core/modules/system/tests/src/FunctionalJavascript/ActiveLinkTest.php
 core/modules/system/tests/src/FunctionalJavascript/ModalRendererTest.php
@@ -3980,6 +3983,8 @@ core/modules/system/src/Element/StatusReportPage.php
 core/modules/system/src/ActionConfigEntityInterface.php
 core/modules/system/src/Plugin/Archiver/Zip.php
 core/modules/system/src/Plugin/Archiver/Tar.php
+core/modules/system/src/Plugin/Validation/Constraint/IgnoreActiveTrailConstraintValidator.php
+core/modules/system/src/Plugin/Validation/Constraint/IgnoreActiveTrailConstraint.php
 core/modules/system/src/Plugin/migrate/process/d6/SystemUpdate7000.php
 core/modules/system/src/Plugin/migrate/process/d6/TimeZone.php
 core/modules/system/src/Plugin/migrate/destination/d7/ThemeSettings.php
@@ -4904,6 +4909,7 @@ core/modules/contextual/src/ContextualController.php
 core/modules/contextual/src/Hook/ContextualThemeHooks.php
 core/modules/contextual/src/Hook/ContextualViewsHooks.php
 core/modules/contextual/src/Hook/ContextualHooks.php
+core/modules/contextual/src/ContextualLinksSerializer.php
 core/modules/contextual/src/Theme/ContextualLinksNegotiator.php
 core/modules/contextual/help_topics/contextual.overview.html.twig
 core/modules/contextual/contextual.api.php
@@ -7260,6 +7266,7 @@ core/modules/comment/src/CommentAccessControlHandler.php
 core/modules/comment/src/CommentManagerInterface.php
 core/modules/comment/src/CommentStorageSchema.php
 core/modules/comment/src/CommentBreadcrumbBuilder.php
+core/modules/comment/src/AnonymousContact.php
 core/modules/comment/src/CommentTypeListBuilder.php
 core/modules/comment/src/Hook/CommentTokensHooks.php
 core/modules/comment/src/Hook/CommentHooks.php
@@ -8846,6 +8853,10 @@ core/modules/jsonapi/tests/modules/jsonapi_test_normalizers_kernel/jsonapi_test_
 core/modules/jsonapi/tests/modules/jsonapi_test_field_filter_access/jsonapi_test_field_filter_access.info.yml
 core/modules/jsonapi/tests/modules/jsonapi_test_field_filter_access/jsonapi_test_field_filter_access.permissions.yml
 core/modules/jsonapi/tests/modules/jsonapi_test_field_filter_access/src/Hook/JsonTestFieldFilterAccessHooks.php
+core/modules/jsonapi/tests/modules/jsonapi_response_validator/tests/src/Unit/EventSubscriber/ResourceResponseValidatorTest.php
+core/modules/jsonapi/tests/modules/jsonapi_response_validator/jsonapi_response_validator.services.yml
+core/modules/jsonapi/tests/modules/jsonapi_response_validator/jsonapi_response_validator.info.yml
+core/modules/jsonapi/tests/modules/jsonapi_response_validator/src/EventSubscriber/ResourceResponseValidator.php
 core/modules/jsonapi/tests/modules/jsonapi_test_field_aliasing/jsonapi_test_field_aliasing.services.yml
 core/modules/jsonapi/tests/modules/jsonapi_test_field_aliasing/jsonapi_test_field_aliasing.info.yml
 core/modules/jsonapi/tests/modules/jsonapi_test_field_aliasing/src/ResourceType/AliasingResourceTypeRepository.php
@@ -8953,7 +8964,6 @@ core/modules/jsonapi/tests/src/Unit/Query/SortTest.php
 core/modules/jsonapi/tests/src/Unit/Query/EntityConditionTest.php
 core/modules/jsonapi/tests/src/Unit/Query/EntityConditionGroupTest.php
 core/modules/jsonapi/tests/src/Unit/Encoder/JsonEncoderTest.php
-core/modules/jsonapi/tests/src/Unit/EventSubscriber/ResourceResponseValidatorTest.php
 core/modules/jsonapi/tests/src/Unit/Routing/RoutesTest.php
 core/modules/jsonapi/tests/src/Unit/JsonApiSpecTest.php
 core/modules/jsonapi/tests/src/FunctionalJavascript/JsonApiPerformanceTest.php
@@ -9030,7 +9040,6 @@ core/modules/jsonapi/src/Revisions/NegotiatorBase.php
 core/modules/jsonapi/src/EventSubscriber/ResourceResponseSubscriber.php
 core/modules/jsonapi/src/EventSubscriber/JsonApiRequestValidator.php
 core/modules/jsonapi/src/EventSubscriber/DefaultExceptionSubscriber.php
-core/modules/jsonapi/src/EventSubscriber/ResourceResponseValidator.php
 core/modules/jsonapi/src/EventSubscriber/JsonapiMaintenanceModeSubscriber.php
 core/modules/jsonapi/src/EventSubscriber/ResourceObjectNormalizationCacher.php
 core/modules/jsonapi/src/Hook/JsonapiRequirements.php
@@ -9717,7 +9726,6 @@ core/modules/views/tests/modules/views_test_config/test_views/views.view.test_fi
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_aggregate_count.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_month_date_plugin.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_field_field_attachment_test.yml
-core/modules/views/tests/modules/views_test_config/test_views/views.view.test_row_render_cache_none.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_view_display_template.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_exposed_block.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_pager_some.yml
@@ -9769,7 +9777,6 @@ core/modules/views/tests/modules/views_test_config/test_views/views.view.test_fi
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_http_status_code.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_distinct_click_sorting.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_group_by_count.yml
-core/modules/views/tests/modules/views_test_config/test_views/views.view.test_row_render_cache.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_views_group_by_save.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_exposed_form_pager.yml
 core/modules/views/tests/modules/views_test_config/test_views/views.view.test_entity_type_filter.yml
@@ -9960,6 +9967,7 @@ core/modules/views/tests/src/Kernel/Plugin/RowEntityTest.php
 core/modules/views/tests/src/Kernel/Plugin/QueryTest.php
 core/modules/views/tests/src/Kernel/Plugin/ArgumentValidatorTest.php
 core/modules/views/tests/src/Kernel/Plugin/PluginBaseTest.php
+core/modules/views/tests/src/Kernel/Plugin/ExposedFormLinkDisplayTest.php
 core/modules/views/tests/src/Kernel/Plugin/StyleHtmlListTest.php
 core/modules/views/tests/src/Kernel/Plugin/ViewsBlockTest.php
 core/modules/views/tests/src/Kernel/Plugin/SqlQueryTest.php
@@ -9978,7 +9986,6 @@ core/modules/views/tests/src/Kernel/Plugin/CastedIntFieldJoinTestBase.php
 core/modules/views/tests/src/Kernel/Plugin/StyleMappingTest.php
 core/modules/views/tests/src/Kernel/Plugin/StyleUnformattedTest.php
 core/modules/views/tests/src/Kernel/Plugin/StyleGridResponsiveTest.php
-core/modules/views/tests/src/Kernel/Plugin/RowRenderCacheTest.php
 core/modules/views/tests/src/Kernel/Plugin/JoinTest.php
 core/modules/views/tests/src/Kernel/Plugin/ViewsSqlExceptionTest.php
 core/modules/views/tests/src/Kernel/Plugin/DisplayExtenderTest.php
@@ -11146,6 +11153,7 @@ core/tests/Drupal/KernelTests/Core/Menu/MenuTreeStorageTest.php
 core/tests/Drupal/KernelTests/Core/Menu/MenuLinkTreeTest.php
 core/tests/Drupal/KernelTests/Core/Menu/LocalActionManagerTest.php
 core/tests/Drupal/KernelTests/Core/Menu/MenuLinkDefaultIntegrationTest.php
+core/tests/Drupal/KernelTests/Core/Menu/OverrideMenuLinksConfigActionTest.php
 core/tests/Drupal/KernelTests/Core/HttpKernel/StackKernelIntegrationTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ModuleHandlerDeprecatedHookUnimplementedTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ModuleHandlerTest.php
@@ -11756,7 +11764,6 @@ core/tests/Drupal/FunctionalJavascriptTests/Ajax/AjaxFormCacheTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Ajax/DialogTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Ajax/MessageCommandTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Theme/ClaroTableDragTest.php
-core/tests/Drupal/FunctionalJavascriptTests/Theme/ClaroMenuUiJavascriptTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Theme/OliveroAvoidStorageUsingTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Theme/OliveroMessagesTest.php
 core/tests/Drupal/FunctionalJavascriptTests/Theme/ClaroEntityDisplayTest.php
@@ -13072,6 +13079,7 @@ core/lib/Drupal/Core/Menu/DefaultMenuLinkTreeManipulators.php
 core/lib/Drupal/Core/Menu/MenuTreeStorageInterface.php
 core/lib/Drupal/Core/Menu/Plugin/Validation/Constraint/MenuLinkDepthConstraintValidator.php
 core/lib/Drupal/Core/Menu/Plugin/Validation/Constraint/MenuLinkDepthConstraint.php
+core/lib/Drupal/Core/Menu/Plugin/ConfigAction/OverrideMenuLinks.php
 core/lib/Drupal/Core/Menu/Plugin/Block/LocalActionsBlock.php
 core/lib/Drupal/Core/Menu/Plugin/Block/LocalTasksBlock.php
 core/lib/Drupal/Core/Menu/StaticMenuLinkOverridesInterface.php

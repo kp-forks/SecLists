@@ -485,6 +485,7 @@ tests/integration/Espo/Role/ServiceTest.php
 tests/integration/Espo/Stream/AuditTest.php
 tests/integration/Espo/Stream/ReactionsTest.php
 tests/integration/Espo/Note/AclTest.php
+tests/integration/Espo/Core/Authentication/FailedLoginAttemptsTest.php
 tests/integration/Espo/Core/Authentication/AuthToken/AuthTokenManagerTest.php
 tests/integration/Espo/Core/Job/JobTest.php
 tests/integration/Espo/Core/Acl/AclTest.php
@@ -1472,6 +1473,7 @@ client/src/handlers/select-related/same-account-many.js
 client/src/handlers/note/record-detail-setup.js
 client/src/handlers/currency-record-rate/default-preparator.js
 client/src/handlers/row-action.js
+client/src/handlers/currency-record/menu-action-settings.js
 client/src/handlers/currency-record/record-detail.js
 client/src/handlers/working-time-range.js
 client/src/handlers/select-related.js
@@ -1975,6 +1977,7 @@ client/src/views/dashlets/abstract/base.js
 client/src/views/dashlets/abstract/record-list.js
 client/src/views/dashlets/emails.js
 client/src/views/dashlet.js
+client/src/views/currency-record/list.js
 client/src/views/currency-record/record/panels/rates.js
 client/src/views/o-auth-account/records/panels/connection.js
 client/src/views/main.js
@@ -5300,6 +5303,7 @@ application/Espo/Core/Authentication/AuthToken/EspoManager.php
 application/Espo/Core/Authentication/Hook/Manager.php
 application/Espo/Core/Authentication/Hook/Hooks/IpAddressWhitelist.php
 application/Espo/Core/Authentication/Hook/Hooks/FailedCodeAttemptsLimit.php
+application/Espo/Core/Authentication/Hook/Hooks/UsernameFailedAttemptsLimit.php
 application/Espo/Core/Authentication/Hook/Hooks/FailedAttemptsLimit.php
 application/Espo/Core/Authentication/Hook/OnLogin.php
 application/Espo/Core/Authentication/Hook/OnResult.php
@@ -5331,6 +5335,7 @@ application/Espo/Core/Authentication/Jwt/Util.php
 application/Espo/Core/Authentication/Jwt/Key.php
 application/Espo/Core/Authentication/Util/IpAddressUtil.php
 application/Espo/Core/Authentication/Util/MethodProvider.php
+application/Espo/Core/Authentication/Util/DelayUtil.php
 application/Espo/Core/Authentication/Result.php
 application/Espo/Core/Authentication/Oidc/UserProvider/UsernameValidator.php
 application/Espo/Core/Authentication/Oidc/UserProvider/Sync.php

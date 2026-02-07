@@ -1165,20 +1165,27 @@ tsconfig.base.json
 .dev/rubocop/cop/zammad/forbid_loofah_fragment.rb
 .dev/rubocop/cop/zammad/update_copyright.rb
 .dev/rubocop/cop/zammad/forbid_loofah_document.rb
+.dev/rubocop/cop/zammad/graphql_csrf_skip_verification.rb
 .dev/rubocop/cop/zammad/active_record_reorder.rb
 .dev/rubocop/cop/zammad/forbid_translatable_marker.rb
+.dev/rubocop/cop/zammad/graphql_authorize_disallowed.rb
 .dev/rubocop/cop/zammad/timezone_default.rb
 .dev/rubocop/cop/zammad/prefer_models_all.rb
 .dev/rubocop/cop/zammad/faker_unique.rb
 .dev/rubocop/cop/zammad/exists_date_time_precision.rb
 .dev/rubocop/cop/zammad/no_to_sym_on_string.rb
 .dev/rubocop/cop/zammad/forbid_rand.rb
+.dev/rubocop/cop/zammad/graphql_authorize_requires_permission.rb
 .dev/rubocop/cop/zammad/forbid_def_send.rb
 .dev/rubocop/cop/zammad/migration_scheduler_last_run.rb
 .dev/rubocop/cop/zammad/to_forbid_over_not_to_permit.rb
 .dev/rubocop/cop/zammad/ensures_time_zone_at_spec_top_level.rb
 .dev/rubocop/cop/zammad/exists_reset_column_information.rb
+.dev/rubocop/cop/zammad/graphql_authorized_requires_enabled_setting.rb
 .dev/rubocop/cop/zammad/forbid_default_scope.rb
+.dev/rubocop/cop/zammad/concerns/can_check_gql_operation.rb
+.dev/rubocop/cop/zammad/concerns/can_check_namespace.rb
+.dev/rubocop/cop/zammad/graphql_authorize_allow_public_access.rb
 .dev/rubocop/cop/zammad/detect_translatable_string.rb
 .dev/rubocop/cop/zammad/prefer_negated_if_over_unless.rb
 .dev/rubocop/cop/zammad/forbid_redis_client.rb
@@ -1377,6 +1384,7 @@ db/migrate/20250903092339_http_log_sensitive_data_cleanup.rb
 db/migrate/20240321081409_issue5083_chat_permission.rb
 db/migrate/20190531180304_initialize_knowledge_base.rb
 db/migrate/20190328000000_rename_locale_on_users.rb
+db/migrate/20260119095936_ticket_summary_ai_stored_result_cleanup.rb
 db/migrate/20241106073757_taskbar_add_uniqueness_index.rb
 db/migrate/20171206000001_setting_default_locale2.rb
 db/migrate/20171024000001_monit_integration.rb
@@ -3609,6 +3617,7 @@ spec/db/migrate/issue_3810_custom_date_attribute_no_default_spec.rb
 spec/db/migrate/smime_meta_information_table_spec.rb
 spec/spec_helper.rb
 spec/services/service/calendar/ics_file/parse_spec.rb
+spec/services/service/check_feature_enabled_spec.rb
 spec/services/service/beta_ui/send_feedback_spec.rb
 spec/services/service/search_spec.rb
 spec/services/service/user/out_of_office_spec.rb
@@ -3694,6 +3703,7 @@ spec/services/service/ai/agent/run_spec.rb
 spec/services/service/ai/analytics/upsert_usage_spec.rb
 spec/services/service/ai/analytics/generate_report/errors_spec.rb
 spec/services/service/ai/analytics/generate_report/with_usages_spec.rb
+spec/services/service/ai/analytics/generate_report/ordering_examples.rb
 spec/services/service/ai/ticket/pre_process_article_content_spec.rb
 spec/services/service/execute_locked_block_spec.rb
 spec/services/service/external_data_source/preview_spec.rb
@@ -4439,14 +4449,19 @@ spec/rubocop/cop/zammad/ensures_time_zone_at_spec_top_level_spec.rb
 spec/rubocop/cop/zammad/prefer_models_all_spec.rb
 spec/rubocop/cop/zammad/enforce_in_modal_spec.rb
 spec/rubocop/cop/zammad/faker_unique_spec.rb
+spec/rubocop/cop/zammad/graphql_authorized_requires_enabled_setting_spec.rb
 spec/rubocop/cop/zammad/forbid_loofah_document_spec.rb
 spec/rubocop/cop/zammad/trigger_from_commit_hooks_spec.rb
+spec/rubocop/cop/zammad/graphql_authorize_requires_permission_spec.rb
 spec/rubocop/cop/zammad/forbid_redis_client_spec.rb
 spec/rubocop/cop/zammad/forbid_def_send_spec.rb
 spec/rubocop/cop/zammad/to_forbid_over_not_to_permit_spec.rb
+spec/rubocop/cop/zammad/graphql_authorize_disallowed_spec.rb
+spec/rubocop/cop/zammad/graphql_authorize_allow_public_access_spec.rb
 spec/rubocop/cop/zammad/forbid_default_scope_spec.rb
 spec/rubocop/cop/zammad/active_record_reorder_spec.rb
 spec/rubocop/cop/zammad/forbid_loofah_fragment_spec.rb
+spec/rubocop/cop/zammad/graphql_csrf_skip_verification_spec.rb
 spec/rubocop/cop/zammad/migration_scheduler_last_run_spec.rb
 spec/policies/template_policy/scope_spec.rb
 spec/policies/taskbar_policy/scope_spec.rb
@@ -4494,7 +4509,6 @@ spec/policies/template_policy_spec.rb
 spec/policies/http_log_policy_spec.rb
 spec/policies/data_privacy_task_policy_spec.rb
 spec/policies/role_policy_spec.rb
-spec/policies/version_policy_spec.rb
 spec/policies/signature_policy_spec.rb
 spec/policies/controllers/links_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/feeds_controller_policy_spec.rb
@@ -5036,6 +5050,7 @@ doc/developer_manual/cookbook/how-to-debug-zammad-processes.md
 doc/developer_manual/cookbook/how-to-test-with-vitest-and-cypress.md
 doc/developer_manual/index.md
 doc/developer_manual/standards/how-to-rebuild-the-chat.md
+doc/developer_manual/standards/how-to-authorize-graphql.md
 doc/developer_manual/standards/how-to-use-forms.md
 doc/developer_manual/standards/how-to-add-an-svg-icon.md
 doc/developer_manual/standards/how-to-design-tests.md
@@ -5449,6 +5464,7 @@ app/frontend/shared/composables/useEmailFileUrls.ts
 app/frontend/shared/composables/useAvatarIndicator.ts
 app/frontend/shared/utils/__tests__/hasPermission.spec.ts
 app/frontend/shared/utils/__tests__/formatters.spec.ts
+app/frontend/shared/utils/__tests__/icons.spec.ts
 app/frontend/shared/utils/__tests__/htmlCleanup.spec.ts
 app/frontend/shared/utils/__tests__/helpers.spec.ts
 app/frontend/shared/utils/__tests__/datetime.spec.ts
@@ -5680,6 +5696,7 @@ app/frontend/shared/components/Form/fields/FieldSecurity/types.ts
 app/frontend/shared/components/Form/fields/FieldAutocomplete/types.ts
 app/frontend/shared/components/Form/fields/FieldTextarea/__tests__/FieldTextarea.spec.ts
 app/frontend/shared/components/Form/fields/FieldTextarea/index.ts
+app/frontend/shared/components/Form/fields/FieldEditor/extensions/TableKit.ts
 app/frontend/shared/components/Form/fields/FieldEditor/extensions/Styles.ts
 app/frontend/shared/components/Form/fields/FieldEditor/extensions/Indent.ts
 app/frontend/shared/components/Form/fields/FieldEditor/extensions/CharacterCount/PlainCharacterCount.ts
@@ -5692,6 +5709,7 @@ app/frontend/shared/components/Form/fields/FieldEditor/extensions/PasteHandler.t
 app/frontend/shared/components/Form/fields/FieldEditor/extensions/TextModuleSuggestion.ts
 app/frontend/shared/components/Form/fields/FieldEditor/extensions/AiAssistantTextTools.ts
 app/frontend/shared/components/Form/fields/FieldEditor/extensions/KnowledgeBaseSuggestion.ts
+app/frontend/shared/components/Form/fields/FieldEditor/extensions/TableKit/Table.ts
 app/frontend/shared/components/Form/fields/FieldEditor/extensions/UserMention.ts
 app/frontend/shared/components/Form/fields/FieldEditor/extensions/Signature.ts
 app/frontend/shared/components/Form/fields/FieldEditor/graphql/queries/mention/mentionSuggestions.mocks.ts
@@ -5715,7 +5733,9 @@ app/frontend/shared/components/Form/fields/FieldEditor/FieldEditorActionMenu/typ
 app/frontend/shared/components/Form/fields/FieldEditor/index.ts
 app/frontend/shared/components/Form/fields/FieldEditor/useInlineMode.ts
 app/frontend/shared/components/Form/fields/FieldEditor/utils.ts
-app/frontend/shared/components/Form/fields/FieldEditor/features/table/EditorTableMenu.vue
+app/frontend/shared/components/Form/fields/FieldEditor/features/table/TableMenuPopover.vue
+app/frontend/shared/components/Form/fields/FieldEditor/features/table/useTableMenu.ts
+app/frontend/shared/components/Form/fields/FieldEditor/features/table/TableMenuTrigger.vue
 app/frontend/shared/components/Form/fields/FieldEditor/features/ai-assistant-text-tools/AiAssistantLoadingBanner/initializeAiAssistantTextToolsLoadingBannerClasses.ts
 app/frontend/shared/components/Form/fields/FieldEditor/features/ai-assistant-text-tools/AiAssistantLoadingBanner/AiAssistantLoadingBanner.vue
 app/frontend/shared/components/Form/fields/FieldEditor/features/ai-assistant-text-tools/AiAssistantTextTools/initializeAiAssistantTextToolsClasses.ts
@@ -6705,6 +6725,7 @@ app/frontend/apps/mobile/initializer/assets/reply-alt.svg
 app/frontend/apps/mobile/initializer/assets/text-style-italic.svg
 app/frontend/apps/mobile/initializer/assets/macros.svg
 app/frontend/apps/mobile/initializer/assets/inactive-user.svg
+app/frontend/apps/mobile/initializer/assets/three-dots-vertical.svg
 app/frontend/apps/mobile/initializer/assets/insert-column-before.svg
 app/frontend/apps/mobile/initializer/assets/library.svg
 app/frontend/apps/mobile/initializer/assets/text-style-h.svg
@@ -8692,9 +8713,8 @@ app/graphql/gql/resolvers/lookup_resolver.rb
 app/graphql/gql/concerns/has_nested_graphql_name.rb
 app/graphql/gql/concerns/handles_authorization.rb
 app/graphql/gql/concerns/handles_possible_objects.rb
-app/graphql/gql/concerns/ensures_checklist_feature_active.rb
+app/graphql/gql/concerns/handles_setting_check.rb
 app/graphql/gql/concerns/handles_overview_caching.rb
-app/graphql/gql/concerns/requires_ticket_agent_permission.rb
 app/graphql/gql/concerns/handles_throttling.rb
 app/graphql/gql/concerns/handles_password_revalidation_token.rb
 app/graphql/gql/types/link_type.rb
@@ -10377,7 +10397,6 @@ app/services/service/template/interpolation/interpolator/ai_agent.rb
 app/services/service/template/interpolation/interpolator/webhook.rb
 app/services/service/template/interpolation/interpolator.rb
 app/services/service/concerns/handles_core_workflow.rb
-app/services/service/concerns/handles_setting.rb
 app/services/service/base.rb
 app/services/service/ai/vectordb/item/create.rb
 app/services/service/ai/vectordb/item/upsert.rb
@@ -10456,7 +10475,6 @@ app/policies/ticket_policy/full_scope.rb
 app/policies/ticket_policy/read_scope.rb
 app/policies/ticket_policy/change_scope.rb
 app/policies/setting_policy.rb
-app/policies/version_policy.rb
 app/policies/ticket/time_accounting_policy.rb
 app/policies/ticket/shared_draft_zoom_policy.rb
 app/policies/ticket/shared_draft_start_policy/scope.rb

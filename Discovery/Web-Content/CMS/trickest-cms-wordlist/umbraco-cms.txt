@@ -558,6 +558,7 @@ tests/Umbraco.Tests.Integration/ManagementApi/RelationType/Item/ItemRelationType
 tests/Umbraco.Tests.Integration/ManagementApi/RelationType/ByKeyRelationTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/MediaType/UpdateMediaTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/MediaType/ByKeyMediaTypeControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/MediaType/AllowedParentsMediaTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/MediaType/CreateMediaTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/MediaType/Folder/UpdateMediaTypeFolderControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/MediaType/Folder/ByKeyMediaTypeFolderControllerTests.cs
@@ -678,6 +679,7 @@ tests/Umbraco.Tests.Integration/ManagementApi/DocumentType/ByKeyDocumentTypeCont
 tests/Umbraco.Tests.Integration/ManagementApi/DocumentType/Item/ItemDocumentTypeItemControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/DocumentType/UpdateDocumentTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/DocumentType/CreateDocumentTypeControllerTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/DocumentType/AllowedParentsDocumentTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/DocumentType/DeleteDocumentTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Services/UserStartNodeEntitiesServiceMediaTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Services/UserStartNodeEntitiesServiceTests.SiblingUserAccessEntities.cs
@@ -740,6 +742,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/PublicAccessRepositoryTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/CacheInstructionRepositoryTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/ContentTypeRepositoryTest.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/DataTypeRepositoryTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/ScriptRepositoryTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/UserGroupRepositoryTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/DocumentRepositoryTest.cs
@@ -1555,9 +1558,11 @@ templates/UmbracoDockerCompose/docker-compose.yml
 templates/UmbracoDockerCompose/.env
 Directory.Packages.props
 Directory.Build.props
+.mcp.json
 nuget.config
 LICENSE.md
 umbraco.sln.DotSettings
+MCP.md
 .editorconfig
 .artifactignore
 tools/Umbraco.JsonSchema/Umbraco.JsonSchema.csproj
@@ -12964,6 +12969,7 @@ src/Umbraco.Cms.Api.Management/Controllers/MediaType/Item/FolderMediaTypeItemCon
 src/Umbraco.Cms.Api.Management/Controllers/MediaType/Item/AllowedMediaTypeItemController.cs
 src/Umbraco.Cms.Api.Management/Controllers/MediaType/UpdateMediaTypeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/MediaType/CopyMediaTypeController.cs
+src/Umbraco.Cms.Api.Management/Controllers/MediaType/AllowedParentsMediaTypeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/MediaType/CreateMediaTypeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/MediaType/CompositionReferenceMediaTypeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/MediaType/AvailableCompositionMediaTypeController.cs
@@ -13225,6 +13231,7 @@ src/Umbraco.Cms.Api.Management/Controllers/DocumentType/Tree/SiblingsDocumentTyp
 src/Umbraco.Cms.Api.Management/Controllers/DocumentType/Tree/ChildrenDocumentTypeTreeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/DocumentType/ByKeyDocumentTypeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/DocumentType/CompositionReferenceDocumentTypeController.cs
+src/Umbraco.Cms.Api.Management/Controllers/DocumentType/AllowedParentsDocumentTypeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/DocumentType/AvailableCompositionDocumentTypeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/DocumentType/CreateDocumentTypeController.cs
 src/Umbraco.Cms.Api.Management/Controllers/DocumentType/ImportNewDocumentTypeController.cs
@@ -13568,6 +13575,7 @@ src/Umbraco.Cms.Api.Management/ViewModels/MediaType/CreateMediaTypeRequestModel.
 src/Umbraco.Cms.Api.Management/ViewModels/MediaType/MediaTypeComposition.cs
 src/Umbraco.Cms.Api.Management/ViewModels/MediaType/AllowedMediaType.cs
 src/Umbraco.Cms.Api.Management/ViewModels/MediaType/MoveMediaTypeRequestModel.cs
+src/Umbraco.Cms.Api.Management/ViewModels/MediaType/MediaTypeAllowedParentsResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/MediaType/MediaTypePropertyTypeResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/MediaType/CopyMediaTypeRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/MediaType/UpdateMediaTypePropertyTypeRequestModel.cs
@@ -13757,6 +13765,7 @@ src/Umbraco.Cms.Api.Management/ViewModels/DocumentType/CopyDocumentTypeRequestMo
 src/Umbraco.Cms.Api.Management/ViewModels/DocumentType/UpdateDocumentTypePropertyTypeContainerRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/DocumentType/DocumentTypeConfigurationResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/DocumentType/DocumentTypeComposition.cs
+src/Umbraco.Cms.Api.Management/ViewModels/DocumentType/DocumentTypeAllowedParentsResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/DocumentType/UpdateDocumentTypeRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/DocumentType/DocumentTypePropertyTypeContainerResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/DocumentType/AvailableDocumentTypeCompositionResponseModel.cs
@@ -15429,4 +15438,6 @@ build/nightly-E2E-build-template.yml
 build/nightly-E2E-run-tests-template.yml
 build/nightly-E2E-test-pipelines.yml
 build/azure-pipelines.yml
+.claude/settings.json
 umbraco.sln
+.env.example
