@@ -125,6 +125,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /calendar/*rss
 /calendar/*xml
 /challenge.html
+/collections/channels
 /comment/*
 /comment/reply/*
 /comments
@@ -162,6 +163,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 /layout/
 /leads/*/jsplayer_show_lead_form.html
 /leads/*/show_form.html
+/likes
 /login
 /lookup?
 /mediaapi/
@@ -225,6 +227,7 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 ?*&ls=
 ?*ListingID=
 ?*ProfileID=
+?*_gl=
 ?*campaignId=
 ?*campaign_id=
 ?*cgi-bin=
@@ -634,6 +637,7 @@ answers
 ap/signin
 api
 api/
+api/*/likes
 api/?
 api/jobPostings/jobs
 api/maps/
@@ -1468,9 +1472,9 @@ hpc/*/supported-applications.aspx?
 hpm
 hpmob
 http://blog.google/robots.txt
-http://calendar.google.com/robots.txt
-http://maps.app.goo.gl/robots.txt
-http://npr.org/robots.txt
+http://dropbox.com/robots.txt
+http://slideshare.net/robots.txt
+http://wa.me/robots.txt
 hub?category=
 hz/contact-us/ajax/initiate-trusted-contact
 hz/help/contact/*/message/$
@@ -1704,8 +1708,10 @@ mac/help.mspx?
 macros
 mactopia/help.mspx?
 mail/$
+mail/u/0/$
 mailman
 main
+manage/videos
 manage_playlist
 map_tile.php
 maphp?
@@ -2526,8 +2532,7 @@ staticmap?
 station/idst.
 stations/force/force_localization.php?
 stats?gid=
-stock/clip
-stock/search
+store
 store/account
 store/addtocart
 store/apps/collection/p3_details_
@@ -3146,7 +3151,7 @@ wiki/Wikipedia_Diskussion:Checkuser
 wiki/Wikipedia_Diskussion:Spam-Blacklist-Log
 wiki/Wikipedia_talk%3AAbuse_reports
 wiki/Wikipedia_talk%3AAbuse_response
-wiki/Wikipedia_talk%3AAdministrator_electionshttp://goo.gl/robots.txt
+wiki/Wikipedia_talk%3AAdministrator_electionshttp://gstatic.com/robots.txt
 wiki/Wikipedia_talk%3AAdministrator_recall
 wiki/Wikipedia_talk%3AAdministrator_review
 wiki/Wikipedia_talk%3AAdministrators%27_noticeboard
