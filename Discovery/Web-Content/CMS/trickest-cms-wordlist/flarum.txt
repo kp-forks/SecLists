@@ -1426,12 +1426,15 @@ framework/core/tests/unit/Foundation/ConfigTest.php
 framework/core/tests/unit/Locale/TranslatorTest.php
 framework/core/tests/unit/Install/BaseUrlTest.php
 framework/core/tests/unit/Install/Prerequisite/WritablePathsTest.php
+framework/core/tests/unit/Install/Steps/PublishAssetsTest.php
 framework/core/tests/unit/User/AvatarUploaderTest.php
 framework/core/tests/unit/User/AbstractPolicyTest.php
 framework/core/tests/unit/Settings/MemoryCacheSettingsRepositoryTest.php
 framework/core/tests/unit/Settings/DatabaseSettingsRepositoryTest.php
 framework/core/tests/unit/Http/CookieFactoryTest.php
 framework/core/tests/unit/Http/RouteCollectionTest.php
+framework/core/tests/unit/Mail/MailerTest.php
+framework/core/tests/unit/Notification/NotificationMailerTest.php
 framework/core/tests/unit/.gitkeep
 framework/core/tests/unit/Queue/DatabaseWorkerArgsTest.php
 framework/core/tests/phpunit.integration.xml
@@ -2017,6 +2020,7 @@ framework/core/src/Mail/SmtpDriver.php
 framework/core/src/Mail/Job/SendInformationalEmailJob.php
 framework/core/src/Mail/MutateEmail.php
 framework/core/src/Mail/ValidatesMailSettings.php
+framework/core/src/Mail/Event/EmailSendFailed.php
 framework/core/src/Mail/MailgunDriver.php
 framework/core/src/Mail/Mailer.php
 framework/core/src/Mail/MailServiceProvider.php
@@ -2515,6 +2519,7 @@ framework/core/js/dist-typings/admin/components/FormSection.d.ts
 framework/core/js/dist-typings/admin/components/ExtensionPage.d.ts
 framework/core/js/dist-typings/admin/components/LoadingModal.d.ts
 framework/core/js/dist-typings/admin/components/ExtensionPermissionGrid.d.ts
+framework/core/js/dist-typings/admin/components/FontAwesomePreviewModal.d.ts
 framework/core/js/dist-typings/admin/components/EditCustomFooterModal.d.ts
 framework/core/js/dist-typings/admin/components/HeaderPrimary.d.ts
 framework/core/js/dist-typings/admin/components/AdminHeader.d.ts
@@ -2637,6 +2642,8 @@ framework/core/js/dist/common/components/EditUserModal.js.map
 framework/core/js/dist/common/components/EditUserModal.js
 framework/core/js/dist/common/components/SearchModal.js.map
 framework/core/js/dist/common/components/SearchModal.js
+framework/core/js/dist/admin/components/FontAwesomePreviewModal.js
+framework/core/js/dist/admin/components/FontAwesomePreviewModal.js.map
 framework/core/js/dist/forum.js
 framework/core/js/dist/admin.js.LICENSE.txt
 framework/core/js/dist/forum/components/PostStream.js
@@ -2840,6 +2847,7 @@ framework/core/js/src/admin/components/ReadmeModal.tsx
 framework/core/js/src/admin/components/ExtensionBisect.tsx
 framework/core/js/src/admin/components/EditCustomCssModal.tsx
 framework/core/js/src/admin/components/BasicsPage.tsx
+framework/core/js/src/admin/components/FontAwesomePreviewModal.tsx
 framework/core/js/src/admin/components/ExtensionLinkButton.js
 framework/core/js/src/admin/components/StatusWidget.js
 framework/core/js/src/admin/components/FormSectionGroup.tsx

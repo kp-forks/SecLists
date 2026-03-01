@@ -6475,6 +6475,9 @@ migrate/20180518000001_issue2029_sipgate_integration_enable.rb
 db/migrate/20230825150332_issue_4657_time_accounting_selector.rb
 migrate/20230825150332_issue_4657_time_accounting_selector.rb
 20230825150332_issue_4657_time_accounting_selector.rb
+db/migrate/20260225155500_pr5952_fix_typos.rb
+migrate/20260225155500_pr5952_fix_typos.rb
+20260225155500_pr5952_fix_typos.rb
 db/migrate/20230523082822_two_factor_security_key_setup.rb
 migrate/20230523082822_two_factor_security_key_setup.rb
 20230523082822_two_factor_security_key_setup.rb
@@ -22199,6 +22202,11 @@ models/channel/driver/microsoft_graph_outbound_spec.rb
 channel/driver/microsoft_graph_outbound_spec.rb
 driver/microsoft_graph_outbound_spec.rb
 microsoft_graph_outbound_spec.rb
+spec/models/channel/driver/using_bcc_examples.rb
+models/channel/driver/using_bcc_examples.rb
+channel/driver/using_bcc_examples.rb
+driver/using_bcc_examples.rb
+using_bcc_examples.rb
 spec/models/channel/driver/imap_spec.rb
 models/channel/driver/imap_spec.rb
 channel/driver/imap_spec.rb
@@ -26045,6 +26053,12 @@ shared/form/features/formLocaleDir.ts
 form/features/formLocaleDir.ts
 features/formLocaleDir.ts
 formLocaleDir.ts
+app/frontend/shared/form/features/addMissingEntityObjectOption.ts
+frontend/shared/form/features/addMissingEntityObjectOption.ts
+shared/form/features/addMissingEntityObjectOption.ts
+form/features/addMissingEntityObjectOption.ts
+features/addMissingEntityObjectOption.ts
+addMissingEntityObjectOption.ts
 app/frontend/shared/form/features/addSubmitEvent.ts
 frontend/shared/form/features/addSubmitEvent.ts
 shared/form/features/addSubmitEvent.ts
@@ -26098,6 +26112,12 @@ frontend/shared/form/useFormBlock.ts
 shared/form/useFormBlock.ts
 form/useFormBlock.ts
 useFormBlock.ts
+app/frontend/shared/form/utils/entity.ts
+frontend/shared/form/utils/entity.ts
+shared/form/utils/entity.ts
+form/utils/entity.ts
+utils/entity.ts
+entity.ts
 app/frontend/shared/form/utils/extendSchemaDefinition.ts
 frontend/shared/form/utils/extendSchemaDefinition.ts
 shared/form/utils/extendSchemaDefinition.ts

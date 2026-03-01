@@ -22,6 +22,7 @@ e2e/tests/admin/posts/posts.test.ts
 e2e/tests/admin/posts/post-preview.test.ts
 e2e/tests/admin/posts/custom-views.test.ts
 e2e/tests/admin/settings/settings-search.test.ts
+e2e/tests/admin/settings/staff.test.ts
 e2e/tests/admin/settings/design.test.ts
 e2e/tests/admin/settings/member-welcome-emails.test.ts
 e2e/tests/admin/settings/publication-language.test.ts
@@ -95,6 +96,7 @@ e2e/helpers/pages/admin/whats-new/index.ts
 e2e/helpers/pages/admin/whats-new/whats-new-modal.ts
 e2e/helpers/pages/admin/whats-new/whats-new-menu.ts
 e2e/helpers/pages/admin/whats-new/whats-new-banner.ts
+e2e/helpers/pages/admin/settings/staff-details-page.ts
 e2e/helpers/pages/admin/settings/settings-page.ts
 e2e/helpers/pages/admin/settings/index.ts
 e2e/helpers/pages/admin/settings/sections/labs-section.ts
@@ -142,14 +144,10 @@ e2e/helpers/services/email/mail-pit.ts
 e2e/helpers/environment/service-managers/index.ts
 e2e/helpers/environment/service-managers/mysql-manager.ts
 e2e/helpers/environment/service-managers/ghost-manager.ts
-e2e/helpers/environment/service-managers/dev-ghost-manager.ts
-e2e/helpers/environment/service-managers/tinybird-manager.ts
 e2e/helpers/environment/index.ts
 e2e/helpers/environment/environment-factory.ts
-e2e/helpers/environment/docker-compose.ts
 e2e/helpers/environment/constants.ts
 e2e/helpers/environment/service-availability.ts
-e2e/helpers/environment/dev-environment-manager.ts
 e2e/helpers/environment/environment-manager.ts
 e2e/helpers/playwright/index.ts
 e2e/helpers/playwright/fixture.ts
@@ -164,12 +162,21 @@ e2e/helpers/utils/app-config.ts
 e2e/Dockerfile.e2e
 e2e/.claude/E2E_TEST_WRITING_GUIDE.md
 e2e/.env.example
-e2e/compose.yml
 e2e/tsconfig.json
+e2e/scripts/dump-e2e-docker-logs.sh
+e2e/scripts/infra-down.sh
+e2e/scripts/load-playwright-container-env.sh
+e2e/scripts/prepare-ci-e2e-build-mode.sh
+e2e/scripts/run-playwright-host.sh
+e2e/scripts/infra-up.sh
+e2e/scripts/run-playwright-container.sh
+e2e/scripts/sync-tinybird-state.mjs
+e2e/scripts/prepare-ci-e2e-job.sh
 e2e/eslint.config.js
 e2e/package.json
 docker/development.entrypoint.sh
 docker/dev-gateway/README.md
+docker/dev-gateway/Caddyfile.build
 docker/dev-gateway/Caddyfile
 docker/dev-gateway/Dockerfile
 docker/prometheus/prometheus.yml
@@ -1048,7 +1055,6 @@ ghost/core/core/server/services/members/members-api/services/next-payment-calcul
 ghost/core/core/server/services/members/members-api/services/member-bread-service.js
 ghost/core/core/server/services/members/members-api/utils/normalize-email.js
 ghost/core/core/server/services/members/members-api/utils/has-active-offer.js
-ghost/core/core/server/services/members/members-api/utils/add-calendar-months.js
 ghost/core/core/server/services/members/members-api/repositories/member-repository.js
 ghost/core/core/server/services/members/members-api/repositories/product-repository.js
 ghost/core/core/server/services/members/members-api/repositories/event-repository.js
@@ -1452,6 +1458,7 @@ ghost/core/core/server/models/settings.js
 ghost/core/core/server/models/member-status-event.js
 ghost/core/core/server/models/webhook.js
 ghost/core/core/server/notify.js
+ghost/core/core/server/web/members/middleware/cors.js
 ghost/core/core/server/web/members/index.js
 ghost/core/core/server/web/members/app.js
 ghost/core/core/server/web/well-known.js
@@ -1766,6 +1773,7 @@ ghost/core/test/unit/frontend/services/data/checks.test.js
 ghost/core/test/unit/frontend/services/data/fetch-data.test.js
 ghost/core/test/unit/frontend/services/asset-hash.test.js
 ghost/core/test/unit/frontend/services/assets-minification/minifier.test.js
+ghost/core/test/unit/frontend/services/assets-minification/assets-minification-base.test.js
 ghost/core/test/unit/frontend/services/assets-minification/fixtures/basic-cards/js/gallery.js
 ghost/core/test/unit/frontend/services/assets-minification/fixtures/basic-cards/js/empty.js
 ghost/core/test/unit/frontend/services/card-assets.test.js
@@ -2045,7 +2053,6 @@ ghost/core/test/unit/server/services/members/members-api/services/payments-servi
 ghost/core/test/unit/server/services/members/members-api/services/members-bread-service.test.js
 ghost/core/test/unit/server/services/members/members-api/utils/has-active-offer.test.js
 ghost/core/test/unit/server/services/members/members-api/utils/normalize-email.test.js
-ghost/core/test/unit/server/services/members/members-api/utils/add-calendar-months.test.js
 ghost/core/test/unit/server/services/members/members-api/repositories/product-repository.test.js
 ghost/core/test/unit/server/services/members/members-api/repositories/member-repository.test.js
 ghost/core/test/unit/server/services/members/members-api/repositories/event-repository.test.js
@@ -2249,6 +2256,7 @@ ghost/core/test/unit/server/models/member-paid-subscription-event.test.js
 ghost/core/test/unit/server/models/post.test.js
 ghost/core/test/unit/server/models/member-created-event.test.js
 ghost/core/test/unit/server/models/member-feedback.test.js
+ghost/core/test/unit/server/web/members/middleware/cors.test.js
 ghost/core/test/unit/server/web/admin/controller.test.js
 ghost/core/test/unit/server/web/admin/middleware.test.js
 ghost/core/test/unit/server/web/shared/middleware/max-limit-cap.test.js
@@ -2564,6 +2572,7 @@ ghost/core/test/utils/fixtures/default-settings.json
 ghost/core/test/utils/fixtures/data-generator.js
 ghost/core/test/utils/assertions.js
 ghost/core/test/utils/url-utils.js
+ghost/core/test/utils/logging-utils.js
 ghost/core/test/utils/index.js
 ghost/core/test/utils/db-utils.js
 ghost/core/test/utils/e2e-utils.js
@@ -2790,6 +2799,7 @@ ghost/core/test/e2e-api/members-comments/comments.test.js
 ghost/core/.c8rc.e2e.json
 ghost/core/monobundle.js
 ghost/core/index.js
+ghost/core/nodemon.json
 ghost/core/content/data/README.md
 ghost/core/content/images/README.md
 ghost/core/content/settings/README.md
@@ -4446,7 +4456,6 @@ ghost/admin/package.json
 .claude/skills/add-admin-api-endpoint/permissions.md
 .claude/skills/add-admin-api-endpoint/reference.md
 .claude/commands/commit.md
-Dockerfile
 nx.json
 .env.example
 apps/signup-form/postcss.config.cjs
@@ -5233,6 +5242,7 @@ apps/admin-x-framework/test/unit/hooks/use-active-visitors.test.ts
 apps/admin-x-framework/test/unit/hooks/use-tinybird-query.test.ts
 apps/admin-x-framework/test/unit/hooks/use-filterable-api.test.ts
 apps/admin-x-framework/test/unit/hooks/use-permissions.test.ts
+apps/admin-x-framework/test/unit/hooks/use-koenig-file-upload.test.ts
 apps/admin-x-framework/test/unit/utils/helpers.test.ts
 apps/admin-x-framework/test/unit/utils/source-utils.test.ts
 apps/admin-x-framework/test/unit/utils/stats-config.test.ts
@@ -5259,6 +5269,7 @@ apps/admin-x-framework/src/providers/routing-provider.tsx
 apps/admin-x-framework/src/hooks/use-active-visitors.ts
 apps/admin-x-framework/src/hooks/use-handle-error.ts
 apps/admin-x-framework/src/hooks/use-tinybird-query.ts
+apps/admin-x-framework/src/hooks/use-koenig-file-upload.ts
 apps/admin-x-framework/src/hooks/use-filterable-api.ts
 apps/admin-x-framework/src/hooks/use-permissions.ts
 apps/admin-x-framework/src/hooks/use-form.ts
@@ -5378,6 +5389,7 @@ apps/admin/src/whats-new/components/changelog-entry.tsx
 apps/admin/src/whats-new/components/whats-new-banner.tsx
 apps/admin/src/whats-new/components/whats-new-dialog.tsx
 apps/admin/src/settings/settings.tsx
+apps/admin/src/my-profile-redirect.tsx
 apps/admin/src/main.tsx
 apps/admin/src/routes.tsx
 apps/admin/src/ember-bridge/ember-root.tsx
@@ -6152,4 +6164,5 @@ apps/comments-ui/tsconfig.json
 apps/comments-ui/package.json
 apps/comments-ui/.env
 yarn.lock
+.codex/environments/environment.toml
 package.json
