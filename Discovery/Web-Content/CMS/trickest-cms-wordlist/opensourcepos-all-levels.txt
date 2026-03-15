@@ -5,6 +5,9 @@ tests/Models/Reports/Summary_discounts_test.php
 Models/Reports/Summary_discounts_test.php
 Reports/Summary_discounts_test.php
 Summary_discounts_test.php
+tests/Models/Item_test.php
+Models/Item_test.php
+Item_test.php
 tests/Models/EmployeeTest.php
 Models/EmployeeTest.php
 EmployeeTest.php
@@ -5480,6 +5483,10 @@ app/Views/partial/dinner_tables.php
 Views/partial/dinner_tables.php
 partial/dinner_tables.php
 dinner_tables.php
+app/Views/partial/table_filter_persistence.php
+Views/partial/table_filter_persistence.php
+partial/table_filter_persistence.php
+table_filter_persistence.php
 app/Views/partial/visibility_js.php
 Views/partial/visibility_js.php
 partial/visibility_js.php

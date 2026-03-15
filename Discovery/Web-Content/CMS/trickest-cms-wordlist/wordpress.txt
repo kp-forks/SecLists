@@ -1436,6 +1436,7 @@ wp-admin/images/freedom-2.svg
 wp-admin/images/freedom-4.svg
 wp-admin/images/privacy.svg
 wp-admin/images/contribute-code.svg
+wp-admin/images/wordpress-logo-gray.svg
 wp-admin/images/freedom-1.svg
 wp-admin/images/wordpress-logo.svg
 wp-admin/images/contribute-main.svg
@@ -1853,6 +1854,7 @@ wp-includes/images/media/default.svg
 wp-includes/images/media/interactive.svg
 wp-includes/images/media/text.svg
 wp-includes/images/media/archive.svg
+wp-includes/class-wp-connector-registry.php
 wp-includes/class-wp-theme.php
 wp-includes/class-wp-block-list.php
 wp-includes/class-wp-block-pattern-categories-registry.php
@@ -2135,6 +2137,8 @@ wp-includes/php-ai-client/src/Providers/Models/DTO/SupportedOption.php
 wp-includes/php-ai-client/src/Providers/Models/DTO/ModelConfig.php
 wp-includes/php-ai-client/src/Providers/Models/DTO/ModelMetadata.php
 wp-includes/php-ai-client/src/Providers/Models/DTO/ModelRequirements.php
+wp-includes/php-ai-client/src/Providers/Models/VideoGeneration/Contracts/VideoGenerationOperationModelInterface.php
+wp-includes/php-ai-client/src/Providers/Models/VideoGeneration/Contracts/VideoGenerationModelInterface.php
 wp-includes/php-ai-client/src/Providers/Models/TextToSpeechConversion/Contracts/TextToSpeechConversionModelInterface.php
 wp-includes/php-ai-client/src/Providers/Models/TextToSpeechConversion/Contracts/TextToSpeechConversionOperationModelInterface.php
 wp-includes/php-ai-client/src/Providers/Models/SpeechGeneration/Contracts/SpeechGenerationOperationModelInterface.php
@@ -2719,6 +2723,7 @@ wp-includes/blocks/rss.php
 wp-includes/blocks/term-template/block.json
 wp-includes/blocks/comment-date.php
 wp-includes/blocks/heading.php
+wp-includes/blocks/details.php
 wp-includes/blocks/table/block.json
 wp-includes/blocks/accordion-item.php
 wp-includes/blocks/post-excerpt.php

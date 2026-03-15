@@ -1,6 +1,7 @@
 INSTALL.md
 tests/.htaccess
 tests/Models/Reports/Summary_discounts_test.php
+tests/Models/Item_test.php
 tests/Models/EmployeeTest.php
 tests/README.md
 tests/Controllers/HomeTest.php
@@ -1424,6 +1425,7 @@ app/Views/partial/tax_categories.php
 app/Views/partial/tax_jurisdictions.php
 app/Views/partial/header.php
 app/Views/partial/dinner_tables.php
+app/Views/partial/table_filter_persistence.php
 app/Views/partial/visibility_js.php
 app/Views/suppliers/form.php
 app/Views/configs/system_config.php

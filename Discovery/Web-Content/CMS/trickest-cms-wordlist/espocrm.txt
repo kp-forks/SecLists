@@ -483,6 +483,7 @@ tests/integration/Core/ApiClient.php
 tests/integration/Core/BaseTestCase.php
 tests/integration/Core/DataLoader.php
 tests/integration/Espo/Role/ServiceTest.php
+tests/integration/Espo/Stream/RecordTest.php
 tests/integration/Espo/Stream/AuditTest.php
 tests/integration/Espo/Stream/ReactionsTest.php
 tests/integration/Espo/Note/AclTest.php
@@ -929,6 +930,7 @@ client/modules/crm/res/templates/campaign/unsubscribe.tpl
 client/modules/crm/res/templates/campaign/modals/mail-merge-pdf.tpl
 client/modules/crm/src/handlers/case/detail-actions.js
 client/modules/crm/src/handlers/event/reminders-handler.js
+client/modules/crm/src/handlers/meeting/external-service.js
 client/modules/crm/src/handlers/knowledge-base-article/send-in-email.js
 client/modules/crm/src/handlers/knowledge-base-article/move.js
 client/modules/crm/src/handlers/opportunity/defaults-preparator.js
@@ -1035,6 +1037,7 @@ client/modules/crm/src/views/meeting/record/detail.js
 client/modules/crm/src/views/meeting/record/panels/attendees.js
 client/modules/crm/src/views/meeting/record/panels/scheduler.js
 client/modules/crm/src/views/meeting/fields/users.js
+client/modules/crm/src/views/meeting/fields/external-service.js
 client/modules/crm/src/views/meeting/fields/date-end.js
 client/modules/crm/src/views/meeting/fields/acceptance-status.js
 client/modules/crm/src/views/meeting/fields/contacts.js
@@ -1540,6 +1543,7 @@ client/src/helpers/record/list/column-width-control.js
 client/src/helpers/record/list/column-resize.js
 client/src/helpers/record/misc/sticky-bar.js
 client/src/helpers/record/select-related.js
+client/src/helpers/site/window-panel-helper.js
 client/src/helpers/site/tabs.js
 client/src/helpers/site/shortcut-manager.js
 client/src/helpers/site/modal-bar-provider.js
@@ -1794,6 +1798,7 @@ client/src/views/user-security/modals/two-factor-email.js
 client/src/views/user-security/modals/two-factor-sms.js
 client/src/views/lead-capture-log-record/modals/detail.js
 client/src/views/site/footer.js
+client/src/views/site/navbar/last-viewed.js
 client/src/views/site/navbar/item.js
 client/src/views/site/navbar/quick-create.js
 client/src/views/site/master.js
@@ -9023,6 +9028,7 @@ application/Espo/Modules/Crm/Resources/metadata/app/popupNotifications.json
 application/Espo/Modules/Crm/Resources/metadata/app/language.json
 application/Espo/Modules/Crm/Resources/metadata/app/webSocket.json
 application/Espo/Modules/Crm/Resources/metadata/app/clientRoutes.json
+application/Espo/Modules/Crm/Resources/metadata/app/appParams.json
 application/Espo/Modules/Crm/Resources/metadata/pdfDefs/Account.json
 application/Espo/Modules/Crm/Resources/layouts/DocumentFolder/filters.json
 application/Espo/Modules/Crm/Resources/layouts/DocumentFolder/detailSmall.json
@@ -9140,6 +9146,7 @@ application/Espo/Modules/Crm/Resources/layouts/EmailQueueItem/list.json
 application/Espo/Modules/Crm/Resources/layouts/Meeting/filters.json
 application/Espo/Modules/Crm/Resources/layouts/Meeting/detailSmall.json
 application/Espo/Modules/Crm/Resources/layouts/Meeting/bottomPanelsDetail.json
+application/Espo/Modules/Crm/Resources/layouts/Meeting/defaultSidePanel.json
 application/Espo/Modules/Crm/Resources/layouts/Meeting/listSmall.json
 application/Espo/Modules/Crm/Resources/layouts/Meeting/detail.json
 application/Espo/Modules/Crm/Resources/layouts/Meeting/massUpdate.json
@@ -9228,10 +9235,13 @@ application/Espo/Modules/Crm/Tools/Case/Service.php
 application/Espo/Modules/Crm/Tools/Case/Distribution/LeastBusy.php
 application/Espo/Modules/Crm/Tools/Case/Distribution/RoundRobin.php
 application/Espo/Modules/Crm/Tools/Meeting/Service.php
+application/Espo/Modules/Crm/Tools/Meeting/MeetingServicesAppParam.php
+application/Espo/Modules/Crm/Tools/Meeting/MeetingServiceAvailabilityCheckerFactory.php
 application/Espo/Modules/Crm/Tools/Meeting/Invitation/Sender.php
 application/Espo/Modules/Crm/Tools/Meeting/Invitation/SenderFactory.php
 application/Espo/Modules/Crm/Tools/Meeting/Invitation/Invitee.php
 application/Espo/Modules/Crm/Tools/Meeting/InvitationService.php
+application/Espo/Modules/Crm/Tools/Meeting/MeetingServiceAvailabilityChecker.php
 application/Espo/Modules/Crm/Tools/Document/Service.php
 application/Espo/Modules/Crm/Tools/MassEmail/Service.php
 application/Espo/Modules/Crm/Tools/MassEmail/UnsubscribeService.php
@@ -9346,6 +9356,7 @@ application/Espo/Modules/Crm/Classes/FormulaFunctions/ExtGroup/AccountGroup/Find
 application/Espo/Modules/Crm/Classes/FormulaFunctions/ExtGroup/CalendarGroup/UserIsBusyType.php
 application/Espo/Modules/Crm/Classes/FieldValidators/Event/Reminders/MaxCount.php
 application/Espo/Modules/Crm/Classes/FieldValidators/Event/Reminders/Valid.php
+application/Espo/Modules/Crm/Classes/FieldValidators/Meeting/ExternalService/Valid.php
 application/Espo/Modules/Crm/Classes/FieldValidators/Campaign/EndDate/AfterStartDate.php
 application/Espo/Modules/Crm/Classes/FieldValidators/Campaign/StartDate/BeforeEndDate.php
 application/Espo/Modules/Crm/Classes/Pdf/Account/ExampleDataLoader.php
@@ -9370,6 +9381,7 @@ application/Espo/Modules/Crm/Classes/RecordHooks/Case/BeforeCreate.php
 application/Espo/Modules/Crm/Classes/RecordHooks/Case/AfterCreate.php
 application/Espo/Modules/Crm/Classes/RecordHooks/Task/BeforeCreate.php
 application/Espo/Modules/Crm/Classes/RecordHooks/Task/AfterSave.php
+application/Espo/Modules/Crm/Classes/RecordHooks/Meeting/BeforeCreateExternalServiceCheck.php
 application/Espo/Modules/Crm/Classes/RecordHooks/Meeting/BeforeCreateSourceEmailCheck.php
 application/Espo/Modules/Crm/Classes/RecordHooks/Contact/AfterCreate.php
 application/Espo/Modules/Crm/Classes/RecordHooks/MassEmail/BeforeCreate.php

@@ -3,6 +3,10 @@ compose.dev.mailgun.yaml
 .vscode/launch.json
 .cursor/rules/yarn.mdc
 Dockerfile.production
+e2e/visual-regression/.auth/.gitkeep
+e2e/visual-regression/playwright.config.ts
+e2e/visual-regression/auth.setup.ts
+e2e/visual-regression/capture-baselines.spec.ts
 e2e/types.d.ts
 e2e/tests/post-factory.test.ts
 e2e/tests/global.setup.ts
@@ -10,6 +14,7 @@ e2e/tests/public/comment-replies.test.ts
 e2e/tests/public/comments.test.ts
 e2e/tests/public/homepage.test.ts
 e2e/tests/public/member-signup-types.test.ts
+e2e/tests/public/transistor.test.ts
 e2e/tests/public/portal-loading.test.ts
 e2e/tests/public/member-signup.test.ts
 e2e/tests/public/comments-manage.test.ts
@@ -32,6 +37,7 @@ e2e/tests/admin/billing/force-upgrade.test.ts
 e2e/tests/admin/tags/editor.test.ts
 e2e/tests/admin/tags/list.test.ts
 e2e/tests/admin/members/member-activity-events.test.ts
+e2e/tests/admin/members/stripe-webhooks.test.ts
 e2e/tests/admin/members/filter-actions.test.ts
 e2e/tests/admin/members/export.test.ts
 e2e/tests/admin/members/disable-commenting.test.ts
@@ -66,6 +72,7 @@ e2e/data-factory/persistence/adapters/http-client.ts
 e2e/data-factory/persistence/adapter.ts
 e2e/data-factory/factories/comment-factory.ts
 e2e/data-factory/factories/automated-email-factory.ts
+e2e/data-factory/factories/lexical.ts
 e2e/data-factory/factories/post-factory.ts
 e2e/data-factory/factories/tag-factory.ts
 e2e/data-factory/factories/user-factory.ts
@@ -137,6 +144,11 @@ e2e/helpers/pages/admin/login-verify-page.ts
 e2e/helpers/services/members-import/index.ts
 e2e/helpers/services/members-import/members-import-service.ts
 e2e/helpers/services/settings/settings-service.ts
+e2e/helpers/services/stripe/builders.ts
+e2e/helpers/services/stripe/fake-stripe-server.ts
+e2e/helpers/services/stripe/index.ts
+e2e/helpers/services/stripe/stripe-service.ts
+e2e/helpers/services/stripe/webhook-client.ts
 e2e/helpers/services/members/members-service.ts
 e2e/helpers/services/members/index.ts
 e2e/helpers/services/tiers/tiers-service.ts
@@ -1756,6 +1768,7 @@ ghost/core/core/shared/labs.js
 ghost/core/core/boot.js
 ghost/core/.npmignore
 ghost/core/.eslintignore
+ghost/core/bin/create-migration.js
 ghost/core/bin/minify-assets.js
 ghost/core/test/.eslintignore
 ghost/core/test/e2e-frontend/member-stats.test.js
@@ -1908,6 +1921,7 @@ ghost/core/test/unit/frontend/web/routers/serve-favicon.test.js
 ghost/core/test/unit/frontend/apps/private-blogging/controller.test.js
 ghost/core/test/unit/frontend/apps/private-blogging/input-password.test.js
 ghost/core/test/unit/frontend/apps/private-blogging/middleware.test.js
+ghost/core/test/unit/bin/create-migration.test.js
 ghost/core/test/unit/server/data/db/backup.test.js
 ghost/core/test/unit/server/data/seeders/data-generator.test.js
 ghost/core/test/unit/server/data/importer/handlers/importer-content-file-handler.test.js
@@ -1949,6 +1963,7 @@ ghost/core/test/unit/server/services/outbox/index.test.js
 ghost/core/test/unit/server/services/koenig/node-renderers.test.js
 ghost/core/test/unit/server/services/koenig/render-utils/stylex.test.js
 ghost/core/test/unit/server/services/koenig/render-utils/escape-html.test.js
+ghost/core/test/unit/server/services/koenig/render-utils/srcset-attribute.test.js
 ghost/core/test/unit/server/services/koenig/render-utils/tagged-template-fns.test.js
 ghost/core/test/unit/server/services/koenig/render-utils/is-content-image.test.js
 ghost/core/test/unit/server/services/koenig/test-utils/visibility.js
@@ -2281,6 +2296,10 @@ ghost/core/test/unit/server/web/api/admin/middleware.test.js
 ghost/core/test/unit/server/web/parent/middleware/queue-request.test.js
 ghost/core/test/unit/server/web/parent/middleware/ghost-locals.test.js
 ghost/core/test/unit/server/web/parent/middleware/request-id.test.js
+ghost/core/test/unit/server/api/endpoints/utils/serializers/output/settings.test.js
+ghost/core/test/unit/server/api/endpoints/utils/serializers/output/images.test.js
+ghost/core/test/unit/server/api/endpoints/utils/serializers/output/files.test.js
+ghost/core/test/unit/server/api/endpoints/utils/serializers/output/media.test.js
 ghost/core/test/unit/shared/config/adapter-config.test.js
 ghost/core/test/unit/shared/config/utils.test.js
 ghost/core/test/unit/shared/config/helpers.test.js
@@ -4816,6 +4835,7 @@ apps/admin-x-settings/src/components/settings/membership/portal/look-and-feel.ts
 apps/admin-x-settings/src/components/settings/membership/portal/portal-frame.tsx
 apps/admin-x-settings/src/components/settings/membership/member-emails/test-email-dropdown.tsx
 apps/admin-x-settings/src/components/settings/membership/member-emails/welcome-email-modal.tsx
+apps/admin-x-settings/src/components/settings/membership/member-emails/welcome-email-customize-modal.tsx
 apps/admin-x-settings/src/components/settings/membership/member-emails/member-email-editor.tsx
 apps/admin-x-settings/src/components/settings/membership/analytics.tsx
 apps/admin-x-settings/src/components/top-level-group.tsx
@@ -4829,7 +4849,6 @@ apps/admin-x-settings/index.html
 apps/admin-x-settings/tsconfig.json
 apps/admin-x-settings/tsconfig.declaration.json
 apps/admin-x-settings/package.json
-apps/posts/postcss.config.cjs
 apps/posts/test/setup.ts
 apps/posts/test/unit/hooks/use-post-success-modal.test.tsx
 apps/posts/test/unit/hooks/use-edit-links.test.tsx
@@ -4971,7 +4990,6 @@ apps/announcement-bar/src/components/main.js
 apps/announcement-bar/src/components/announcement-bar.js
 apps/announcement-bar/src/components/preview.js
 apps/announcement-bar/package.json
-apps/activitypub/postcss.config.cjs
 apps/activitypub/.eslintignore
 apps/activitypub/test/unit/utils/posts.test.ts
 apps/activitypub/test/unit/utils/screenshot.test.ts
@@ -5406,7 +5424,6 @@ apps/admin/tsconfig.app.json
 apps/admin/tsconfig.node.json
 apps/admin/vite-ember-assets.ts
 apps/admin/README.md
-apps/admin/postcss.config.js
 apps/admin/vite-backend-proxy.ts
 apps/admin/src/providers/app-provider.tsx
 apps/admin/src/assets/videos/logo-loader-dark.mp4
@@ -6006,7 +6023,6 @@ apps/admin-x-design-system/tsconfig.json
 apps/admin-x-design-system/tsconfig.declaration.json
 apps/admin-x-design-system/package.json
 apps/admin-x-design-system/vite.config.ts
-apps/stats/postcss.config.cjs
 apps/stats/.eslintignore
 apps/stats/test/setup.ts
 apps/stats/test/unit/setup.ts
