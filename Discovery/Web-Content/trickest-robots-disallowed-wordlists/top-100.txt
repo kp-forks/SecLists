@@ -1485,10 +1485,10 @@ hp/video
 hpc/*/supported-applications.aspx?
 hpm
 hpmob
-http://creativecommons.org/robots.txt
+http://apps.apple.com/robots.txt
+http://blog.google/robots.txt
 http://dropbox.com/robots.txt
-http://eventbrite.com/robots.txt
-http://npr.org/robots.txt
+http://support.cloudflare.com/robots.txt
 http://web.archive.org/robots.txt
 hub?category=
 hz/contact-us/ajax/initiate-trusted-contact
